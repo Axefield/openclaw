@@ -194,14 +194,21 @@ export function stopSharedClientForAccount(auth: MatrixAuth): void {
   sharedClientPromises.delete(key);
 }
 
-export function stopSharedClientInstance(client: MatrixClient): void {
+export function removeSharedClientInstance(client: MatrixClient): boolean {
   for (const [key, state] of sharedClientStates.entries()) {
     if (state.client !== client) {
       continue;
     }
-    state.client.stop();
     sharedClientStates.delete(key);
     sharedClientPromises.delete(key);
+    return true;
+  }
+  return false;
+}
+
+export function stopSharedClientInstance(client: MatrixClient): void {
+  if (!removeSharedClientInstance(client)) {
     return;
   }
+  client.stop();
 }

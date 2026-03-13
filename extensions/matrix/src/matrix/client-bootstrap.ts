@@ -2,7 +2,7 @@ import { getMatrixRuntime } from "../runtime.js";
 import type { CoreConfig } from "../types.js";
 import { getActiveMatrixClient } from "./active-client.js";
 import { isBunRuntime, resolveMatrixAuthContext, resolveSharedMatrixClient } from "./client.js";
-import { stopSharedClientInstance } from "./client/shared.js";
+import { removeSharedClientInstance } from "./client/shared.js";
 import type { MatrixClient } from "./sdk.js";
 
 type ResolvedRuntimeMatrixClient = {
@@ -78,7 +78,7 @@ async function resolveRuntimeMatrixClient(opts: {
       } else {
         client.stop();
       }
-      stopSharedClientInstance(client);
+      removeSharedClientInstance(client);
     },
   };
 }

@@ -11,6 +11,7 @@ export {
 } from "./client/config.js";
 export { createMatrixClient } from "./client/create-client.js";
 export {
+  removeSharedClientInstance,
   resolveSharedMatrixClient,
   stopSharedClientForAccount,
   stopSharedClientInstance,

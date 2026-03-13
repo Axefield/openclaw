@@ -12,7 +12,7 @@ const {
   getMatrixRuntimeMock,
   getActiveMatrixClientMock,
   resolveSharedMatrixClientMock,
-  stopSharedClientInstanceMock,
+  removeSharedClientInstanceMock,
   isBunRuntimeMock,
   resolveMatrixAuthContextMock,
 } = matrixClientResolverMocks;
@@ -32,7 +32,7 @@ vi.mock("../client.js", () => ({
 }));
 
 vi.mock("../client/shared.js", () => ({
-  stopSharedClientInstance: (...args: unknown[]) => stopSharedClientInstanceMock(...args),
+  removeSharedClientInstance: (...args: unknown[]) => removeSharedClientInstanceMock(...args),
 }));
 
 vi.mock("../send.js", () => ({
@@ -74,7 +74,7 @@ describe("action client helpers", () => {
     const sharedClient = await resolveSharedMatrixClientMock.mock.results[0]?.value;
     expect(sharedClient.prepareForOneOff).toHaveBeenCalledTimes(1);
     expect(sharedClient.stop).toHaveBeenCalledTimes(1);
-    expect(stopSharedClientInstanceMock).toHaveBeenCalledWith(sharedClient);
+    expect(removeSharedClientInstanceMock).toHaveBeenCalledWith(sharedClient);
     expect(result).toBe("ok");
   });
 
@@ -95,7 +95,7 @@ describe("action client helpers", () => {
     expect(sharedClient.prepareForOneOff).not.toHaveBeenCalled();
     expect(sharedClient.stop).not.toHaveBeenCalled();
     expect(sharedClient.stopAndPersist).toHaveBeenCalledTimes(1);
-    expect(stopSharedClientInstanceMock).toHaveBeenCalledWith(sharedClient);
+    expect(removeSharedClientInstanceMock).toHaveBeenCalledWith(sharedClient);
   });
 
   it("reuses active monitor client when available", async () => {
@@ -197,7 +197,7 @@ describe("action client helpers", () => {
     expect(result).toBe("ok");
     expect(sharedClient.stop).toHaveBeenCalledTimes(1);
     expect(sharedClient.stopAndPersist).not.toHaveBeenCalled();
-    expect(stopSharedClientInstanceMock).toHaveBeenCalledWith(sharedClient);
+    expect(removeSharedClientInstanceMock).toHaveBeenCalledWith(sharedClient);
   });
 
   it("stops shared action clients when the wrapped call throws", async () => {

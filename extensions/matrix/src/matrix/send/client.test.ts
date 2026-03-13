@@ -9,7 +9,7 @@ const {
   getMatrixRuntimeMock,
   getActiveMatrixClientMock,
   resolveSharedMatrixClientMock,
-  stopSharedClientInstanceMock,
+  removeSharedClientInstanceMock,
   isBunRuntimeMock,
   resolveMatrixAuthContextMock,
 } = matrixClientResolverMocks;
@@ -25,7 +25,7 @@ vi.mock("../client.js", () => ({
 }));
 
 vi.mock("../client/shared.js", () => ({
-  stopSharedClientInstance: (...args: unknown[]) => stopSharedClientInstanceMock(...args),
+  removeSharedClientInstance: (...args: unknown[]) => removeSharedClientInstanceMock(...args),
 }));
 
 vi.mock("../../runtime.js", () => ({
@@ -63,7 +63,7 @@ describe("withResolvedMatrixClient", () => {
     const sharedClient = await resolveSharedMatrixClientMock.mock.results[0]?.value;
     expect(sharedClient.prepareForOneOff).toHaveBeenCalledTimes(1);
     expect(sharedClient.stop).toHaveBeenCalledTimes(1);
-    expect(stopSharedClientInstanceMock).toHaveBeenCalledWith(sharedClient);
+    expect(removeSharedClientInstanceMock).toHaveBeenCalledWith(sharedClient);
     expect(result).toBe("ok");
   });
 
@@ -132,6 +132,6 @@ describe("withResolvedMatrixClient", () => {
     ).rejects.toThrow("boom");
 
     expect(sharedClient.stop).toHaveBeenCalledTimes(1);
-    expect(stopSharedClientInstanceMock).toHaveBeenCalledWith(sharedClient);
+    expect(removeSharedClientInstanceMock).toHaveBeenCalledWith(sharedClient);
   });
 });
