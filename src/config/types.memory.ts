@@ -1,13 +1,14 @@
 import type { SessionSendPolicyConfig } from "./types.base.js";
 
-export type MemoryBackend = "builtin" | "qmd";
+export type MemoryBackend = "builtin" | "qmd" | "axerey";
 export type MemoryCitationsMode = "auto" | "on" | "off";
 export type MemoryQmdSearchMode = "query" | "search" | "vsearch";
 
 export type MemoryConfig = {
   backend?: MemoryBackend;
   citations?: MemoryCitationsMode;
-  qmd?: MemoryQmdConfig;
+  qmd?: MemoryQMDConfig;
+  axerey?: AxereyMemoryConfig;
 };
 
 export type MemoryQmdConfig = {
@@ -64,4 +65,21 @@ export type MemoryQmdLimitsConfig = {
   maxSnippetChars?: number;
   maxInjectedChars?: number;
   timeoutMs?: number;
+};
+
+export type AxereyMemoryConfig = {
+  /** Path to Axerey database (default: ~/.openclaw/axerey.db) */
+  dbPath?: string;
+  /** Port for Axerey MCP server (default: 4578) */
+  port?: number;
+  /** Auto-start Axerey MCP server on OpenClaw launch (default: true) */
+  autoStart?: boolean;
+  /** Default persona to use (default: "default") */
+  defaultPersona?: string;
+  /** Embedding provider to use */
+  embeddingProvider?: "auto" | "hash" | "transformers" | "llama";
+  /** Enable reasoning tools (mind.balance, steelman, strawman) */
+  reasoningEnabled?: boolean;
+  /** Enable memory connections and verification */
+  smartThinkingEnabled?: boolean;
 };

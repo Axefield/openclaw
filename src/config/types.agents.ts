@@ -25,6 +25,17 @@ export type AgentRuntimeConfig =
       acp?: AgentRuntimeAcpConfig;
     };
 
+export type AxereyPersonaConfig = {
+  /** Axerey persona ID for this agent (defaults to agent ID) */
+  personaId?: string;
+  /** Enable Axerey memory for this agent */
+  enabled?: boolean;
+  /** Enable reasoning tools (mind.balance, steelman, strawman) */
+  reasoningEnabled?: boolean;
+  /** Enable smart-thinking features (connections, verification) */
+  smartThinkingEnabled?: boolean;
+};
+
 export type AgentBindingMatch = {
   channel: string;
   accountId?: string;
@@ -87,6 +98,8 @@ export type AgentConfig = {
   tools?: AgentToolsConfig;
   /** Optional runtime descriptor for this agent. */
   runtime?: AgentRuntimeConfig;
+  /** Axerey persona configuration for this agent */
+  axerey?: AxereyPersonaConfig;
 };
 
 export type AgentsConfig = {

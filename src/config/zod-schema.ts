@@ -113,12 +113,25 @@ const MemoryQmdSchema = z
 
 const MemorySchema = z
   .object({
-    backend: z.union([z.literal("builtin"), z.literal("qmd")]).optional(),
+    backend: z.union([z.literal("builtin"), z.literal("qmd"), z.literal("axerey")]).optional(),
     citations: z.union([z.literal("auto"), z.literal("on"), z.literal("off")]).optional(),
     qmd: MemoryQmdSchema.optional(),
+    axerey: MemoryAxereySchema.optional(),
   })
   .strict()
   .optional();
+
+const MemoryAxereySchema = z
+  .object({
+    dbPath: z.string().optional(),
+    port: z.number().int().positive().optional(),
+    autoStart: z.boolean().optional(),
+    defaultPersona: z.string().optional(),
+    embeddingProvider: z.union([z.literal("auto"), z.literal("hash"), z.literal("transformers"), z.literal("llama")]).optional(),
+    reasoningEnabled: z.boolean().optional(),
+    smartThinkingEnabled: z.boolean().optional(),
+  })
+  .strict();
 
 const HttpUrlSchema = z
   .string()

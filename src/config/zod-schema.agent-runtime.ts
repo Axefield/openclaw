@@ -800,6 +800,15 @@ export const AgentEntrySchema = z
     params: z.record(z.string(), z.unknown()).optional(),
     tools: AgentToolsSchema,
     runtime: AgentRuntimeSchema,
+    axerey: z
+      .object({
+        personaId: z.string().optional(),
+        enabled: z.boolean().optional(),
+        reasoningEnabled: z.boolean().optional(),
+        smartThinkingEnabled: z.boolean().optional(),
+      })
+      .strict()
+      .optional(),
   })
   .strict();
 
