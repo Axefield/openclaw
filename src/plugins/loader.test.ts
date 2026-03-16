@@ -2232,6 +2232,7 @@ module.exports = {
         channels: {
           "setup-runtime-not-preferred-test": {
             enabled: true,
+            endpoint: "https://configured.example.test",
           },
         },
         plugins: {
