@@ -1,0 +1,44 @@
+# Axerey Strawman Tool Grammar
+# Analyze arguments to identify distortions, fallacies, and weak points
+
+root ::= McpAction
+
+McpAction ::= "{" 
+  "\"name\":\"axerey_strawman\","
+  "\"arguments\":" McpArguments 
+"}"
+
+McpArguments ::= "{" 
+  "\"originalClaim\":" string
+  (",\"distorts\":" DistortionArray)?
+  (",\"fallacies\":" FallacyArray)?
+  (",\"requestRefutation\":" boolean)?
+  (",\"context\":" string)?
+"}"
+
+DistortionArray ::= "[" (Distortion ("," Distortion)*)? "]"
+Distortion ::= 
+    "\"exaggeration\""
+  | "\"oversimplification\""
+  | "\"misattribution\""
+  | "\"context_stripping\""
+  | "\"straw_person_minor\""
+  | "\"quote_mining\""
+  | "\"false_dichotomy\""
+
+FallacyArray ::= "[" (Fallacy ("," Fallacy)*)? "]"
+Fallacy ::= 
+    "\"strawman\""
+  | "\"ad_hominem\""
+  | "\"false_dichotomy\""
+  | "\"slippery_slope\""
+  | "\"appeal_to_authority\""
+  | "\"circular_reasoning\""
+
+boolean ::= "true" | "false"
+string ::= "\"" ( "\\" ( "u" [0-9a-fA-F]{4} | [^\n"\\] ) | [^\n"\\] )* "\""
+object ::= "{" (pair ("," pair)*)? "}"
+pair ::= string ":" value
+value ::= string | number | boolean | object | array | "null"
+array ::= "[" (value ("," value)*)? "]"
+number ::= "-"? ([0-9]+ ("." [0-9]+)?)? (("e"|"E") ("+"|"-") [0-9]+)?

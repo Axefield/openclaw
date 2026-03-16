@@ -1,0 +1,88 @@
+{
+  "version": "1.0.0",
+  "environment": "production",
+  "personas": {
+    "default": {
+      "id": "default",
+      "name": "Default Persona",
+      "description": "Standard analytical persona",
+      "memoryIsolation": true,
+      "reasoningStyle": "balanced"
+    },
+    "scientific": {
+      "id": "scientific",
+      "name": "Scientific Persona",
+      "description": "Rigorous scientific analysis persona",
+      "memoryIsolation": true,
+      "reasoningStyle": "analytical",
+      "preferences": {
+        "evidenceRequired": true,
+        "statisticalSignificance": 0.95,
+        "peerReview": true
+      }
+    },
+    "creative": {
+      "id": "creative",
+      "name": "Creative Persona",
+      "description": "Creative and innovative thinking persona",
+      "memoryIsolation": true,
+      "reasoningStyle": "divergent",
+      "preferences": {
+        "brainstorming": true,
+        "lateralThinking": true,
+        "experimentation": true
+      }
+    }
+  },
+  "memory": {
+    "vssEnabled": true,
+    "vectorDimension": 1536,
+    "maxMemories": 10000,
+    "retentionDays": 365,
+    "hybridVSS": {
+      "useHNSWForSearch": true,
+      "useVectorliteForPersistence": true,
+      "autoSwitchThreshold": 1000,
+      "maxElements": 50000,
+      "M": 16,
+      "efConstruction": 200,
+      "ef": 100,
+      "space": "cosine"
+    },
+    "adaptiveLearning": {
+      "enabled": true,
+      "outcomeTracking": true,
+      "patternMining": true,
+      "ruleExtraction": true
+    }
+  },
+  "reasoning": {
+    "mindBalance": {
+      "defaultTheta": 0.7853981633974483,
+      "defaultPhi": 0.5235987755982988,
+      "defaultCosine": 0.7,
+      "defaultTangent": 0.4,
+      "abstentionThreshold": 0.3
+    },
+    "argumentation": {
+      "steelman": {
+        "maxPremises": 10,
+        "charitableAssumptionsRequired": true
+      },
+      "strawman": {
+        "maxDistortions": 5,
+        "requestRefutation": true
+      }
+    }
+  },
+  "performance": {
+    "cacheSize": 1000,
+    "batchSize": 100,
+    "timeoutMs": 30000
+  },
+  "metadata": {
+    "createdAt": "2025-01-18T00:00:00.000Z",
+    "lastModified": "2025-01-18T00:00:00.000Z",
+    "version": "1.0.0"
+  }
+}

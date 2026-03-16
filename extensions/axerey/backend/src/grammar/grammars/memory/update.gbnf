@@ -1,0 +1,21 @@
+# Axerey Update Tool Grammar
+# Modifies existing memory text
+
+root ::= McpAction
+
+McpAction ::= "{" 
+  "\"name\":\"axerey_update\","
+  "\"arguments\":" McpArguments 
+"}"
+
+McpArguments ::= "{" 
+  "\"id\":" string
+  ",\"text\":" string
+"}"
+
+string ::= "\"" ( "\\" ( "u" [0-9a-fA-F]{4} | [^\n"\\] ) | [^\n"\\] )* "\""
+object ::= "{" (pair ("," pair)*)? "}"
+pair ::= string ":" value
+value ::= string | number | object | array | "true" | "false" | "null"
+array ::= "[" (value ("," value)*)? "]"
+number ::= "-"? ([0-9]+ ("." [0-9]+)?)? (("e"|"E") ("+"|"-") [0-9]+)?

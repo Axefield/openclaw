@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Axerey: Memory Systems & Adaptive Learning</title>
+    <style>
+      :root {
+        --jsr-pink: #ff00ff;
+        --jsr-blue: #00ffff;
+        --tron-cyan: #00f0ff;
+        --jsr-green: #00ff00;
+        --bg-primary: #000000;
+        --bg-card: #0f0f0f;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --text-accent: #00f0ff;
+        --border-primary: #333333;
+        --border-accent: #00f0ff;
+        --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-mono: "Courier New", Monaco, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: var(--font-sans);
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        background-image: linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+      .container { max-width: 960px; margin: 0 auto; }
+      .header {
+        border-bottom: 2px solid var(--border-accent);
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+      }
+      h1 {
+        background: linear-gradient(135deg, var(--jsr-pink), var(--jsr-blue));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 2.25rem;
+        margin-bottom: 0.5rem;
+      }
+      .subtitle { color: var(--text-secondary); font-size: 1.05rem; }
+      .section {
+        background: var(--bg-card);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.75rem;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      .section h2 {
+        color: var(--text-accent);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .section h3 {
+        color: var(--text-primary);
+        font-size: 1.2rem;
+        margin: 1.5rem 0 0.5rem;
+      }
+      .card {
+        background: var(--bg-card);
+        border-radius: 0.75rem;
+        border: 1px solid var(--border-accent);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+      }
+      .card h2 { margin-top: 0; }
+      ul { margin-left: 1.5rem; margin-top: 0.5rem; }
+      li { margin-bottom: 0.5rem; color: var(--text-secondary); }
+      li strong { color: var(--text-accent); }
+      .code-block {
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin: 1rem 0;
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+        overflow-x: auto;
+      }
+      .callout {
+        border-left: 3px solid var(--border-accent);
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+        color: var(--text-secondary);
+      }
+      .callout strong { color: var(--text-accent); }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Axerey: Memory Systems & Adaptive Learning</h1>
+        <p class="subtitle">Production-Ready Memory & Reasoning System with 32+ MCP Tools</p>
+      </div>
+
+      <section class="card">
+        <h2>Why This Matters for Investors</h2>
+        <p>
+          Axerey provides the foundational memory layer for all Truligon applications, creating <strong>high switching costs</strong> 
+          (users build memories in Axerey) and <strong>network effects</strong> (pattern mining improves with usage). 
+          This creates defensible moats that competitors cannot easily replicate.
+        </p>
+        <p>
+          <strong>Production-Ready:</strong> Backend infrastructure complete with user management, authentication, WebSocket, database. 
+          <strong>Integration:</strong> Embedded in deltaGon, car02/PAWS, and other Truligon systems, demonstrating real-world usage.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Memory Types: Episodic, Semantic, Procedural</h2>
+        <p>
+          Axerey implements three distinct memory types, each serving different purposes in AI applications:
+        </p>
+
+        <h3>Episodic Memory</h3>
+        <p>
+          <strong>Purpose:</strong> Stores specific events and experiences with temporal context. 
+          <strong>Use Cases:</strong> Trade history (deltaGon), user interactions, session data, specific occurrences.
+        </p>
+        <ul>
+          <li><strong>Structure:</strong> Event-based with timestamps, context, outcomes</li>
+          <li><strong>Example:</strong> "11/20/2025: SPY options trade, +52% in &lt;1 hour, ascending triangle pattern"</li>
+          <li><strong>Investment Value:</strong> Creates switching costs (trading history locked in Axerey)</li>
+        </ul>
+
+        <h3>Semantic Memory</h3>
+        <p>
+          <strong>Purpose:</strong> Stores facts, concepts, and knowledge without temporal context. 
+          <strong>Use Cases:</strong> PineScript knowledge (car02/PAWS), domain knowledge, conceptual understanding.
+        </p>
+        <ul>
+          <li><strong>Structure:</strong> Fact-based with relationships, concepts, knowledge</li>
+          <li><strong>Example:</strong> "PineScript syntax patterns, trading strategies, technical indicators"</li>
+          <li><strong>Investment Value:</strong> Knowledge base creates lock-in, network effects improve with usage</li>
+        </ul>
+
+        <h3>Procedural Memory</h3>
+        <p>
+          <strong>Purpose:</strong> Stores rules, procedures, and how-to knowledge. 
+          <strong>Use Cases:</strong> Trading rules, decision-making procedures, automated workflows.
+        </p>
+        <ul>
+          <li><strong>Structure:</strong> Rule-based with conditions, actions, outcomes</li>
+          <li><strong>Example:</strong> "If ascending triangle pattern detected, wait for 3-4 tests before breakout"</li>
+          <li><strong>Investment Value:</strong> Automated learning creates defensible moats</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Adaptive Learning & Pattern Mining</h2>
+        <p>
+          Axerey's adaptive learning system automatically improves with usage through pattern mining and outcome-based ranking:
+        </p>
+
+        <h3>Pattern Mining</h3>
+        <ul>
+          <li><strong>K-means Clustering:</strong> Consolidates similar patterns for efficiency</li>
+          <li><strong>Outcome-Based Ranking:</strong> Patterns ranked by success rate</li>
+          <li><strong>Rule Extraction:</strong> Automatically extracts rules from successful patterns</li>
+          <li><strong>Continuous Improvement:</strong> System learns from every interaction</li>
+        </ul>
+
+        <h3>Network Effects</h3>
+        <p>
+          <strong>How It Works:</strong> As more users interact with Axerey, pattern mining improves, creating better 
+          recommendations and decisions for all users. This creates a network effect where the system becomes more 
+          valuable as more people use it.
+        </p>
+        <ul>
+          <li><strong>Pattern Recognition:</strong> Identifies successful patterns across users</li>
+          <li><strong>Knowledge Sharing:</strong> Semantic memory improves with collective knowledge</li>
+          <li><strong>Procedural Rules:</strong> Best practices emerge from usage patterns</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Investment Insight:</strong> Network effects create defensible moats that competitors cannot easily replicate. 
+          The more users, the better the system becomes, creating a virtuous cycle.
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>MCP Tools: 32+ Tools via Model Context Protocol</h2>
+        <p>
+          Axerey provides 32+ MCP tools for AI agent integration, enabling memory-driven intelligence across applications:
+        </p>
+
+        <h3>Memory Operations</h3>
+        <ul>
+          <li><strong>memory-store:</strong> Store new memories with text, tags, importance, expiration</li>
+          <li><strong>memory-search:</strong> Semantic search through stored memories</li>
+          <li><strong>memory-recall:</strong> Retrieve memories by query or get recent ones</li>
+          <li><strong>memory-update:</strong> Modify existing memory text</li>
+          <li><strong>memory-pin:</strong> Pin/unpin memories for quick access</li>
+          <li><strong>memory-forget:</strong> Delete a memory by ID</li>
+        </ul>
+
+        <h3>Advanced Memory Management</h3>
+        <ul>
+          <li><strong>memory-consolidate:</strong> Cluster memories and produce semantic beliefs</li>
+          <li><strong>memory-extract-rules:</strong> Pattern mine executions vs outcomes to emit procedural rules</li>
+          <li><strong>memory-reflect:</strong> Write a distilled lesson and update procedural rules</li>
+          <li><strong>memory-decay:</strong> Maintain memory scores and delete/archive stale items</li>
+          <li><strong>memory-pin-set:</strong> Create curated memory sets for quick access</li>
+        </ul>
+
+        <h3>Context & Learning</h3>
+        <ul>
+          <li><strong>context-broker:</strong> Returns exact set of memories for specific tasks</li>
+          <li><strong>context-grading:</strong> Provide feedback on context helpfulness for adaptive ranking</li>
+          <li><strong>outcome-labeling:</strong> Label execution outcomes with success metrics</li>
+          <li><strong>context-explanation:</strong> Explain why specific memories were chosen</li>
+          <li><strong>adaptive-learning:</strong> Adaptive learning system improvements</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Production Infrastructure</h2>
+        <p>
+          Axerey's production-ready infrastructure demonstrates execution capability:
+        </p>
+
+        <h3>Backend Architecture</h3>
+        <ul>
+          <li><strong>User Management:</strong> Complete user system with authentication</li>
+          <li><strong>WebSocket:</strong> Real-time communication for memory operations</li>
+          <li><strong>Database:</strong> Prisma ORM, PostgreSQL, vector database for embeddings</li>
+          <li><strong>API:</strong> RESTful API with comprehensive endpoints</li>
+          <li><strong>Security:</strong> Authentication, authorization, API key management</li>
+        </ul>
+
+        <h3>Integration Examples</h3>
+        <ul>
+          <li><strong>deltaGon:</strong> Context broker for pretrade/intrade/posttrade phases</li>
+          <li><strong>car02/PAWS:</strong> PineScript knowledge system with Axerey memory</li>
+          <li><strong>Gon-Search:</strong> Memory-driven search with context awareness</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Defensibility & Competitive Advantage</h2>
+        <h3>High Switching Costs</h3>
+        <p>
+          Users build memories in Axerey (trading history, knowledge base, procedural rules), creating lock-in. 
+          Switching to a competitor means losing all accumulated memories and knowledge.
+        </p>
+
+        <h3>Network Effects</h3>
+        <p>
+          Pattern mining improves with usage, creating better recommendations for all users. The system becomes 
+          more valuable as more people use it, creating a defensible moat.
+        </p>
+
+        <h3>Unique IP</h3>
+        <p>
+          Adaptive learning algorithms, memory-driven reasoning, context broker, and comprehensive MCP tools create 
+          unique intellectual property that competitors cannot easily replicate.
+        </p>
+
+        <div class="callout">
+          <strong>Investment Recommendation:</strong> Axerey is one of Truligon's strongest moats, with high switching 
+          costs, network effects, and unique IP. It's production-ready and integrated into multiple systems, demonstrating 
+          real-world usage and value creation.
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
+

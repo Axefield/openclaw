@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Axerey: Persona Management & Context Broker</title>
+    <style>
+      :root {
+        --jsr-pink: #ff00ff;
+        --jsr-blue: #00ffff;
+        --tron-cyan: #00f0ff;
+        --jsr-green: #00ff00;
+        --bg-primary: #000000;
+        --bg-card: #0f0f0f;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --text-accent: #00f0ff;
+        --border-primary: #333333;
+        --border-accent: #00f0ff;
+        --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-mono: "Courier New", Monaco, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: var(--font-sans);
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        background-image: linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+      .container { max-width: 960px; margin: 0 auto; }
+      .header {
+        border-bottom: 2px solid var(--border-accent);
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+      }
+      h1 {
+        background: linear-gradient(135deg, var(--jsr-pink), var(--jsr-blue));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 2.25rem;
+        margin-bottom: 0.5rem;
+      }
+      .subtitle { color: var(--text-secondary); font-size: 1.05rem; }
+      .section {
+        background: var(--bg-card);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.75rem;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      .section h2 {
+        color: var(--text-accent);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .section h3 {
+        color: var(--text-primary);
+        font-size: 1.2rem;
+        margin: 1.5rem 0 0.5rem;
+      }
+      .card {
+        background: var(--bg-card);
+        border-radius: 0.75rem;
+        border: 1px solid var(--border-accent);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+      }
+      ul { margin-left: 1.5rem; margin-top: 0.5rem; }
+      li { margin-bottom: 0.5rem; color: var(--text-secondary); }
+      li strong { color: var(--text-accent); }
+      .code-block {
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin: 1rem 0;
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+        overflow-x: auto;
+      }
+      .callout {
+        border-left: 3px solid var(--border-accent);
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+        color: var(--text-secondary);
+      }
+      .callout strong { color: var(--text-accent); }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Axerey: Persona Management & Context Broker</h1>
+        <p class="subtitle">Enabling Agentic Systems Execution Model with Isolated Memory Spaces</p>
+      </div>
+
+      <section class="card">
+        <h2>Why This Matters for Investors</h2>
+        <p>
+          Axerey's persona management and context broker enable Truligon's <strong>novel agentic systems execution model</strong>, 
+          which allows <strong>10x faster team scaling at 10x lower cost</strong> than traditional hiring. This creates a 
+          significant competitive advantage in execution capability.
+        </p>
+        <p>
+          <strong>Infrastructure Ready:</strong> 29+ documentation guides, multi-tenant architecture, memory isolation 
+          per persona. <strong>Production-Ready:</strong> Each role has its own persona and memory space, custom MCP tools, 
+          and decision-making integration with mythoGon.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Persona Management System</h2>
+        <p>
+          Axerey implements a comprehensive persona management system that enables role-based memory isolation and 
+          custom tool configuration:
+        </p>
+
+        <h3>Persona Architecture</h3>
+        <ul>
+          <li><strong>Unique IDs:</strong> Each persona has a unique identifier (e.g., p1-financial-investor)</li>
+          <li><strong>Memory Isolation:</strong> Each persona has its own memory space, preventing cross-contamination</li>
+          <li><strong>Custom Tools:</strong> Each persona can have custom MCP tools tailored to their role</li>
+          <li><strong>Reasoning Style:</strong> Each persona can have different reasoning styles (strategic, technical, ethical)</li>
+          <li><strong>Session Management:</strong> Personas can have multiple sessions with different goals</li>
+        </ul>
+
+        <h3>Truligon Personas</h3>
+        <ul>
+          <li><strong>P1 - Financial Investor:</strong> Strategic reasoning, investment analysis, risk assessment</li>
+          <li><strong>P2 - Technical Investor:</strong> Architecture focus, tradeoffs, engine boundaries</li>
+          <li><strong>P3 - Ethics/Systems Investor:</strong> Harm modeling, ethics, mythoGon integration</li>
+          <li><strong>P4 - Client CTO/Head of Product:</strong> Integration surfaces, APIs, packaging</li>
+          <li><strong>P5 - Innovation/Strategy:</strong> Training, serious games, scenario design</li>
+          <li><strong>P6 - Player/Gamer:</strong> Game mechanics, player experience</li>
+          <li><strong>P7 - Citizen/Dystopia-Aware Reader:</strong> Social impact, dystopian themes</li>
+        </ul>
+
+        <div class="code-block">
+// Example: Persona Configuration
+{
+  "id": "p1-financial-investor",
+  "reasoningStyle": "strategic",
+  "customTools": ["financial-analysis", "risk-assessment"],
+  "memoryTags": ["investment", "financial", "risk"],
+  "sessionType": "reasoning"
+}
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Context Broker: Task-Specific Memory Retrieval</h2>
+        <p>
+          The context broker is a sophisticated system that retrieves the most relevant memories for specific tasks, 
+          enabling memory-driven intelligence:
+        </p>
+
+        <h3>Task Types</h3>
+        <ul>
+          <li><strong>Planning:</strong> Retrieves memories relevant to planning and strategy</li>
+          <li><strong>Execution:</strong> Retrieves memories relevant to current execution tasks</li>
+          <li><strong>Review:</strong> Retrieves memories relevant to review and analysis</li>
+        </ul>
+
+        <h3>Context Broker in deltaGon</h3>
+        <p>
+          deltaGon uses the context broker for trading decisions with task-specific queries:
+        </p>
+        <ul>
+          <li><strong>Pre-Trade:</strong> Historical pattern analysis, similar market conditions</li>
+          <li><strong>In-Trade:</strong> Real-time decision support, risk management</li>
+          <li><strong>Post-Trade:</strong> Performance analysis, learning and improvement</li>
+        </ul>
+
+        <div class="code-block">
+// Example: Context Broker Usage
+contextBroker({
+  task: "pretrade",
+  symbol: "SPY",
+  tags: ["scalping", "options"],
+  limit: 10
+})
+// Returns: Most relevant memories for pre-trade analysis
+        </div>
+
+        <h3>Adaptive Ranking</h3>
+        <p>
+          The context broker uses adaptive ranking to improve memory selection over time:
+        </p>
+        <ul>
+          <li><strong>Context Grading:</strong> Users provide feedback on context helpfulness</li>
+          <li><strong>Outcome Labeling:</strong> Execution outcomes labeled with success metrics</li>
+          <li><strong>Adaptive Learning:</strong> Ranking weights adjusted based on outcomes</li>
+          <li><strong>Performance Metrics:</strong> VSS status and performance tracking</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Agentic Systems Execution Model</h2>
+        <p>
+          Axerey's persona management enables Truligon's novel agentic systems execution model:
+        </p>
+
+        <h3>How It Works</h3>
+        <ul>
+          <li><strong>Role Definition:</strong> Each role (CEO, CTO, etc.) has its own persona in Axerey</li>
+          <li><strong>Memory Isolation:</strong> Each role has its own memory space, preventing conflicts</li>
+          <li><strong>Custom Tools:</strong> Each role has custom MCP tools tailored to responsibilities</li>
+          <li><strong>Decision-Making:</strong> mythoGon provides soul/agency for role-specific decisions</li>
+          <li><strong>Infrastructure:</strong> 29+ documentation guides, multi-tenant architecture</li>
+        </ul>
+
+        <h3>Advantages</h3>
+        <ul>
+          <li><strong>10x Faster Scaling:</strong> Agentic systems enable rapid team scaling</li>
+          <li><strong>10x Lower Cost:</strong> No traditional hiring overhead</li>
+          <li><strong>Consistent Execution:</strong> Personas maintain consistent reasoning and decision-making</li>
+          <li><strong>Scalable:</strong> Infrastructure designed for team scaling</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Investment Insight:</strong> The agentic systems execution model provides a significant competitive 
+          advantage in execution capability, enabling fast, cost-effective scaling without traditional hiring overhead.
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Production Infrastructure</h2>
+        <h3>Multi-Tenant Architecture</h3>
+        <ul>
+          <li><strong>Persona Isolation:</strong> Each persona has isolated memory space</li>
+          <li><strong>Session Management:</strong> Multiple sessions per persona with different goals</li>
+          <li><strong>Custom Tools:</strong> Per-persona MCP tool configuration</li>
+          <li><strong>Scalability:</strong> Architecture designed for team scaling</li>
+        </ul>
+
+        <h3>Documentation & Guides</h3>
+        <p>
+          <strong>29+ Documentation Guides:</strong> Comprehensive documentation for persona management, context broker, 
+          memory operations, reasoning tools, and agentic systems integration.
+        </p>
+
+        <h3>Integration Examples</h3>
+        <ul>
+          <li><strong>deltaGon:</strong> Context broker for trading decisions (pretrade/intrade/posttrade)</li>
+          <li><strong>car02/PAWS:</strong> PineScript knowledge system with persona-specific memories</li>
+          <li><strong>Future:</strong> CEO persona, CTO persona, etc. for agentic systems execution model</li>
+        </ul>
+      </section>
+    </div>
+  </body>
+</html>
+

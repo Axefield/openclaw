@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mythoGon: Personal Decision Support for Every Person</title>
+    <style>
+      :root {
+        --jsr-pink: #ff00ff;
+        --jsr-blue: #00ffff;
+        --tron-cyan: #00f0ff;
+        --jsr-green: #00ff00;
+        --bg-primary: #000000;
+        --bg-card: #0f0f0f;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --text-accent: #00f0ff;
+        --border-primary: #333333;
+        --border-accent: #00f0ff;
+        --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-mono: "Courier New", Monaco, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: var(--font-sans);
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        background-image: linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+      .container { max-width: 960px; margin: 0 auto; }
+      .header {
+        border-bottom: 2px solid var(--border-accent);
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+      }
+      h1 {
+        background: linear-gradient(135deg, var(--jsr-pink), var(--jsr-blue));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 2.25rem;
+        margin-bottom: 0.5rem;
+      }
+      .subtitle { color: var(--text-secondary); font-size: 1.05rem; }
+      .section {
+        background: var(--bg-card);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.75rem;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      .section h2 {
+        color: var(--text-accent);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .section h3 {
+        color: var(--text-primary);
+        font-size: 1.2rem;
+        margin: 1.5rem 0 0.5rem;
+      }
+      .card {
+        background: var(--bg-card);
+        border-radius: 0.75rem;
+        border: 1px solid var(--border-accent);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+      }
+      ul { margin-left: 1.5rem; margin-top: 0.5rem; }
+      li { margin-bottom: 0.5rem; color: var(--text-secondary); }
+      li strong { color: var(--text-accent); }
+      .code-block {
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin: 1rem 0;
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+        overflow-x: auto;
+      }
+      .callout {
+        border-left: 3px solid var(--border-accent);
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+        color: var(--text-secondary);
+      }
+      .callout strong { color: var(--text-accent); }
+      .use-case-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin: 1.5rem 0;
+      }
+      .use-case-card {
+        background: rgba(0, 240, 255, 0.05);
+        border: 1px solid var(--border-accent);
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+      }
+      .use-case-card h4 {
+        color: var(--text-accent);
+        margin-bottom: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>mythoGon: Personal Decision Support for Every Person</h1>
+        <p class="subtitle">How Every Individual Uses mythoGon in Their Daily Work</p>
+      </div>
+
+      <section class="card">
+        <h2>Why This Matters for Investors</h2>
+        <p>
+          When <strong>every person</strong> in an organization uses mythoGon for their decisions, it creates a 
+          <strong>mythoGon-native culture</strong> where decision-making is consistent, ethical, and optimized. 
+          This creates <strong>massive productivity gains</strong> and <strong>competitive advantages</strong> 
+          through better decisions at every level.
+        </p>
+        <p>
+          <strong>Universal Adoption:</strong> Every person has their own mythoGon persona. <strong>Daily Integration:</strong> 
+          mythoGon integrated into daily workflows. <strong>Compound Value:</strong> Individual benefits compound at 
+          organizational level.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Engineer: Technical Decision Support</h2>
+        <p>
+          How engineers use mythoGon daily:
+        </p>
+
+        <h3>Code Review Decisions</h3>
+        <div class="code-block">
+// Engineer uses mythoGon for code review
+const codeReviewDecision = await mythoGon.runDecision({
+  context: {
+    domain: "ENGINEERING",
+    role: "engineer",
+    task: "code_review",
+    code: {
+      complexity: 0.7,
+      testCoverage: 0.85,
+      performance: { ... }
+    },
+    requirements: { ... }
+  },
+  contract: {
+    coreValues: {
+      codeQuality: 0.9,
+      maintainability: 0.9,
+      performance: 0.8,
+      security: 1.0
+    }
+  }
+});
+        </div>
+
+        <h3>Architecture Decisions</h3>
+        <ul>
+          <li><strong>Technology Selection:</strong> mythoGon evaluates technology choices</li>
+          <li><strong>Design Patterns:</strong> mythoGon selects design patterns</li>
+          <li><strong>Tradeoff Analysis:</strong> mythoGon analyzes technical tradeoffs</li>
+          <li><strong>Scalability Planning:</strong> mythoGon plans for scalability</li>
+        </ul>
+
+        <h3>Daily Workflow</h3>
+        <ul>
+          <li><strong>Task Prioritization:</strong> mythoGon prioritizes daily tasks</li>
+          <li><strong>Bug Triage:</strong> mythoGon helps triage bugs</li>
+          <li><strong>Feature Implementation:</strong> mythoGon guides feature implementation</li>
+          <li><strong>Performance Optimization:</strong> mythoGon optimizes performance</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Designer: Creative Decision Support</h2>
+        <p>
+          How designers use mythoGon:
+        </p>
+
+        <h3>Design Decisions</h3>
+        <ul>
+          <li><strong>User Experience:</strong> mythoGon evaluates UX decisions</li>
+          <li><strong>Visual Design:</strong> mythoGon guides visual design choices</li>
+          <li><strong>Accessibility:</strong> mythoGon ensures accessibility</li>
+          <li><strong>Brand Consistency:</strong> mythoGon maintains brand consistency</li>
+        </ul>
+
+        <h3>Creative Process</h3>
+        <ul>
+          <li><strong>Ideation:</strong> mythoGon generates creative ideas</li>
+          <li><strong>Concept Evaluation:</strong> mythoGon evaluates design concepts</li>
+          <li><strong>User Testing:</strong> mythoGon interprets user testing results</li>
+          <li><strong>Iteration:</strong> mythoGon guides design iteration</li>
+        </ul>
+
+        <h3>Design System</h3>
+        <ul>
+          <li><strong>Component Decisions:</strong> mythoGon decides on component design</li>
+          <li><strong>Style Guide:</strong> mythoGon maintains style guide consistency</li>
+          <li><strong>Design Patterns:</strong> mythoGon selects design patterns</li>
+          <li><strong>User Research:</strong> mythoGon interprets user research</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Sales: Customer Decision Support</h2>
+        <p>
+          How sales uses mythoGon:
+        </p>
+
+        <h3>Lead Qualification</h3>
+        <div class="code-block">
+// Sales uses mythoGon for lead qualification
+const leadDecision = await mythoGon.runDecision({
+  context: {
+    domain: "SALES",
+    role: "sales",
+    task: "lead_qualification",
+    lead: {
+      company: { ... },
+      budget: { ... },
+      timeline: { ... },
+      decisionMaker: { ... }
+    }
+  },
+  contract: {
+    coreValues: {
+      revenuePotential: 0.8,
+      fit: 0.9,
+      timeline: 0.7
+    }
+  }
+});
+        </div>
+
+        <h3>Deal Decisions</h3>
+        <ul>
+          <li><strong>Pricing:</strong> mythoGon determines pricing strategy</li>
+          <li><strong>Negotiation:</strong> mythoGon guides negotiation</li>
+          <li><strong>Proposal:</strong> mythoGon helps create proposals</li>
+          <li><strong>Closing:</strong> mythoGon identifies closing opportunities</li>
+        </ul>
+
+        <h3>Customer Relationships</h3>
+        <ul>
+          <li><strong>Communication:</strong> mythoGon guides customer communication</li>
+          <li><strong>Relationship Building:</strong> mythoGon builds relationships</li>
+          <li><strong>Objection Handling:</strong> mythoGon handles objections</li>
+          <li><strong>Retention:</strong> mythoGon focuses on retention</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Support: Customer Service Decisions</h2>
+        <p>
+          How support uses mythoGon:
+        </p>
+
+        <h3>Ticket Resolution</h3>
+        <ul>
+          <li><strong>Ticket Triage:</strong> mythoGon triages support tickets</li>
+          <li><strong>Response Generation:</strong> mythoGon generates responses</li>
+          <li><strong>Escalation:</strong> mythoGon decides on escalations</li>
+          <li><strong>Resolution:</strong> mythoGon guides resolution</li>
+        </ul>
+
+        <h3>Customer Satisfaction</h3>
+        <ul>
+          <li><strong>Empathy:</strong> mythoGon shows empathy in responses</li>
+          <li><strong>Problem Solving:</strong> mythoGon solves customer problems</li>
+          <li><strong>Satisfaction:</strong> mythoGon optimizes satisfaction</li>
+          <li><strong>Retention:</strong> mythoGon focuses on retention</li>
+        </ul>
+
+        <h3>Knowledge Base</h3>
+        <ul>
+          <li><strong>Article Creation:</strong> mythoGon creates knowledge base articles</li>
+          <li><strong>Article Updates:</strong> mythoGon updates articles</li>
+          <li><strong>Search Optimization:</strong> mythoGon optimizes search</li>
+          <li><strong>Content Quality:</strong> mythoGon ensures content quality</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Manager: Team Decision Support</h2>
+        <p>
+          How managers use mythoGon:
+        </p>
+
+        <h3>Team Management</h3>
+        <ul>
+          <li><strong>Task Assignment:</strong> mythoGon assigns tasks to team members</li>
+          <li><strong>Resource Allocation:</strong> mythoGon allocates team resources</li>
+          <li><strong>Performance Management:</strong> mythoGon manages performance</li>
+          <li><strong>Team Development:</strong> mythoGon develops team capabilities</li>
+        </ul>
+
+        <h3>Strategic Planning</h3>
+        <ul>
+          <li><strong>Goal Setting:</strong> mythoGon sets team goals</li>
+          <li><strong>Roadmap Planning:</strong> mythoGon plans roadmaps</li>
+          <li><strong>Priority Setting:</strong> mythoGon sets priorities</li>
+          <li><strong>Risk Management:</strong> mythoGon manages team risks</li>
+        </ul>
+
+        <h3>Conflict Resolution</h3>
+        <ul>
+          <li><strong>Conflict Detection:</strong> mythoGon detects team conflicts</li>
+          <li><strong>Resolution Strategies:</strong> mythoGon suggests resolutions</li>
+          <li><strong>Mediation:</strong> mythoGon mediates conflicts</li>
+          <li><strong>Team Harmony:</strong> mythoGon maintains team harmony</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Executive: Strategic Decision Support</h2>
+        <p>
+          How executives use mythoGon:
+        </p>
+
+        <h3>Strategic Planning</h3>
+        <ul>
+          <li><strong>Vision Development:</strong> mythoGon develops company vision</li>
+          <li><strong>Strategic Goals:</strong> mythoGon sets strategic goals</li>
+          <li><strong>Market Analysis:</strong> mythoGon analyzes markets</li>
+          <li><strong>Competitive Strategy:</strong> mythoGon develops competitive strategy</li>
+        </ul>
+
+        <h3>Resource Allocation</h3>
+        <ul>
+          <li><strong>Budget Allocation:</strong> mythoGon allocates budgets</li>
+          <li><strong>Investment Decisions:</strong> mythoGon makes investments</li>
+          <li><strong>Team Scaling:</strong> mythoGon plans team scaling</li>
+          <li><strong>Infrastructure:</strong> mythoGon plans infrastructure</li>
+        </ul>
+
+        <h3>Risk Management</h3>
+        <ul>
+          <li><strong>Risk Assessment:</strong> mythoGon assesses risks</li>
+          <li><strong>Risk Mitigation:</strong> mythoGon mitigates risks</li>
+          <li><strong>Crisis Management:</strong> mythoGon manages crises</li>
+          <li><strong>Compliance:</strong> mythoGon ensures compliance</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Personal Productivity: Individual Use</h2>
+        <p>
+          How individuals use mythoGon for personal productivity:
+        </p>
+
+        <div class="use-case-grid">
+          <div class="use-case-card">
+            <h4>Task Management</h4>
+            <ul>
+              <li>Prioritize daily tasks</li>
+              <li>Schedule optimization</li>
+              <li>Time allocation</li>
+              <li>Goal tracking</li>
+            </ul>
+          </div>
+
+          <div class="use-case-card">
+            <h4>Learning & Development</h4>
+            <ul>
+              <li>Skill development planning</li>
+              <li>Learning path optimization</li>
+              <li>Career decisions</li>
+              <li>Growth opportunities</li>
+            </ul>
+          </div>
+
+          <div class="use-case-card">
+            <h4>Work-Life Balance</h4>
+            <ul>
+              <li>Balance work and life</li>
+              <li>Stress management</li>
+              <li>Wellness decisions</li>
+              <li>Personal goals</li>
+            </ul>
+          </div>
+
+          <div class="use-case-card">
+            <h4>Communication</h4>
+            <ul>
+              <li>Email prioritization</li>
+              <li>Meeting decisions</li>
+              <li>Communication style</li>
+              <li>Relationship management</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Integration into Daily Workflows</h2>
+        <p>
+          mythoGon integrated into every workflow:
+        </p>
+
+        <h3>Email Integration</h3>
+        <ul>
+          <li><strong>Email Prioritization:</strong> mythoGon prioritizes emails</li>
+          <li><strong>Response Generation:</strong> mythoGon suggests responses</li>
+          <li><strong>Action Items:</strong> mythoGon extracts action items</li>
+          <li><strong>Follow-up:</strong> mythoGon reminds of follow-ups</li>
+        </ul>
+
+        <h3>Calendar Integration</h3>
+        <ul>
+          <li><strong>Meeting Decisions:</strong> mythoGon decides on meeting attendance</li>
+          <li><strong>Schedule Optimization:</strong> mythoGon optimizes schedules</li>
+          <li><strong>Time Blocking:</strong> mythoGon blocks time for priorities</li>
+          <li><strong>Conflict Resolution:</strong> mythoGon resolves scheduling conflicts</li>
+        </ul>
+
+        <h3>Task Management</h3>
+        <ul>
+          <li><strong>Task Creation:</strong> mythoGon creates tasks from context</li>
+          <li><strong>Task Prioritization:</strong> mythoGon prioritizes tasks</li>
+          <li><strong>Task Assignment:</strong> mythoGon assigns tasks</li>
+          <li><strong>Task Completion:</strong> mythoGon tracks completion</li>
+        </ul>
+
+        <h3>Communication Tools</h3>
+        <ul>
+          <li><strong>Slack/Teams:</strong> mythoGon integrated into chat</li>
+          <li><strong>Message Prioritization:</strong> mythoGon prioritizes messages</li>
+          <li><strong>Response Suggestions:</strong> mythoGon suggests responses</li>
+          <li><strong>Notification Management:</strong> mythoGon manages notifications</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Mobile & Always-On Access</h2>
+        <p>
+          mythoGon available everywhere:
+        </p>
+
+        <h3>Mobile App</h3>
+        <ul>
+          <li><strong>Mobile Decisions:</strong> Make decisions on mobile</li>
+          <li><strong>Push Notifications:</strong> Get decision notifications</li>
+          <li><strong>Quick Decisions:</strong> Quick decision support</li>
+          <li><strong>Offline Capability:</strong> Works offline</li>
+        </ul>
+
+        <h3>Voice Integration</h3>
+        <ul>
+          <li><strong>Voice Commands:</strong> Voice-activated decisions</li>
+          <li><strong>Voice Responses:</strong> Voice decision responses</li>
+          <li><strong>Hands-Free:</strong> Hands-free decision-making</li>
+          <li><strong>Accessibility:</strong> Accessible decision-making</li>
+        </ul>
+
+        <h3>Wearable Integration</h3>
+        <ul>
+          <li><strong>Smartwatch:</strong> Decisions on smartwatch</li>
+          <li><strong>Quick Access:</strong> Quick decision access</li>
+          <li><strong>Context Awareness:</strong> Context-aware decisions</li>
+          <li><strong>Health Integration:</strong> Health-aware decisions</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Investment Insight:</strong> When every person uses mythoGon for their decisions, it creates a 
+          mythoGon-native culture with consistent, ethical, and optimized decision-making. This creates massive 
+          productivity gains and competitive advantages.
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
+

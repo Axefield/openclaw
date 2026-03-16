@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>blingyat: Alpaca Trading Analysis API</title>
+    <style>
+      :root {
+        --jsr-pink: #ff00ff;
+        --jsr-blue: #00ffff;
+        --tron-cyan: #00f0ff;
+        --jsr-green: #00ff00;
+        --bg-primary: #000000;
+        --bg-card: #0f0f0f;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --text-accent: #00f0ff;
+        --border-primary: #333333;
+        --border-accent: #00f0ff;
+        --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-mono: "Courier New", Monaco, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: var(--font-sans);
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        background-image: linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+      .container { max-width: 960px; margin: 0 auto; }
+      .header {
+        border-bottom: 2px solid var(--border-accent);
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+      }
+      h1 {
+        background: linear-gradient(135deg, var(--jsr-pink), var(--jsr-blue));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 2.25rem;
+        margin-bottom: 0.5rem;
+      }
+      .subtitle { color: var(--text-secondary); font-size: 1.05rem; }
+      .section {
+        background: var(--bg-card);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.75rem;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      .section h2 {
+        color: var(--text-accent);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .section h3 {
+        color: var(--text-primary);
+        font-size: 1.2rem;
+        margin: 1.5rem 0 0.5rem;
+      }
+      .card {
+        background: var(--bg-card);
+        border-radius: 0.75rem;
+        border: 1px solid var(--border-accent);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+      }
+      ul { margin-left: 1.5rem; margin-top: 0.5rem; }
+      li { margin-bottom: 0.5rem; color: var(--text-secondary); }
+      li strong { color: var(--text-accent); }
+      .code-block {
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin: 1rem 0;
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+        overflow-x: auto;
+      }
+      .callout {
+        border-left: 3px solid var(--border-accent);
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+        color: var(--text-secondary);
+      }
+      .callout strong { color: var(--text-accent); }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>blingyat: Alpaca Trading Analysis API</h1>
+        <p class="subtitle">Advanced Strategy Engine with 15+ Patterns, Interactive Charts, and Market Dashboard</p>
+      </div>
+
+      <section class="card">
+        <h2>Why This Matters for Investors</h2>
+        <p>
+          blingyat provides <strong>advanced trading strategy analysis</strong> with Alpaca Market Data integration, 
+          featuring interactive Plotly charts, advanced strategy engine (15+ patterns), unified signal system, and 
+          market health dashboard. The platform demonstrates production-ready infrastructure with multi-layer caching 
+          and WebSocket support.
+        </p>
+        <p>
+          <strong>Production-Ready:</strong> TypeScript Express + Pug web API, AdvancedStrategy.ts (1,776+ lines). 
+          <strong>Unique IP:</strong> EMA cloud, stochastic, support/resistance, pattern predictions, Black-Scholes options.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Advanced Strategy Engine: 1,776+ Lines</h2>
+        <p>
+          AdvancedStrategy.ts (1,776+ lines) provides comprehensive trading strategy analysis:
+        </p>
+
+        <h3>Unified Signal System</h3>
+        <ul>
+          <li><strong>Multi-Factor Signals:</strong> Trend, momentum, pattern, breakout, reversal, volume, RSI</li>
+          <li><strong>Signal Aggregation:</strong> Combines signals from multiple sources</li>
+          <li><strong>Signal Confidence:</strong> Confidence scoring for each signal</li>
+          <li><strong>Signal Ranking:</strong> Ranks signals by strength and confidence</li>
+        </ul>
+
+        <h3>Pattern Suite: 15+ Candlestick Patterns</h3>
+        <ul>
+          <li><strong>Reversal Patterns:</strong> Doji, hammer, shooting star, hanging man</li>
+          <li><strong>Continuation Patterns:</strong> Three white soldiers, three black crows</li>
+          <li><strong>Engulfing Patterns:</strong> Bullish/bearish engulfing</li>
+          <li><strong>Harami Patterns:</strong> Bullish/bearish harami</li>
+          <li><strong>Star Patterns:</strong> Morning star, evening star</li>
+          <li><strong>Pattern Recognition:</strong> Automatic pattern detection</li>
+        </ul>
+
+        <h3>Stochastic Oscillator</h3>
+        <ul>
+          <li><strong>K/D Lines:</strong> Stochastic %K and %D lines</li>
+          <li><strong>Overbought/Oversold:</strong> Detects overbought/oversold conditions</li>
+          <li><strong>Momentum:</strong> Measures momentum and trend strength</li>
+          <li><strong>Divergence:</strong> Identifies momentum divergences</li>
+        </ul>
+
+        <h3>EMA Cloud</h3>
+        <ul>
+          <li><strong>Fast/Slow EMA:</strong> Fast and slow exponential moving averages</li>
+          <li><strong>Cloud Formation:</strong> EMA cloud visualization</li>
+          <li><strong>Breakout Detection:</strong> Detects breakouts from cloud</li>
+          <li><strong>Trend Identification:</strong> Identifies trend direction</li>
+        </ul>
+
+        <h3>Support/Resistance Detection</h3>
+        <ul>
+          <li><strong>Touch-Based Detection:</strong> Detects support/resistance based on touches</li>
+          <li><strong>Level Strength:</strong> Measures level strength</li>
+          <li><strong>Breakout Prediction:</strong> Predicts breakouts from levels</li>
+          <li><strong>Price Targets:</strong> Calculates price targets from levels</li>
+        </ul>
+
+        <h3>Pattern Predictions</h3>
+        <ul>
+          <li><strong>Price Predictions:</strong> Predicts price movements based on patterns</li>
+          <li><strong>Confidence Scoring:</strong> Confidence scores for predictions</li>
+          <li><strong>Target Levels:</strong> Calculates target price levels</li>
+          <li><strong>Risk Assessment:</strong> Assesses risk for predictions</li>
+        </ul>
+
+        <h3>Black-Scholes Options</h3>
+        <ul>
+          <li><strong>Options Pricing:</strong> Black-Scholes options pricing</li>
+          <li><strong>Greeks Calculation:</strong> Delta, gamma, theta, vega, rho</li>
+          <li><strong>Implied Volatility:</strong> Calculates implied volatility</li>
+          <li><strong>Options Analysis:</strong> Comprehensive options analysis</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Interactive Charts: Plotly.js Integration</h2>
+        <p>
+          blingyat features interactive Plotly.js charts with strongly-typed components:
+        </p>
+
+        <h3>Chart Features</h3>
+        <ul>
+          <li><strong>Interactive Visualization:</strong> Zoom, pan, hover tooltips</li>
+          <li><strong>Multiple Chart Types:</strong> Candlestick, line, bar, scatter</li>
+          <li><strong>Technical Indicators:</strong> Overlays technical indicators on charts</li>
+          <li><strong>Pattern Highlighting:</strong> Highlights detected patterns</li>
+          <li><strong>Strongly Typed:</strong> TypeScript types for all chart components</li>
+        </ul>
+
+        <h3>Market Health Dashboard</h3>
+        <ul>
+          <li><strong>Real-Time Snapshots:</strong> Real-time market snapshots</li>
+          <li><strong>Breadth Analysis:</strong> Market breadth indicators</li>
+          <li><strong>Health Metrics:</strong> Overall market health metrics</li>
+          <li><strong>Visualization:</strong> Interactive dashboard visualization</li>
+        </ul>
+
+        <h3>Traffic Map System</h3>
+        <ul>
+          <li><strong>Metro-Style Visualization:</strong> Metro-style traffic map for market visualization</li>
+          <li><strong>Symbol Flow:</strong> Visualizes symbol flow and relationships</li>
+          <li><strong>Market Structure:</strong> Shows market structure and connections</li>
+          <li><strong>Interactive:</strong> Interactive exploration of market relationships</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Alpaca Market Data Integration</h2>
+        <p>
+          blingyat integrates with Alpaca Market Data:
+        </p>
+
+        <h3>Native Alpaca v2 Bars</h3>
+        <ul>
+          <li><strong>Seamless Normalization:</strong> Native support for Alpaca v2 bars</li>
+          <li><strong>Data Quality:</strong> High-quality market data</li>
+          <li><strong>Real-Time Data:</strong> Real-time and historical data</li>
+          <li><strong>Multiple Timeframes:</strong> Supports multiple timeframes</li>
+        </ul>
+
+        <h3>WebSocket Support</h3>
+        <ul>
+          <li><strong>Real-Time Streaming:</strong> Real-time data streaming via Alpaca WebSocket API</li>
+          <li><strong>Live Updates:</strong> Live updates for charts and dashboards</li>
+          <li><strong>Low Latency:</strong> Low-latency data delivery</li>
+          <li><strong>Scalable:</strong> Handles multiple concurrent connections</li>
+        </ul>
+
+        <h3>Symbol Management</h3>
+        <ul>
+          <li><strong>Symbol Maps:</strong> Symbol mapping and validation</li>
+          <li><strong>Symbol Search:</strong> Search and filter symbols</li>
+          <li><strong>Symbol Validation:</strong> Validates symbol availability</li>
+          <li><strong>Dynamic Configuration:</strong> Dynamic symbol configuration</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Production Infrastructure</h2>
+        <p>
+          blingyat includes comprehensive production infrastructure:
+        </p>
+
+        <h3>Multi-Layer Caching</h3>
+        <ul>
+          <li><strong>Bar Data Caching:</strong> Caches bar data for performance</li>
+          <li><strong>Snapshot Caching:</strong> Caches market snapshots</li>
+          <li><strong>Chart Caching:</strong> Caches chart data</li>
+          <li><strong>Performance:</strong> Significantly improves performance</li>
+        </ul>
+
+        <h3>Bootstrap SCSS Customization</h3>
+        <ul>
+          <li><strong>Custom Styling:</strong> Bootstrap SCSS customization</li>
+          <li><strong>Responsive Design:</strong> Responsive design for all devices</li>
+          <li><strong>Modern UI:</strong> Modern, professional user interface</li>
+          <li><strong>Theme Support:</strong> Theme customization support</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Investment Recommendation:</strong> blingyat demonstrates advanced trading strategy analysis capabilities 
+          with production-ready infrastructure. The advanced strategy engine (1,776+ lines) and interactive charts create 
+          unique IP. Multi-layer caching and WebSocket support demonstrate scalability.
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
+

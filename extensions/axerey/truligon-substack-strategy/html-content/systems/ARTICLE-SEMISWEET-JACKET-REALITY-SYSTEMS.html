@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semisweet Jacket: Reality-Systems Engine</title>
+    <style>
+      :root {
+        --jsr-pink: #ff00ff;
+        --jsr-blue: #00ffff;
+        --tron-cyan: #00f0ff;
+        --jsr-green: #00ff00;
+        --bg-primary: #000000;
+        --bg-card: #0f0f0f;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --text-accent: #00f0ff;
+        --border-primary: #333333;
+        --border-accent: #00f0ff;
+        --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-mono: "Courier New", Monaco, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: var(--font-sans);
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        background-image: linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+      .container { max-width: 960px; margin: 0 auto; }
+      .header {
+        border-bottom: 2px solid var(--border-accent);
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+      }
+      h1 {
+        background: linear-gradient(135deg, var(--jsr-pink), var(--jsr-blue));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 2.25rem;
+        margin-bottom: 0.5rem;
+      }
+      .subtitle { color: var(--text-secondary); font-size: 1.05rem; }
+      .section {
+        background: var(--bg-card);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.75rem;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      .section h2 {
+        color: var(--text-accent);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .section h3 {
+        color: var(--text-primary);
+        font-size: 1.2rem;
+        margin: 1.5rem 0 0.5rem;
+      }
+      .card {
+        background: var(--bg-card);
+        border-radius: 0.75rem;
+        border: 1px solid var(--border-accent);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+      }
+      ul { margin-left: 1.5rem; margin-top: 0.5rem; }
+      li { margin-bottom: 0.5rem; color: var(--text-secondary); }
+      li strong { color: var(--text-accent); }
+      .code-block {
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin: 1rem 0;
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+        overflow-x: auto;
+      }
+      .callout {
+        border-left: 3px solid var(--border-accent);
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+        color: var(--text-secondary);
+      }
+      .callout strong { color: var(--text-accent); }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Semisweet Jacket: Reality-Systems Engine</h1>
+        <p class="subtitle">Engine-Agnostic Control & Surveillance Modeling with Clear Boundaries</p>
+      </div>
+
+      <section class="card">
+        <h2>Why This Matters for Investors</h2>
+        <p>
+          Semisweet Jacket provides <strong>engine-agnostic reality-systems core</strong> (500 lines TypeScript) with clear 
+          boundaries enabling extraction as standalone API. The engine models control and surveillance systems, demonstrating 
+          sophisticated systems thinking applicable to training, simulation, and policy analysis.
+        </p>
+        <p>
+          <strong>Production-Ready:</strong> Well-structured code with clear separation from rendering. <strong>Reusable:</strong> 
+          Engine can be extracted as standalone API for B2B applications.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Reality-Systems Core: 500 Lines</h2>
+        <p>
+          reality-systems.ts (500 lines, engine-agnostic TypeScript) implements four core systems:
+        </p>
+
+        <h3>Surveillance System</h3>
+        <ul>
+          <li><strong>Monitoring:</strong> Tracks entities, events, and activities</li>
+          <li><strong>Data Collection:</strong> Collects data from various sources</li>
+          <li><strong>Analysis:</strong> Analyzes collected data for patterns</li>
+          <li><strong>Reporting:</strong> Generates reports on surveillance findings</li>
+        </ul>
+
+        <h3>Commandeering System</h3>
+        <ul>
+          <li><strong>Control:</strong> Takes control of systems and entities</li>
+          <li><strong>Manipulation:</strong> Manipulates system behavior</li>
+          <li><strong>System Takeover:</strong> Complete system takeover capability</li>
+          <li><strong>Authority Management:</strong> Manages authority and permissions</li>
+        </ul>
+
+        <h3>Reality Sickness System</h3>
+        <ul>
+          <li><strong>Disorientation:</strong> Models disorientation from reality conflicts</li>
+          <li><strong>System Conflicts:</strong> Tracks conflicts between systems</li>
+          <li><strong>Reality Distortion:</strong> Models reality distortion effects</li>
+          <li><strong>Recovery:</strong> Models recovery from reality sickness</li>
+        </ul>
+
+        <h3>Essentials System</h3>
+        <ul>
+          <li><strong>Core Functionality:</strong> Provides essential system functions</li>
+          <li><strong>System Integration:</strong> Integrates with other systems</li>
+          <li><strong>Resource Management:</strong> Manages system resources</li>
+          <li><strong>Foundation:</strong> Provides foundation for other systems</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Engine-Agnostic Design</h2>
+        <p>
+          The reality-systems core is engine-agnostic, working with any rendering engine:
+        </p>
+
+        <h3>Clear Separation</h3>
+        <ul>
+          <li><strong>Core Logic:</strong> 500 lines of pure TypeScript, no rendering dependencies</li>
+          <li><strong>Rendering Abstraction:</strong> Clear interface for rendering integration</li>
+          <li><strong>Portability:</strong> Can work with Three.js, Unity, Unreal, or any engine</li>
+          <li><strong>Extractability:</strong> Can be extracted as standalone API</li>
+        </ul>
+
+        <h3>Integration Example</h3>
+        <div class="code-block">
+// Example: Engine-Agnostic Integration
+realitySystems.update(deltaTime);
+// Connects reality-systems to Three.js - clear boundary
+threeJsRenderer.render(realitySystems.getState());
+        </div>
+
+        <h3>Investment Value</h3>
+        <p>
+          Engine-agnostic design enables:
+        </p>
+        <ul>
+          <li><strong>Reusability:</strong> Same core logic works with multiple engines</li>
+          <li><strong>Extractability:</strong> Can be extracted as standalone API</li>
+          <li><strong>B2B Applications:</strong> Can be licensed for training/simulation</li>
+          <li><strong>Future-Proof:</strong> Not tied to specific rendering technology</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Control & Surveillance Modeling</h2>
+        <p>
+          The engine models sophisticated control and surveillance systems:
+        </p>
+
+        <h3>Control Modeling</h3>
+        <ul>
+          <li><strong>Authority Levels:</strong> Different levels of control authority</li>
+          <li><strong>Control Mechanisms:</strong> Various mechanisms for system control</li>
+          <li><strong>Resistance:</strong> Models resistance to control</li>
+          <li><strong>Compliance:</strong> Models compliance with control</li>
+        </ul>
+
+        <h3>Surveillance Modeling</h3>
+        <ul>
+          <li><strong>Monitoring Capabilities:</strong> Different types of monitoring</li>
+          <li><strong>Data Collection:</strong> Various data collection methods</li>
+          <li><strong>Privacy:</strong> Models privacy and surveillance conflicts</li>
+          <li><strong>Transparency:</strong> Models transparency vs. surveillance</li>
+        </ul>
+
+        <h3>Applications</h3>
+        <ul>
+          <li><strong>Training:</strong> Training for control/surveillance scenarios</li>
+          <li><strong>Simulation:</strong> Simulating control/surveillance systems</li>
+          <li><strong>Policy Analysis:</strong> Analyzing policy impacts</li>
+          <li><strong>Serious Games:</strong> Educational games about control/surveillance</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Clear Engine Boundaries</h2>
+        <p>
+          Semisweet Jacket has clear engine boundaries enabling extraction:
+        </p>
+
+        <h3>Extractable Components</h3>
+        <ul>
+          <li><strong>Surveillance System:</strong> Monitoring and data collection</li>
+          <li><strong>Commandeering System:</strong> Control and manipulation</li>
+          <li><strong>Reality Sickness System:</strong> Disorientation and conflicts</li>
+          <li><strong>Essentials System:</strong> Core functionality</li>
+        </ul>
+
+        <h3>API Surface</h3>
+        <ul>
+          <li><strong>System Updates:</strong> Update all systems with deltaTime</li>
+          <li><strong>State Management:</strong> Get/set system state</li>
+          <li><strong>Event Handling:</strong> Handle system events</li>
+          <li><strong>Integration:</strong> Integrate with rendering engines</li>
+        </ul>
+
+        <h3>Reusability</h3>
+        <ul>
+          <li><strong>Training Applications:</strong> Control/surveillance training</li>
+          <li><strong>Simulation:</strong> System simulation</li>
+          <li><strong>Policy Analysis:</strong> Policy impact analysis</li>
+          <li><strong>B2B API:</strong> Standalone API for external applications</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Investment Recommendation:</strong> Semisweet Jacket demonstrates sophisticated systems thinking with 
+          clear engine boundaries. The engine-agnostic design enables extraction as standalone API for training, simulation, 
+          and policy analysis applications, creating additional revenue opportunities.
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
+

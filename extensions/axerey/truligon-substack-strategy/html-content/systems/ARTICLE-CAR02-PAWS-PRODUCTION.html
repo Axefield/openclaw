@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>car02/PAWS: Production Infrastructure & React Frontend</title>
+    <style>
+      :root {
+        --jsr-pink: #ff00ff;
+        --jsr-blue: #00ffff;
+        --tron-cyan: #00f0ff;
+        --jsr-green: #00ff00;
+        --bg-primary: #000000;
+        --bg-card: #0f0f0f;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --text-accent: #00f0ff;
+        --border-primary: #333333;
+        --border-accent: #00f0ff;
+        --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-mono: "Courier New", Monaco, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: var(--font-sans);
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        background-image: linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+      .container { max-width: 960px; margin: 0 auto; }
+      .header {
+        border-bottom: 2px solid var(--border-accent);
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+      }
+      h1 {
+        background: linear-gradient(135deg, var(--jsr-pink), var(--jsr-blue));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 2.25rem;
+        margin-bottom: 0.5rem;
+      }
+      .subtitle { color: var(--text-secondary); font-size: 1.05rem; }
+      .section {
+        background: var(--bg-card);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.75rem;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      .section h2 {
+        color: var(--text-accent);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .section h3 {
+        color: var(--text-primary);
+        font-size: 1.2rem;
+        margin: 1.5rem 0 0.5rem;
+      }
+      .card {
+        background: var(--bg-card);
+        border-radius: 0.75rem;
+        border: 1px solid var(--border-accent);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+      }
+      ul { margin-left: 1.5rem; margin-top: 0.5rem; }
+      li { margin-bottom: 0.5rem; color: var(--text-secondary); }
+      li strong { color: var(--text-accent); }
+      .code-block {
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin: 1rem 0;
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+        overflow-x: auto;
+      }
+      .callout {
+        border-left: 3px solid var(--jsr-green);
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+        color: var(--text-secondary);
+      }
+      .callout strong { color: var(--jsr-green); }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>car02/PAWS: Production Infrastructure & React Frontend</h1>
+        <p class="subtitle">Modern React 18+ Frontend with Express Backend, WebSocket, and Payment Integration</p>
+      </div>
+
+      <section class="card">
+        <h2>Why This Matters for Investors</h2>
+        <p>
+          car02/PAWS demonstrates <strong>production-ready infrastructure</strong> with modern React 18+ frontend, Express backend, 
+          WebSocket real-time features, and PayPal payment integration. The platform is <strong>almost online</strong> (paws.truligon.com), 
+          demonstrating real-world deployment capability.
+        </p>
+        <p>
+          <strong>Technology Stack:</strong> React 18+, TypeScript, Vite, Monaco Editor, Express.js, Socket.IO, Axerey VSSMemoryStore, 
+          SQLite, JWT authentication, PayPal integration.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>React 18+ Frontend Architecture</h2>
+        <p>
+          car02/PAWS uses modern React 18+ with TypeScript:
+        </p>
+
+        <h3>Monaco Editor Integration</h3>
+        <ul>
+          <li><strong>PineScript Syntax Highlighting:</strong> Full PineScript syntax support</li>
+          <li><strong>Code Completion:</strong> Intelligent code completion</li>
+          <li><strong>Error Detection:</strong> Real-time error detection</li>
+          <li><strong>Code Formatting:</strong> Automatic code formatting</li>
+          <li><strong>Multi-Cursor Editing:</strong> Advanced editing features</li>
+        </ul>
+
+        <h3>Real-Time Features</h3>
+        <ul>
+          <li><strong>Live Code Execution:</strong> Real-time code execution and testing</li>
+          <li><strong>WebSocket Integration:</strong> Socket.IO for real-time updates</li>
+          <li><strong>Live Collaboration:</strong> Real-time collaboration features</li>
+          <li><strong>Instant Feedback:</strong> Instant feedback on code changes</li>
+        </ul>
+
+        <h3>User Interface</h3>
+        <ul>
+          <li><strong>Modern Design:</strong> Modern, professional user interface</li>
+          <li><strong>Responsive Layout:</strong> Responsive design for all devices</li>
+          <li><strong>Component Architecture:</strong> Modular component architecture</li>
+          <li><strong>State Management:</strong> Efficient state management</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Express Backend Architecture</h2>
+        <p>
+          car02/PAWS uses Express.js with TypeScript:
+        </p>
+
+        <h3>RESTful API</h3>
+        <ul>
+          <li><strong>Comprehensive Endpoints:</strong> Full RESTful API coverage</li>
+          <li><strong>Type Safety:</strong> TypeScript for type safety</li>
+          <li><strong>Error Handling:</strong> Comprehensive error handling</li>
+          <li><strong>Request Validation:</strong> Input validation and sanitization</li>
+        </ul>
+
+        <h3>WebSocket Server</h3>
+        <ul>
+          <li><strong>Socket.IO Integration:</strong> Real-time communication</li>
+          <li><strong>Room Management:</strong> Room-based communication</li>
+          <li><strong>Event Handling:</strong> Comprehensive event handling</li>
+          <li><strong>Scalability:</strong> Scalable WebSocket architecture</li>
+        </ul>
+
+        <h3>Authentication & Security</h3>
+        <ul>
+          <li><strong>JWT Authentication:</strong> Secure JWT-based authentication</li>
+          <li><strong>User Management:</strong> Complete user management system</li>
+          <li><strong>Password Hashing:</strong> Secure password hashing</li>
+          <li><strong>Session Management:</strong> Secure session management</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Axerey Memory Integration</h2>
+        <p>
+          car02/PAWS integrates Axerey VSSMemoryStore:
+        </p>
+
+        <h3>Hybrid Search</h3>
+        <ul>
+          <li><strong>HNSW + VectorLite:</strong> Efficient vector similarity search</li>
+          <li><strong>Semantic Search:</strong> Semantic search through PineScript knowledge</li>
+          <li><strong>Context-Aware:</strong> Context-aware memory retrieval</li>
+          <li><strong>Performance:</strong> High-performance search capabilities</li>
+        </ul>
+
+        <h3>Embeddings</h3>
+        <ul>
+          <li><strong>OpenAI Integration:</strong> text-embedding-3-small (1536 dimensions)</li>
+          <li><strong>Fallback Support:</strong> Fallback embedding support</li>
+          <li><strong>Batch Processing:</strong> Efficient batch embedding processing</li>
+          <li><strong>Caching:</strong> Embedding caching for performance</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Payment Integration: PayPal</h2>
+        <p>
+          car02/PAWS includes PayPal payment integration:
+        </p>
+
+        <h3>Subscription Management</h3>
+        <ul>
+          <li><strong>Subscription Billing:</strong> Automated subscription billing</li>
+          <li><strong>Payment Processing:</strong> Secure payment processing</li>
+          <li><strong>Subscription Tiers:</strong> Multiple subscription tiers</li>
+          <li><strong>Billing History:</strong> Complete billing history</li>
+        </ul>
+
+        <h3>Revenue Tracking</h3>
+        <ul>
+          <li><strong>Revenue Analytics:</strong> Revenue tracking and analytics</li>
+          <li><strong>Subscription Metrics:</strong> Subscription metrics and KPIs</li>
+          <li><strong>Churn Analysis:</strong> Churn analysis and prevention</li>
+          <li><strong>Financial Reporting:</strong> Financial reporting capabilities</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Investment Insight:</strong> Production-ready infrastructure with payment integration demonstrates 
+          real-world deployment capability. Almost online status (paws.truligon.com) validates execution capability.
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
+

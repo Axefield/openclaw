@@ -1,0 +1,146 @@
+{
+  "defaultServer": "axerey",
+  "cwd": "C:/Users/p5_pa/axerey",
+  "env": {
+    "PCM_DB": "C:/Users/p5_pa/axerey/pcm.db",
+    "NODE_ENV": "development",
+    "LOG_LEVEL": "INFO",
+    "VSS_ENABLED": "true",
+    "VECTOR_DIMENSION": "1536",
+    "EMBEDDING_MODE": "advanced-hash"
+  },
+  "workspaces": {
+    "root": {
+      "cwd": "C:/Users/p5_pa/axerey",
+      "env": {
+        "PCM_DB": "C:/Users/p5_pa/axerey/pcm.db",
+        "NODE_ENV": "development",
+        "LOG_LEVEL": "INFO",
+        "VSS_ENABLED": "true"
+      },
+      "scripts": {
+        "start": "npm run dev",
+        "build": "npm run build",
+        "mcp": "npm run dev"
+      }
+    },
+    "backend": {
+      "cwd": "C:/Users/p5_pa/axerey/backend",
+      "env": {
+        "NODE_ENV": "development",
+        "PORT": "3001",
+        "PCM_DB": "C:/Users/p5_pa/axerey/pcm.db"
+      },
+      "scripts": {
+        "start": "npm run dev",
+        "build": "npm run build"
+      }
+    },
+    "frontend": {
+      "cwd": "C:/Users/p5_pa/axerey/frontend",
+      "env": {
+        "VITE_API_URL": "http://localhost:3001/api"
+      },
+      "scripts": {
+        "start": "npm run dev",
+        "build": "npm run build"
+      }
+    }
+  },
+  "tasks": {
+    "start-all": {
+      "description": "Start all Axerey services (MCP, Backend, Frontend)",
+      "command": "node scripts/start-all.js",
+      "cwd": "C:/Users/p5_pa/axerey"
+    },
+    "start-mcp": {
+      "description": "Start only the MCP server",
+      "command": "node scripts/start-all.js --mcp-only",
+      "cwd": "C:/Users/p5_pa/axerey"
+    },
+    "start-backend": {
+      "description": "Start only the backend API server",
+      "command": "node scripts/start-all.js --backend-only",
+      "cwd": "C:/Users/p5_pa/axerey"
+    },
+    "start-frontend": {
+      "description": "Start only the frontend dev server",
+      "command": "node scripts/start-all.js --frontend-only",
+      "cwd": "C:/Users/p5_pa/axerey"
+    },
+    "build-all": {
+      "description": "Build all TypeScript projects",
+      "command": "npm run build && cd backend && npm run build && cd ../frontend && npm run build",
+      "cwd": "C:/Users/p5_pa/axerey"
+    },
+    "stop-all": {
+      "description": "Stop all running Axerey services",
+      "command": "node scripts/stop-all.js",
+      "cwd": "C:/Users/p5_pa/axerey"
+    },
+    "stop-mcp": {
+      "description": "Stop only the MCP server",
+      "command": "node scripts/stop-all.js --mcp-only",
+      "cwd": "C:/Users/p5_pa/axerey"
+    },
+    "stop-backend": {
+      "description": "Stop only the backend API server",
+      "command": "node scripts/stop-all.js --backend-only",
+      "cwd": "C:/Users/p5_pa/axerey"
+    },
+    "stop-frontend": {
+      "description": "Stop only the frontend dev server",
+      "command": "node scripts/stop-all.js --frontend-only",
+      "cwd": "C:/Users/p5_pa/axerey"
+    },
+    "restart-all": {
+      "description": "Restart all Axerey services (stop then start)",
+      "command": "node scripts/restart-all.js",
+      "cwd": "C:/Users/p5_pa/axerey"
+    },
+    "restart-mcp": {
+      "description": "Restart only the MCP server",
+      "command": "node scripts/restart-all.js --mcp-only",
+      "cwd": "C:/Users/p5_pa/axerey"
+    },
+    "restart-backend": {
+      "description": "Restart only the backend API server",
+      "command": "node scripts/restart-all.js --backend-only",
+      "cwd": "C:/Users/p5_pa/axerey"
+    },
+    "restart-frontend": {
+      "description": "Restart only the frontend dev server",
+      "command": "node scripts/restart-all.js --frontend-only",
+      "cwd": "C:/Users/p5_pa/axerey"
+    }
+  },
+  "permissions": {
+    "fs": {
+      "read": [
+        "src/**",
+        "backend/**",
+        "frontend/**",
+        ".cursor/**",
+        "scripts/**",
+        "README.md",
+        "package.json",
+        "*.md"
+      ],
+      "write": [
+        "src/**",
+        "backend/**",
+        "frontend/**",
+        ".cursor/**",
+        "scripts/**"
+      ]
+    },
+    "commands": [
+      "npm",
+      "node",
+      "git",
+      "sqlite3",
+      "powershell"
+    ]
+  }
+}
+

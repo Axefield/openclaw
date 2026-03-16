@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semigon: RPG Core System & Time Logic</title>
+    <style>
+      :root {
+        --jsr-pink: #ff00ff;
+        --jsr-blue: #00ffff;
+        --tron-cyan: #00f0ff;
+        --jsr-green: #00ff00;
+        --bg-primary: #000000;
+        --bg-card: #0f0f0f;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --text-accent: #00f0ff;
+        --border-primary: #333333;
+        --border-accent: #00f0ff;
+        --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-mono: "Courier New", Monaco, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: var(--font-sans);
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        background-image: linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+      .container { max-width: 960px; margin: 0 auto; }
+      .header {
+        border-bottom: 2px solid var(--border-accent);
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+      }
+      h1 {
+        background: linear-gradient(135deg, var(--jsr-pink), var(--jsr-blue));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 2.25rem;
+        margin-bottom: 0.5rem;
+      }
+      .subtitle { color: var(--text-secondary); font-size: 1.05rem; }
+      .section {
+        background: var(--bg-card);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.75rem;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      .section h2 {
+        color: var(--text-accent);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .section h3 {
+        color: var(--text-primary);
+        font-size: 1.2rem;
+        margin: 1.5rem 0 0.5rem;
+      }
+      .card {
+        background: var(--bg-card);
+        border-radius: 0.75rem;
+        border: 1px solid var(--border-accent);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+      }
+      ul { margin-left: 1.5rem; margin-top: 0.5rem; }
+      li { margin-bottom: 0.5rem; color: var(--text-secondary); }
+      li strong { color: var(--text-accent); }
+      .code-block {
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin: 1rem 0;
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+        overflow-x: auto;
+      }
+      .callout {
+        border-left: 3px solid var(--border-accent);
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+        color: var(--text-secondary);
+      }
+      .callout strong { color: var(--text-accent); }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Semigon: RPG Core System & Time Logic</h1>
+        <p class="subtitle">52-Card Structured Universe with 8 Progressive Time States</p>
+      </div>
+
+      <section class="card">
+        <h2>Why This Matters for Investors</h2>
+        <p>
+          Semigon provides a <strong>unique RPG core system</strong> based on 52-card structured universe with time logic/fractures 
+          (8 progressive states), procedural board generation, and comprehensive character system. The <strong>time logic system</strong> 
+          represents unique IP with no direct competitors.
+        </p>
+        <p>
+          <strong>Production-Ready:</strong> Comprehensive TypeScript implementation with modular systems. <strong>Clear Boundaries:</strong> 
+          RPG core extractable as standalone API for game development applications.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>52-Card Structured Universe</h2>
+        <p>
+          Semigon's universe is structured around a 52-card deck system:
+        </p>
+
+        <h3>Card System</h3>
+        <ul>
+          <li><strong>Deck Management:</strong> 52-card deck system (deck.ts)</li>
+          <li><strong>Card Types:</strong> Different card types with unique properties</li>
+          <li><strong>Card Relationships:</strong> Cards have relationships and interactions</li>
+          <li><strong>Reshuffle Logic:</strong> Dynamic reshuffling system (reshuffle.ts)</li>
+        </ul>
+
+        <h3>Universe Structure</h3>
+        <ul>
+          <li><strong>Card-Based World:</strong> World structured around card system</li>
+          <li><strong>Card Interactions:</strong> Cards interact with each other</li>
+          <li><strong>Card Progression:</strong> Cards progress through states</li>
+          <li><strong>Card Narrative:</strong> Cards drive narrative and story</li>
+        </ul>
+
+        <h3>Investment Value</h3>
+        <p>
+          The 52-card structured universe creates unique IP:
+        </p>
+        <ul>
+          <li><strong>Unique System:</strong> No direct competitors with card-based universe</li>
+          <li><strong>Narrative Potential:</strong> Cards drive narrative and story</li>
+          <li><strong>Reusability:</strong> Card system reusable for multiple games</li>
+          <li><strong>Extractability:</strong> Can be extracted as standalone API</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Time Logic/Fractures: 8 Progressive States</h2>
+        <p>
+          Semigon implements unique time logic with 8 progressive states:
+        </p>
+
+        <h3>Time States</h3>
+        <ul>
+          <li><strong>State 1 - Stable:</strong> Normal time flow</li>
+          <li><strong>State 2 - Minor Fracture:</strong> Small time disruptions</li>
+          <li><strong>State 3 - Moderate Fracture:</strong> Moderate time disruptions</li>
+          <li><strong>State 4 - Major Fracture:</strong> Major time disruptions</li>
+          <li><strong>State 5 - Critical Fracture:</strong> Critical time disruptions</li>
+          <li><strong>State 6 - Temporal Collapse:</strong> Time collapse begins</li>
+          <li><strong>State 7 - Temporal Anomaly:</strong> Time anomalies occur</li>
+          <li><strong>State 8 - Temporal Reset:</strong> Time resets to stable state</li>
+        </ul>
+
+        <h3>Time Manipulation</h3>
+        <ul>
+          <li><strong>Time Progression:</strong> Time progresses through states</li>
+          <li><strong>Time Reversal:</strong> Time can reverse to previous states</li>
+          <li><strong>Time Freeze:</strong> Time can freeze at specific states</li>
+          <li><strong>Time Acceleration:</strong> Time can accelerate through states</li>
+        </ul>
+
+        <h3>Fracture System</h3>
+        <ul>
+          <li><strong>Fracture Detection:</strong> Detects time fractures</li>
+          <li><strong>Fracture Effects:</strong> Fractures have gameplay effects</li>
+          <li><strong>Fracture Recovery:</strong> System recovers from fractures</li>
+          <li><strong>Fracture Progression:</strong> Fractures progress through states</li>
+        </ul>
+
+        <h3>Investment Value</h3>
+        <p>
+          Time logic/fractures represent unique IP:
+        </p>
+        <ul>
+          <li><strong>Unique System:</strong> No direct competitors with 8-state time logic</li>
+          <li><strong>Gameplay Innovation:</strong> Time manipulation creates innovative gameplay</li>
+          <li><strong>Narrative Potential:</strong> Time fractures drive narrative</li>
+          <li><strong>Extractability:</strong> Can be extracted as standalone API</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Procedural Board Generation</h2>
+        <p>
+          Semigon includes procedural board generation:
+        </p>
+
+        <h3>Board Generation</h3>
+        <ul>
+          <li><strong>Procedural Generation:</strong> Boards generated procedurally</li>
+          <li><strong>Zone-Based:</strong> Boards divided into zones</li>
+          <li><strong>Dynamic Editing:</strong> Zones can be edited dynamically (zoneEditEngine.ts)</li>
+          <li><strong>Replayability:</strong> High replayability through procedural generation</li>
+        </ul>
+
+        <h3>Zone System</h3>
+        <ul>
+          <li><strong>Zone Types:</strong> Different zone types with unique properties</li>
+          <li><strong>Zone Interactions:</strong> Zones interact with each other</li>
+          <li><strong>Zone Progression:</strong> Zones progress through states</li>
+          <li><strong>Zone Editing:</strong> Dynamic zone editing and modification</li>
+        </ul>
+
+        <h3>Investment Value</h3>
+        <p>
+          Procedural board generation creates:
+        </p>
+        <ul>
+          <li><strong>Replayability:</strong> High replayability through procedural generation</li>
+          <li><strong>Scalability:</strong> Can generate infinite board variations</li>
+          <li><strong>Extractability:</strong> Can be extracted as standalone API</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Comprehensive Character System</h2>
+        <p>
+          Semigon includes comprehensive character system:
+        </p>
+
+        <h3>Character Management</h3>
+        <ul>
+          <li><strong>Character Creation:</strong> Comprehensive character creation</li>
+          <li><strong>Character Progression:</strong> Character progression system</li>
+          <li><strong>Character Abilities:</strong> Character abilities and skills</li>
+          <li><strong>Character Traits:</strong> Character traits and attributes (traitEngine.ts)</li>
+        </ul>
+
+        <h3>Combat System</h3>
+        <ul>
+          <li><strong>Turn-Based Combat:</strong> Turn-based combat mechanics (combatSystem.ts)</li>
+          <li><strong>Combat Abilities:</strong> Character abilities in combat</li>
+          <li><strong>Combat Strategy:</strong> Strategic combat decisions</li>
+          <li><strong>Combat Progression:</strong> Combat progression and improvement</li>
+        </ul>
+
+        <h3>Inventory System</h3>
+        <ul>
+          <li><strong>Item Management:</strong> Comprehensive item management (inventoryEngine.ts)</li>
+          <li><strong>Relic System:</strong> Relic management and progression</li>
+          <li><strong>Item Drops:</strong> Procedural item drops (dropEngine.ts)</li>
+          <li><strong>Item Progression:</strong> Item progression and upgrades</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Modular Systems Architecture</h2>
+        <p>
+          Semigon uses modular systems architecture:
+        </p>
+
+        <h3>Core Systems</h3>
+        <ul>
+          <li><strong>Game Engine:</strong> Core game loop and state management (gameEngine.ts)</li>
+          <li><strong>Time Logic:</strong> Time logic and fracture system (timeLogic.ts)</li>
+          <li><strong>Deck System:</strong> 52-card deck management (deck.ts, reshuffle.ts)</li>
+          <li><strong>Board System:</strong> Procedural board generation (boardConfig.ts)</li>
+        </ul>
+
+        <h3>Gameplay Systems</h3>
+        <ul>
+          <li><strong>Combat System:</strong> Turn-based combat (combatSystem.ts)</li>
+          <li><strong>Trait Engine:</strong> Character traits (traitEngine.ts)</li>
+          <li><strong>Inventory Engine:</strong> Item management (inventoryEngine.ts)</li>
+          <li><strong>Drop Engine:</strong> Item drops (dropEngine.ts)</li>
+        </ul>
+
+        <h3>Clear Boundaries</h3>
+        <ul>
+          <li><strong>Modular Design:</strong> Each system is modular and independent</li>
+          <li><strong>Extractability:</strong> Systems can be extracted as standalone APIs</li>
+          <li><strong>Reusability:</strong> Systems reusable for multiple games</li>
+          <li><strong>B2B Applications:</strong> Can be licensed for game development</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Investment Recommendation:</strong> Semigon demonstrates unique RPG core system with time logic/fractures 
+          (8 progressive states) and 52-card structured universe. The modular systems architecture enables extraction as 
+          standalone API for game development applications, creating additional revenue opportunities.
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
+

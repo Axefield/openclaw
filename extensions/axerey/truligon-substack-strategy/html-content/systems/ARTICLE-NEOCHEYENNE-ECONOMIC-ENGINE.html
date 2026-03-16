@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeoCheyenne: Economic Simulation Engine</title>
+    <style>
+      :root {
+        --jsr-pink: #ff00ff;
+        --jsr-blue: #00ffff;
+        --tron-cyan: #00f0ff;
+        --jsr-green: #00ff00;
+        --bg-primary: #000000;
+        --bg-card: #0f0f0f;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --text-accent: #00f0ff;
+        --border-primary: #333333;
+        --border-accent: #00f0ff;
+        --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-mono: "Courier New", Monaco, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: var(--font-sans);
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        background-image: linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+      .container { max-width: 960px; margin: 0 auto; }
+      .header {
+        border-bottom: 2px solid var(--border-accent);
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+      }
+      h1 {
+        background: linear-gradient(135deg, var(--jsr-pink), var(--jsr-blue));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 2.25rem;
+        margin-bottom: 0.5rem;
+      }
+      .subtitle { color: var(--text-secondary); font-size: 1.05rem; }
+      .section {
+        background: var(--bg-card);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.75rem;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      .section h2 {
+        color: var(--text-accent);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .section h3 {
+        color: var(--text-primary);
+        font-size: 1.2rem;
+        margin: 1.5rem 0 0.5rem;
+      }
+      .card {
+        background: var(--bg-card);
+        border-radius: 0.75rem;
+        border: 1px solid var(--border-accent);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+      }
+      ul { margin-left: 1.5rem; margin-top: 0.5rem; }
+      li { margin-bottom: 0.5rem; color: var(--text-secondary); }
+      li strong { color: var(--text-accent); }
+      .code-block {
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin: 1rem 0;
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+        overflow-x: auto;
+      }
+      .callout {
+        border-left: 3px solid var(--border-accent);
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+        color: var(--text-secondary);
+      }
+      .callout strong { color: var(--text-accent); }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>NeoCheyenne: Economic Simulation Engine</h1>
+        <p class="subtitle">Sophisticated Economic Modeling with 8 Metrics, 18 Event Types, and Wealth-Based Pricing</p>
+      </div>
+
+      <section class="card">
+        <h2>Why This Matters for Investors</h2>
+        <p>
+          NeoCheyenne demonstrates <strong>sophisticated systems thinking</strong> with 1,032 lines UnifiedEconomicSystem.ts, 
+          8 economic metrics, 18 event types, and wealth-based pricing (6 tiers). The engine has <strong>clear boundaries</strong> 
+          enabling extraction as standalone API for training, simulation, and policy analysis.
+        </p>
+        <p>
+          <strong>Production-Ready:</strong> Well-structured code with clear engine boundaries. <strong>Reusable:</strong> Engine 
+          can be extracted as standalone API for B2B applications.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Unified Economic System: 1,032 Lines</h2>
+        <p>
+          UnifiedEconomicSystem.ts (1,032 lines) provides comprehensive economic modeling:
+        </p>
+
+        <h3>8 Economic Metrics</h3>
+        <ul>
+          <li><strong>GDP (Gross Domestic Product):</strong> Total economic output</li>
+          <li><strong>Inflation:</strong> Price level changes</li>
+          <li><strong>Unemployment:</strong> Labor market conditions</li>
+          <li><strong>Interest Rates:</strong> Cost of borrowing</li>
+          <li><strong>Currency Value:</strong> Exchange rates and purchasing power</li>
+          <li><strong>Trade Balance:</strong> Import/export relationships</li>
+          <li><strong>Government Spending:</strong> Fiscal policy impact</li>
+          <li><strong>Consumer Confidence:</strong> Economic sentiment</li>
+        </ul>
+
+        <h3>18 Event Types</h3>
+        <p>
+          The system models 18 different event types that impact the economy:
+        </p>
+        <ul>
+          <li><strong>Economic Events:</strong> Recessions, booms, market crashes</li>
+          <li><strong>Policy Events:</strong> Interest rate changes, fiscal policy</li>
+          <li><strong>Market Events:</strong> Supply/demand shocks, price changes</li>
+          <li><strong>Infrastructure Events:</strong> Infrastructure changes, technology adoption</li>
+          <li><strong>Social Events:</strong> Population changes, migration</li>
+          <li><strong>Environmental Events:</strong> Natural disasters, climate change</li>
+        </ul>
+
+        <h3>Interconnected System</h3>
+        <p>
+          All 8 metrics are interconnected, creating a realistic economic simulation:
+        </p>
+        <ul>
+          <li><strong>Causal Relationships:</strong> Changes in one metric affect others</li>
+          <li><strong>Feedback Loops:</strong> Positive and negative feedback loops</li>
+          <li><strong>Time Delays:</strong> Realistic time delays for policy effects</li>
+          <li><strong>Non-Linear Dynamics:</strong> Complex non-linear relationships</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Wealth-Based Pricing: 6 Wealth Tiers</h2>
+        <p>
+          ServicesAndUtilitiesPricing.ts (462 lines) implements wealth-based pricing with 6 tiers:
+        </p>
+
+        <h3>Wealth Tiers</h3>
+        <ul>
+          <li><strong>Tier 1 - Destitute:</strong> Lowest wealth, highest prices (monopoly effects)</li>
+          <li><strong>Tier 2 - Poor:</strong> Low wealth, high prices</li>
+          <li><strong>Tier 3 - Lower Middle:</strong> Moderate wealth, moderate prices</li>
+          <li><strong>Tier 4 - Upper Middle:</strong> Good wealth, lower prices</li>
+          <li><strong>Tier 5 - Wealthy:</strong> High wealth, competitive prices</li>
+          <li><strong>Tier 6 - Elite:</strong> Highest wealth, best prices (privatization benefits)</li>
+        </ul>
+
+        <h3>Monopoly & Privatization Effects</h3>
+        <ul>
+          <li><strong>Monopoly Effects:</strong> Lower tiers face monopoly pricing</li>
+          <li><strong>Privatization Benefits:</strong> Higher tiers benefit from privatization</li>
+          <li><strong>Wealth Inequality:</strong> Pricing reflects wealth inequality</li>
+          <li><strong>Economic Impact:</strong> Pricing affects economic metrics</li>
+        </ul>
+
+        <h3>Investment Value</h3>
+        <p>
+          Wealth-based pricing demonstrates sophisticated economic modeling:
+        </p>
+        <ul>
+          <li><strong>Realistic Modeling:</strong> Reflects real-world economic dynamics</li>
+          <li><strong>Policy Analysis:</strong> Can analyze policy impacts on different wealth tiers</li>
+          <li><strong>Training Applications:</strong> Useful for economic training and education</li>
+          <li><strong>Simulation:</strong> Can simulate economic scenarios</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Infrastructure Dependencies: 7 Types</h2>
+        <p>
+          The system models 7 infrastructure types with economic impact:
+        </p>
+
+        <h3>Infrastructure Types</h3>
+        <ul>
+          <li><strong>Transportation:</strong> Roads, railways, airports</li>
+          <li><strong>Energy:</strong> Power plants, grids, renewable energy</li>
+          <li><strong>Communication:</strong> Internet, telecommunications</li>
+          <li><strong>Water & Sanitation:</strong> Water supply, waste management</li>
+          <li><strong>Healthcare:</strong> Hospitals, clinics, medical facilities</li>
+          <li><strong>Education:</strong> Schools, universities, training centers</li>
+          <li><strong>Housing:</strong> Residential infrastructure</li>
+        </ul>
+
+        <h3>Economic Impact</h3>
+        <ul>
+          <li><strong>Productivity:</strong> Infrastructure affects economic productivity</li>
+          <li><strong>Costs:</strong> Infrastructure affects production costs</li>
+          <li><strong>Access:</strong> Infrastructure affects access to services</li>
+          <li><strong>Wealth Distribution:</strong> Infrastructure affects wealth distribution</li>
+        </ul>
+
+        <h3>Housing System</h3>
+        <ul>
+          <li><strong>Wealth-Based Allocation:</strong> Housing allocated based on wealth tiers</li>
+          <li><strong>Housing Quality:</strong> Quality varies by wealth tier</li>
+          <li><strong>Housing Costs:</strong> Costs reflect wealth-based pricing</li>
+          <li><strong>Economic Impact:</strong> Housing affects economic metrics</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Clear Engine Boundaries</h2>
+        <p>
+          NeoCheyenne has clear engine boundaries enabling extraction:
+        </p>
+
+        <h3>Extractable Components</h3>
+        <ul>
+          <li><strong>UnifiedEconomicSystem:</strong> Core economic simulation (1,032 lines)</li>
+          <li><strong>ServicesAndUtilitiesPricing:</strong> Wealth-based pricing (462 lines)</li>
+          <li><strong>Infrastructure Dependencies:</strong> Infrastructure impact modeling</li>
+          <li><strong>Housing System:</strong> Wealth-based housing allocation</li>
+        </ul>
+
+        <h3>API Surface</h3>
+        <ul>
+          <li><strong>Economic Metrics:</strong> Get/update 8 economic metrics</li>
+          <li><strong>Event Processing:</strong> Process 18 event types</li>
+          <li><strong>Pricing Calculation:</strong> Calculate wealth-based pricing</li>
+          <li><strong>Infrastructure Impact:</strong> Calculate infrastructure economic impact</li>
+        </ul>
+
+        <h3>Reusability</h3>
+        <ul>
+          <li><strong>Training Applications:</strong> Economic training and education</li>
+          <li><strong>Simulation:</strong> Economic scenario simulation</li>
+          <li><strong>Policy Analysis:</strong> Policy impact analysis</li>
+          <li><strong>B2B API:</strong> Standalone API for external applications</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Investment Recommendation:</strong> NeoCheyenne demonstrates sophisticated systems thinking with clear 
+          engine boundaries. The engine can be extracted as standalone API for training, simulation, and policy analysis 
+          applications, creating additional revenue opportunities.
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
+

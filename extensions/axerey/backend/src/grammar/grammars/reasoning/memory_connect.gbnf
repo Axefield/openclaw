@@ -1,0 +1,41 @@
+# Axerey Memory Connect Tool Grammar
+# Create explicit relationships between memories
+
+root ::= McpAction
+
+McpAction ::= "{" 
+  "\"name\":\"axerey_memory_connect\","
+  "\"arguments\":" McpArguments 
+"}"
+
+McpArguments ::= "{" 
+  "\"sourceId\":" string
+  ",\"targetId\":" string
+  ",\"connectionType\":" ConnectionType
+  ",\"strength\:" number
+  ",\"inferred\":" boolean
+  (",\"description\":" string)?
+  (",\"inferenceConfidence\":" number)?
+"}"
+
+ConnectionType ::= 
+    "\"supports\""
+  | "\"contradicts\""
+  | "\"refines\""
+  | "\"derives\""
+  | "\"exemplifies\""
+  | "\"generalizes\""
+  | "\"questions\""
+  | "\"analyzes\""
+  | "\"synthesizes\""
+  | "\"associates\""
+  | "\"extends\""
+  | "\"applies\""
+
+boolean ::= "true" | "false"
+string ::= "\"" ( "\\" ( "u" [0-9a-fA-F]{4} | [^\n"\\] ) | [^\n"\\] )* "\""
+object ::= "{" (pair ("," pair)*)? "}"
+pair ::= string ":" value
+value ::= string | number | boolean | object | array | "null"
+array ::= "[" (value ("," value)*)? "]"
+number ::= "-"? ([0-9]+ ("." [0-9]+)?)? (("e"|"E") ("+"|"-") [0-9]+)?

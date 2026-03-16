@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "axerey": {
+      "command": "node",
+      "args": ["C:/Users/p5_pa/axerey/dist/index.js"],
+      "env": { 
+        "PCM_DB": "C:/Users/p5_pa/axerey/pcm.db",
+        "MCP_API_KEY": "axerey_YOUR_MCP_KEY_HERE"
+      }
+    }
+  }
+}

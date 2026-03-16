@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "axerey": {
+      "command": "C:\\Program Files\\nodejs\\node.exe",
+      "args": ["C:\\Users\\p5_pa\\axerey\\dist\\index.js"],
+      "env": {
+        "PCM_DB": "C:\\Users\\p5_pa\\axerey\\pcm.db",
+        "NODE_ENV": "production",
+        "LOG_LEVEL": "INFO",
+        "VSS_ENABLED": "true",
+        "VECTOR_DIMENSION": "1536",
+        "EMBEDDING_MODE": "advanced-hash"
+      }
+    }
+  }
+}

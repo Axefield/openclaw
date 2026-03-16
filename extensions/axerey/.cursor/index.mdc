@@ -1,0 +1,83 @@
+# Axerey Cursor Guide
+
+Welcome to the Axerey / Vagogon workspace. These rules keep Cursor agents aligned with our architecture, security posture, and workflow.
+
+## Read This First
+- `README.md`, `VAGOGON.md`, and `AXEREY_MINDMAP.md` describe the platform, personas, and memory/ranking systems.
+- `.cursor/rules/*.md` contains topic-specific rules that auto-load for relevant files. Start with `01-architecture` and `03-security-data`.
+- Use the prompts in `.cursor/prompts/` (e.g., `@persona-config.md`) whenever you need detailed checklists.
+
+## Key Practices
+1. **Stack Awareness** – MCP + backend (`backend/`) + frontend (`frontend/`) + shared TypeScript (`src/`). Never edit `dist/`.
+2. **Security First** – No plaintext secrets, sanitize WordPress data, prefer parameterized queries. See `03-security-data.md`.
+3. **Memory Discipline** – Use MCP memory tools (`commands/memory-*.md`) and keep persona isolation intact (See `rules/06-persona-management.mdc`).
+4. **Smart-Thinking** – Use connection, verification, and quality tools (`commands/memory-connect.md`, `memory-verify.md`, `memory-quality.md`) for enhanced memory management.
+5. **Tooling** – Build with `npm run build`, test via scripts in `scripts/`, and run MCP via `.cursor/mcp.json`.
+
+## Rule Directory
+| File | Purpose |
+| --- | --- |
+| `rules/01-architecture.md` | MCP architecture, memory layers, module layout |
+| `rules/02-typescript-standards.md` | ES2022 imports, strict typing, documentation |
+| `rules/03-security-data.md` | Encryption, sanitization, env handling |
+| `rules/04-testing-performance.md` | Benchmarking, VSS optimization |
+| `rules/05-workflow-tooling.md` | Build/test commands, workspace split |
+| `rules/06-persona-management.mdc` | Persona APIs, memory isolation, config hygiene |
+
+## Cursor Config Files
+- `.cursor/mcp.json` – Registered MCP server targets `dist/index.js`.
+- `.cursor/cli.json` – Defines default cwd, env, and safe commands for `cursor agent`.
+- `.cursor/modes.json` – Community modes for Persona Ops, Memory Ops, and Frontend Runway workflows.
+
+## Command Library
+
+### Memory Management
+- `commands/memory-store.md` – Core memory storage operations
+- `commands/memory-recall.md` – Retrieve memories by query
+- `commands/memory-search.md` – Semantic search through memories
+- `commands/memory-memorize.md` – Store new memories
+- `commands/memory-update.md` – Update existing memories
+- `commands/memory-forget.md` – Delete memories
+- `commands/memory-pin.md` – Pin/unpin memories
+- `commands/memory-consolidate.md` – Merge related memories
+- `commands/memory-decay.md` – Maintain memory scores
+- `commands/memory-reflect.md` – Create distilled lessons
+- `commands/memory-extract-rules.md` – Generate procedural rules
+
+### Smart-Thinking Features
+- `commands/memory-connect.md` – Create memory connections (graph relationships)
+- `commands/memory-verify.md` – Verify factual claims and calculations
+- `commands/memory-quality.md` – Evaluate memory quality metrics
+- `commands/context-broker.md` – Get context with connection-based expansion
+- `commands/reasoning-step.md` – Track reasoning steps
+- `commands/reasoning-state.md` – Save/load reasoning state
+- `commands/reasoning-trace.md` – Get complete reasoning trace
+- `commands/next-steps.md` – Get AI-suggested next steps
+
+### Reasoning & Decision-Making
+- `commands/mind-balance.md` – Probabilistic decision-making
+- `commands/argument-steelman.md` – Strengthen arguments
+- `commands/argument-strawman.md` – Identify argument weaknesses
+- `commands/reasoning-with-memory.md` – Reasoning with memory context
+- `commands/decision-patterns.md` – Analyze decision patterns
+
+### Context & Learning
+- `commands/context-broker.md` – Task-specific context retrieval
+- `commands/context-explanation.md` – Explain context selection
+- `commands/context-grading.md` – Grade context helpfulness
+- `commands/adaptive-learning.md` – Adaptive ranking metrics
+- `commands/performance-metrics.md` – System performance metrics
+
+### Sessions & Workflows
+- `commands/session-start.md` – Start reasoning session
+- `commands/session-end.md` – End session with summary
+- `commands/comprehensive-workflow.md` – Complete workflow guide
+- `commands/contextual-workflow.md` – Context-aware workflows
+
+## Prompt Library
+- `prompts/persona-config.md` – Config/merge behavior for personas.
+- `prompts/persona-checklist.md` – Step-by-step CRUD + switching flow.
+- `prompts/startup-workflow.md` – How to start all services (MCP, Backend, Frontend).
+- `prompts/agent-architecture.md` – Complete guide to agent types, workflows, and configuration.
+
+Please keep this index current when creating new rules, prompts, or configs so Cursor keeps the right guardrails.***

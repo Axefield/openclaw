@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>blingyat: Interactive Charts & Market Dashboard</title>
+    <style>
+      :root {
+        --jsr-pink: #ff00ff;
+        --jsr-blue: #00ffff;
+        --tron-cyan: #00f0ff;
+        --jsr-green: #00ff00;
+        --bg-primary: #000000;
+        --bg-card: #0f0f0f;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --text-accent: #00f0ff;
+        --border-primary: #333333;
+        --border-accent: #00f0ff;
+        --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-mono: "Courier New", Monaco, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: var(--font-sans);
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        background-image: linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+      .container { max-width: 960px; margin: 0 auto; }
+      .header {
+        border-bottom: 2px solid var(--border-accent);
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+      }
+      h1 {
+        background: linear-gradient(135deg, var(--jsr-pink), var(--jsr-blue));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 2.25rem;
+        margin-bottom: 0.5rem;
+      }
+      .subtitle { color: var(--text-secondary); font-size: 1.05rem; }
+      .section {
+        background: var(--bg-card);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.75rem;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      .section h2 {
+        color: var(--text-accent);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .section h3 {
+        color: var(--text-primary);
+        font-size: 1.2rem;
+        margin: 1.5rem 0 0.5rem;
+      }
+      .card {
+        background: var(--bg-card);
+        border-radius: 0.75rem;
+        border: 1px solid var(--border-accent);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+      }
+      ul { margin-left: 1.5rem; margin-top: 0.5rem; }
+      li { margin-bottom: 0.5rem; color: var(--text-secondary); }
+      li strong { color: var(--text-accent); }
+      .code-block {
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin: 1rem 0;
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+        overflow-x: auto;
+      }
+      .callout {
+        border-left: 3px solid var(--border-accent);
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+        color: var(--text-secondary);
+      }
+      .callout strong { color: var(--text-accent); }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>blingyat: Interactive Charts & Market Dashboard</h1>
+        <p class="subtitle">Plotly.js Integration with Market Health Dashboard & Traffic Map</p>
+      </div>
+
+      <section class="card">
+        <h2>Why This Matters for Investors</h2>
+        <p>
+          blingyat's <strong>interactive Plotly.js charts</strong> and <strong>market health dashboard</strong> provide 
+          sophisticated visualization capabilities for trading analysis. The strongly-typed chart components and real-time 
+          WebSocket updates demonstrate production-ready infrastructure.
+        </p>
+        <p>
+          <strong>User Experience:</strong> Interactive charts improve user experience. <strong>Market Insights:</strong> 
+          Market dashboard provides comprehensive market insights. <strong>Production-Ready:</strong> Multi-layer caching 
+          and WebSocket support demonstrate scalability.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Interactive Plotly.js Charts</h2>
+        <p>
+          blingyat features interactive Plotly.js charts with strongly-typed components:
+        </p>
+
+        <h3>Chart Types</h3>
+        <ul>
+          <li><strong>Candlestick Charts:</strong> Professional candlestick charts</li>
+          <li><strong>Line Charts:</strong> Time series line charts</li>
+          <li><strong>Bar Charts:</strong> Volume and indicator bar charts</li>
+          <li><strong>Scatter Charts:</strong> Correlation and relationship charts</li>
+        </ul>
+
+        <h3>Interactive Features</h3>
+        <ul>
+          <li><strong>Zoom & Pan:</strong> Interactive zoom and pan</li>
+          <li><strong>Hover Tooltips:</strong> Detailed hover tooltips</li>
+          <li><strong>Click Interactions:</strong> Click interactions for analysis</li>
+          <li><strong>Custom Controls:</strong> Custom chart controls</li>
+        </ul>
+
+        <h3>Technical Indicator Overlays</h3>
+        <ul>
+          <li><strong>Moving Averages:</strong> Overlays moving averages</li>
+          <li><strong>Bollinger Bands:</strong> Overlays Bollinger bands</li>
+          <li><strong>RSI:</strong> Overlays RSI indicator</li>
+          <li><strong>MACD:</strong> Overlays MACD indicator</li>
+        </ul>
+
+        <h3>Pattern Highlighting</h3>
+        <ul>
+          <li><strong>Pattern Detection:</strong> Highlights detected patterns</li>
+          <li><strong>Pattern Annotations:</strong> Annotations for patterns</li>
+          <li><strong>Pattern Confidence:</strong> Shows pattern confidence</li>
+          <li><strong>Pattern Predictions:</strong> Shows pattern predictions</li>
+        </ul>
+
+        <h3>Strongly Typed Components</h3>
+        <ul>
+          <li><strong>TypeScript Types:</strong> Full TypeScript type safety</li>
+          <li><strong>Component Architecture:</strong> Modular component architecture</li>
+          <li><strong>Reusability:</strong> Reusable chart components</li>
+          <li><strong>Maintainability:</strong> Easy to maintain and extend</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Market Health Dashboard</h2>
+        <p>
+          blingyat includes comprehensive market health dashboard:
+        </p>
+
+        <h3>Real-Time Snapshots</h3>
+        <ul>
+          <li><strong>Market Status:</strong> Real-time market status</li>
+          <li><strong>Price Updates:</strong> Real-time price updates</li>
+          <li><strong>Volume Updates:</strong> Real-time volume updates</li>
+          <li><strong>Indicator Updates:</strong> Real-time indicator updates</li>
+        </ul>
+
+        <h3>Breadth Analysis</h3>
+        <ul>
+          <li><strong>Advance/Decline:</strong> Advance/decline indicators</li>
+          <li><strong>Market Breadth:</strong> Overall market breadth</li>
+          <li><strong>Sector Analysis:</strong> Sector-by-sector analysis</li>
+          <li><strong>Market Strength:</strong> Overall market strength</li>
+        </ul>
+
+        <h3>Health Metrics</h3>
+        <ul>
+          <li><strong>Overall Health:</strong> Overall market health score</li>
+          <li><strong>Health Trends:</strong> Health trends over time</li>
+          <li><strong>Health Alerts:</strong> Alerts on health changes</li>
+          <li><strong>Health Predictions:</strong> Health predictions</li>
+        </ul>
+
+        <h3>Visualization</h3>
+        <ul>
+          <li><strong>Interactive Dashboard:</strong> Interactive dashboard visualization</li>
+          <li><strong>Real-Time Updates:</strong> Real-time dashboard updates</li>
+          <li><strong>Customizable Views:</strong> Customizable dashboard views</li>
+          <li><strong>Export Capabilities:</strong> Export dashboard data</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Traffic Map System</h2>
+        <p>
+          blingyat includes metro-style traffic map for market visualization:
+        </p>
+
+        <h3>Symbol Flow Visualization</h3>
+        <ul>
+          <li><strong>Metro-Style Map:</strong> Metro-style traffic map</li>
+          <li><strong>Symbol Flow:</strong> Visualizes symbol flow and relationships</li>
+          <li><strong>Market Structure:</strong> Shows market structure and connections</li>
+          <li><strong>Interactive Exploration:</strong> Interactive exploration of relationships</li>
+        </ul>
+
+        <h3>Relationship Mapping</h3>
+        <ul>
+          <li><strong>Symbol Relationships:</strong> Maps symbol relationships</li>
+          <li><strong>Correlation Visualization:</strong> Visualizes correlations</li>
+          <li><strong>Flow Direction:</strong> Shows flow direction and strength</li>
+          <li><strong>Network Analysis:</strong> Network analysis capabilities</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>WebSocket Support & Real-Time Updates</h2>
+        <p>
+          blingyat includes WebSocket support for real-time updates:
+        </p>
+
+        <h3>Real-Time Data Streaming</h3>
+        <ul>
+          <li><strong>Alpaca WebSocket:</strong> Real-time data streaming via Alpaca WebSocket API</li>
+          <li><strong>Live Updates:</strong> Live updates for charts and dashboards</li>
+          <li><strong>Low Latency:</strong> Low-latency data delivery</li>
+          <li><strong>Scalable:</strong> Handles multiple concurrent connections</li>
+        </ul>
+
+        <h3>Multi-Layer Caching</h3>
+        <ul>
+          <li><strong>Bar Data Caching:</strong> Caches bar data for performance</li>
+          <li><strong>Snapshot Caching:</strong> Caches market snapshots</li>
+          <li><strong>Chart Caching:</strong> Caches chart data</li>
+          <li><strong>Performance:</strong> Significantly improves performance</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Investment Recommendation:</strong> Interactive charts and market dashboard provide sophisticated 
+          visualization capabilities. WebSocket support and multi-layer caching demonstrate production-ready 
+          infrastructure and scalability.
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
+

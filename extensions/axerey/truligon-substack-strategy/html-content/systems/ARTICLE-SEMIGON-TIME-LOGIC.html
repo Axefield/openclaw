@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semigon: Time Logic & Fracture System</title>
+    <style>
+      :root {
+        --jsr-pink: #ff00ff;
+        --jsr-blue: #00ffff;
+        --tron-cyan: #00f0ff;
+        --jsr-green: #00ff00;
+        --bg-primary: #000000;
+        --bg-card: #0f0f0f;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --text-accent: #00f0ff;
+        --border-primary: #333333;
+        --border-accent: #00f0ff;
+        --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-mono: "Courier New", Monaco, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: var(--font-sans);
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        background-image: linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+      .container { max-width: 960px; margin: 0 auto; }
+      .header {
+        border-bottom: 2px solid var(--border-accent);
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+      }
+      h1 {
+        background: linear-gradient(135deg, var(--jsr-pink), var(--jsr-blue));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 2.25rem;
+        margin-bottom: 0.5rem;
+      }
+      .subtitle { color: var(--text-secondary); font-size: 1.05rem; }
+      .section {
+        background: var(--bg-card);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.75rem;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      .section h2 {
+        color: var(--text-accent);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .section h3 {
+        color: var(--text-primary);
+        font-size: 1.2rem;
+        margin: 1.5rem 0 0.5rem;
+      }
+      .card {
+        background: var(--bg-card);
+        border-radius: 0.75rem;
+        border: 1px solid var(--border-accent);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+      }
+      ul { margin-left: 1.5rem; margin-top: 0.5rem; }
+      li { margin-bottom: 0.5rem; color: var(--text-secondary); }
+      li strong { color: var(--text-accent); }
+      .code-block {
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin: 1rem 0;
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+        overflow-x: auto;
+      }
+      .callout {
+        border-left: 3px solid var(--border-accent);
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+        color: var(--text-secondary);
+      }
+      .callout strong { color: var(--text-accent); }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Semigon: Time Logic & Fracture System</h1>
+        <p class="subtitle">8 Progressive Time States with Fracture Detection & Recovery</p>
+      </div>
+
+      <section class="card">
+        <h2>Why This Matters for Investors</h2>
+        <p>
+          Semigon's <strong>time logic/fracture system</strong> with 8 progressive states represents unique intellectual property 
+          with no direct competitors. The system enables innovative gameplay mechanics and narrative possibilities that cannot be 
+          easily replicated.
+        </p>
+        <p>
+          <strong>Unique IP:</strong> No other game system implements 8-state progressive time logic with fracture detection and 
+          recovery. <strong>Extractable:</strong> Time logic system can be extracted as standalone API for game development.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>8 Progressive Time States</h2>
+        <p>
+          Semigon implements 8 progressive time states (timeLogic.ts):
+        </p>
+
+        <h3>State 1 - Stable</h3>
+        <ul>
+          <li><strong>Normal Flow:</strong> Time flows normally</li>
+          <li><strong>No Disruptions:</strong> No time disruptions</li>
+          <li><strong>Baseline:</strong> Baseline state for all time operations</li>
+          <li><strong>Stability:</strong> Maximum stability and predictability</li>
+        </ul>
+
+        <h3>State 2 - Minor Fracture</h3>
+        <ul>
+          <li><strong>Small Disruptions:</strong> Minor time disruptions occur</li>
+          <li><strong>Minimal Impact:</strong> Minimal impact on gameplay</li>
+          <li><strong>Recovery:</strong> Quick recovery to stable state</li>
+          <li><strong>Warning Signs:</strong> Early warning signs of larger fractures</li>
+        </ul>
+
+        <h3>State 3 - Moderate Fracture</h3>
+        <ul>
+          <li><strong>Moderate Disruptions:</strong> Moderate time disruptions</li>
+          <li><strong>Noticeable Impact:</strong> Noticeable impact on gameplay</li>
+          <li><strong>Recovery Time:</strong> Longer recovery time required</li>
+          <li><strong>Fracture Effects:</strong> Fracture effects become apparent</li>
+        </ul>
+
+        <h3>State 4 - Major Fracture</h3>
+        <ul>
+          <li><strong>Major Disruptions:</strong> Major time disruptions</li>
+          <li><strong>Significant Impact:</strong> Significant impact on gameplay</li>
+          <li><strong>Extended Recovery:</strong> Extended recovery time</li>
+          <li><strong>Fracture Cascades:</strong> Fractures can cascade to other states</li>
+        </ul>
+
+        <h3>State 5 - Critical Fracture</h3>
+        <ul>
+          <li><strong>Critical Disruptions:</strong> Critical time disruptions</li>
+          <li><strong>Severe Impact:</strong> Severe impact on gameplay</li>
+          <li><strong>System Instability:</strong> System becomes unstable</li>
+          <li><strong>Emergency Measures:</strong> Emergency measures required</li>
+        </ul>
+
+        <h3>State 6 - Temporal Collapse</h3>
+        <ul>
+          <li><strong>Collapse Begins:</strong> Temporal collapse begins</li>
+          <li><strong>System Breakdown:</strong> System breakdown occurs</li>
+          <li><strong>Chaos:</strong> Time becomes chaotic</li>
+          <li><strong>Recovery Difficult:</strong> Recovery becomes difficult</li>
+        </ul>
+
+        <h3>State 7 - Temporal Anomaly</h3>
+        <ul>
+          <li><strong>Anomalies Occur:</strong> Temporal anomalies occur</li>
+          <li><strong>Unpredictable:</strong> Time becomes unpredictable</li>
+          <li><strong>Reality Distortion:</strong> Reality becomes distorted</li>
+          <li><strong>Extreme Measures:</strong> Extreme measures required</li>
+        </ul>
+
+        <h3>State 8 - Temporal Reset</h3>
+        <ul>
+          <li><strong>Reset Occurs:</strong> Time resets to stable state</li>
+          <li><strong>System Recovery:</strong> System recovers from collapse</li>
+          <li><strong>New Cycle:</strong> New time cycle begins</li>
+          <li><strong>Lessons Learned:</strong> System learns from fracture</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Fracture Detection & Recovery</h2>
+        <p>
+          The time logic system includes fracture detection and recovery:
+        </p>
+
+        <h3>Fracture Detection</h3>
+        <ul>
+          <li><strong>Early Detection:</strong> Detects fractures early in progression</li>
+          <li><strong>Pattern Recognition:</strong> Recognizes fracture patterns</li>
+          <li><strong>Severity Assessment:</strong> Assesses fracture severity</li>
+          <li><strong>Impact Prediction:</strong> Predicts fracture impact</li>
+        </ul>
+
+        <h3>Fracture Recovery</h3>
+        <ul>
+          <li><strong>Recovery Mechanisms:</strong> Multiple recovery mechanisms</li>
+          <li><strong>Recovery Time:</strong> Recovery time varies by state</li>
+          <li><strong>Recovery Strategies:</strong> Different strategies for different states</li>
+          <li><strong>Prevention:</strong> Prevents future fractures</li>
+        </ul>
+
+        <h3>Fracture Effects</h3>
+        <ul>
+          <li><strong>Gameplay Effects:</strong> Fractures affect gameplay mechanics</li>
+          <li><strong>Narrative Effects:</strong> Fractures drive narrative</li>
+          <li><strong>System Effects:</strong> Fractures affect system behavior</li>
+          <li><strong>Player Agency:</strong> Players can influence fracture recovery</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Time Manipulation Mechanics</h2>
+        <p>
+          The time logic system enables time manipulation:
+        </p>
+
+        <h3>Time Progression</h3>
+        <ul>
+          <li><strong>Forward Progression:</strong> Time progresses forward through states</li>
+          <li><strong>State Transitions:</strong> Smooth transitions between states</li>
+          <li><strong>Progression Speed:</strong> Progression speed can vary</li>
+          <li><strong>Progression Control:</strong> Players can influence progression</li>
+        </ul>
+
+        <h3>Time Reversal</h3>
+        <ul>
+          <li><strong>Backward Progression:</strong> Time can reverse to previous states</li>
+          <li><strong>State Rewind:</strong> Rewind to previous stable states</li>
+          <li><strong>Reversal Cost:</strong> Reversal has costs and consequences</li>
+          <li><strong>Strategic Use:</strong> Strategic use of time reversal</li>
+        </ul>
+
+        <h3>Time Freeze</h3>
+        <ul>
+          <li><strong>Freeze Capability:</strong> Time can freeze at specific states</li>
+          <li><strong>Freeze Duration:</strong> Freeze duration is limited</li>
+          <li><strong>Freeze Effects:</strong> Freeze has gameplay effects</li>
+          <li><strong>Freeze Strategy:</strong> Strategic use of time freeze</li>
+        </ul>
+
+        <h3>Time Acceleration</h3>
+        <ul>
+          <li><strong>Acceleration Capability:</strong> Time can accelerate through states</li>
+          <li><strong>Acceleration Speed:</strong> Acceleration speed can vary</li>
+          <li><strong>Acceleration Effects:</strong> Acceleration has gameplay effects</li>
+          <li><strong>Acceleration Strategy:</strong> Strategic use of time acceleration</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Integration with 52-Card Universe</h2>
+        <p>
+          Time logic integrates with the 52-card universe:
+        </p>
+
+        <ul>
+          <li><strong>Card-Time Relationships:</strong> Cards have time-based properties</li>
+          <li><strong>Time-Card Interactions:</strong> Time affects card behavior</li>
+          <li><strong>Card-Time Progression:</strong> Cards progress through time states</li>
+          <li><strong>Time-Card Narrative:</strong> Time and cards drive narrative together</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Investment Value</h2>
+        <p>
+          Time logic/fracture system provides unique intellectual property:
+        </p>
+
+        <ul>
+          <li><strong>Unique IP:</strong> No direct competitors with 8-state time logic</li>
+          <li><strong>Gameplay Innovation:</strong> Time manipulation creates innovative gameplay</li>
+          <li><strong>Narrative Potential:</strong> Time fractures drive narrative</li>
+          <li><strong>Extractability:</strong> Can be extracted as standalone API</li>
+          <li><strong>B2B Applications:</strong> Can be licensed for game development</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Investment Recommendation:</strong> Semigon's time logic/fracture system represents unique intellectual property 
+          with no direct competitors. The 8-state progressive time logic with fracture detection and recovery creates innovative 
+          gameplay mechanics and narrative possibilities. The system can be extracted as standalone API for game development 
+          applications, creating additional revenue opportunities.
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
+

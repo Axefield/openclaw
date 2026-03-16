@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gon-Search: Web Crawler & URL Indexing</title>
+    <style>
+      :root {
+        --jsr-pink: #ff00ff;
+        --jsr-blue: #00ffff;
+        --tron-cyan: #00f0ff;
+        --jsr-green: #00ff00;
+        --bg-primary: #000000;
+        --bg-card: #0f0f0f;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --text-accent: #00f0ff;
+        --border-primary: #333333;
+        --border-accent: #00f0ff;
+        --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-mono: "Courier New", Monaco, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: var(--font-sans);
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        background-image: linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+      .container { max-width: 960px; margin: 0 auto; }
+      .header {
+        border-bottom: 2px solid var(--border-accent);
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+      }
+      h1 {
+        background: linear-gradient(135deg, var(--jsr-pink), var(--jsr-blue));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 2.25rem;
+        margin-bottom: 0.5rem;
+      }
+      .subtitle { color: var(--text-secondary); font-size: 1.05rem; }
+      .section {
+        background: var(--bg-card);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.75rem;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      .section h2 {
+        color: var(--text-accent);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .section h3 {
+        color: var(--text-primary);
+        font-size: 1.2rem;
+        margin: 1.5rem 0 0.5rem;
+      }
+      .card {
+        background: var(--bg-card);
+        border-radius: 0.75rem;
+        border: 1px solid var(--border-accent);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+      }
+      ul { margin-left: 1.5rem; margin-top: 0.5rem; }
+      li { margin-bottom: 0.5rem; color: var(--text-secondary); }
+      li strong { color: var(--text-accent); }
+      .code-block {
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin: 1rem 0;
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+        overflow-x: auto;
+      }
+      .callout {
+        border-left: 3px solid var(--border-accent);
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+        color: var(--text-secondary);
+      }
+      .callout strong { color: var(--text-accent); }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Gon-Search: Web Crawler & URL Indexing</h1>
+        <p class="subtitle">Automated Content Discovery with Intelligent URL Indexing</p>
+      </div>
+
+      <section class="card">
+        <h2>Why This Matters for Investors</h2>
+        <p>
+          Gon-Search's <strong>web crawler and URL indexing</strong> create network effects—more indexed content improves 
+          search quality for all users. The automated content discovery system enables scalable content acquisition without 
+          manual intervention.
+        </p>
+        <p>
+          <strong>Network Effects:</strong> More indexed content = better search quality = more users = more content. 
+          <strong>Defensible Moat:</strong> Large indexed content base creates switching costs.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>URL Indexing System</h2>
+        <p>
+          Gon-Search includes comprehensive URL indexing:
+        </p>
+
+        <h3>Automatic Indexing</h3>
+        <ul>
+          <li><strong>URL Discovery:</strong> Automatically discovers new URLs</li>
+          <li><strong>Content Extraction:</strong> Extracts text, metadata, and structure</li>
+          <li><strong>Indexing Pipeline:</strong> Automated indexing pipeline</li>
+          <li><strong>Update Management:</strong> Tracks and updates indexed content</li>
+        </ul>
+
+        <h3>Content Extraction</h3>
+        <ul>
+          <li><strong>Text Extraction:</strong> Extracts main content text</li>
+          <li><strong>Metadata Extraction:</strong> Extracts title, description, keywords</li>
+          <li><strong>Structure Extraction:</strong> Extracts document structure</li>
+          <li><strong>Link Extraction:</strong> Extracts links for further crawling</li>
+        </ul>
+
+        <h3>Index Management</h3>
+        <ul>
+          <li><strong>Index Storage:</strong> Efficient index storage</li>
+          <li><strong>Index Updates:</strong> Incremental index updates</li>
+          <li><strong>Index Optimization:</strong> Index optimization for performance</li>
+          <li><strong>Index Search:</strong> Fast index search capabilities</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Web Crawler System</h2>
+        <p>
+          Gon-Search includes automated web crawler:
+        </p>
+
+        <h3>Crawling Strategy</h3>
+        <ul>
+          <li><strong>Breadth-First:</strong> Breadth-first crawling strategy</li>
+          <li><strong>Depth Control:</strong> Configurable crawling depth</li>
+          <li><strong>Priority Queue:</strong> Priority-based URL queue</li>
+          <li><strong>Duplicate Detection:</strong> Prevents duplicate crawling</li>
+        </ul>
+
+        <h3>Rate Limiting & Ethics</h3>
+        <ul>
+          <li><strong>Rate Limiting:</strong> Respects rate limits</li>
+          <li><strong>Robots.txt:</strong> Respects robots.txt rules</li>
+          <li><strong>Polite Crawling:</strong> Polite crawling practices</li>
+          <li><strong>Error Handling:</strong> Graceful error handling</li>
+        </ul>
+
+        <h3>Content Discovery</h3>
+        <ul>
+          <li><strong>Link Following:</strong> Follows links to discover content</li>
+          <li><strong>Content Filtering:</strong> Filters relevant content</li>
+          <li><strong>Quality Assessment:</strong> Assesses content quality</li>
+          <li><strong>Content Ranking:</strong> Ranks content by relevance</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Network Effects & Defensibility</h2>
+        <p>
+          Web crawler and URL indexing create network effects:
+        </p>
+
+        <h3>Network Effects</h3>
+        <ul>
+          <li><strong>More Content:</strong> More indexed content improves search quality</li>
+          <li><strong>Better Results:</strong> Better results attract more users</li>
+          <li><strong>More Users:</strong> More users generate more content</li>
+          <li><strong>Virtuous Cycle:</strong> Creates virtuous cycle of improvement</li>
+        </ul>
+
+        <h3>Switching Costs</h3>
+        <ul>
+          <li><strong>Indexed Content Base:</strong> Large indexed content base creates lock-in</li>
+          <li><strong>Search History:</strong> User search history locked in system</li>
+          <li><strong>Personalization:</strong> Personalized search creates switching costs</li>
+          <li><strong>Defensible Moat:</strong> Network effects create defensible moat</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Investment Insight:</strong> Web crawler and URL indexing create network effects that improve with usage. 
+          Large indexed content base creates switching costs and defensible moat.
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
+

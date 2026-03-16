@@ -1,0 +1,100 @@
+.financial-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.financial-years {
+  margin-bottom: 3rem;
+}
+
+.year-card {
+  background: var(--white);
+  padding: 3rem 2.5rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  border: 2px solid var(--border-color);
+  transition: var(--transition);
+  height: 100%;
+}
+
+.year-card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-light);
+}
+
+.year-card h3 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.year-label {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.year-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.year-stat {
+  padding: 1.25rem 1rem;
+  background: var(--light-color);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+
+.year-stat-label {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.year-stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.financial-highlights {
+  background: var(--white);
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  border: 2px solid var(--border-color);
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+
+.highlight-item {
+  text-align: center;
+}
+
+.highlight-item strong {
+  display: block;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.highlight-item {
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .financial-highlights {
+    flex-direction: column;
+  }
+}
+

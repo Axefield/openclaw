@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>topgon: AlphaAxe Trading Strategy System</title>
+    <style>
+      :root {
+        --jsr-pink: #ff00ff;
+        --jsr-blue: #00ffff;
+        --tron-cyan: #00f0ff;
+        --jsr-green: #00ff00;
+        --bg-primary: #000000;
+        --bg-card: #0f0f0f;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --text-accent: #00f0ff;
+        --border-primary: #333333;
+        --border-accent: #00f0ff;
+        --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-mono: "Courier New", Monaco, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: var(--font-sans);
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        background-image: linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+      .container { max-width: 960px; margin: 0 auto; }
+      .header {
+        border-bottom: 2px solid var(--border-accent);
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+      }
+      h1 {
+        background: linear-gradient(135deg, var(--jsr-pink), var(--jsr-blue));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 2.25rem;
+        margin-bottom: 0.5rem;
+      }
+      .subtitle { color: var(--text-secondary); font-size: 1.05rem; }
+      .section {
+        background: var(--bg-card);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.75rem;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      .section h2 {
+        color: var(--text-accent);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .section h3 {
+        color: var(--text-primary);
+        font-size: 1.2rem;
+        margin: 1.5rem 0 0.5rem;
+      }
+      .card {
+        background: var(--bg-card);
+        border-radius: 0.75rem;
+        border: 1px solid var(--border-accent);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+      }
+      ul { margin-left: 1.5rem; margin-top: 0.5rem; }
+      li { margin-bottom: 0.5rem; color: var(--text-secondary); }
+      li strong { color: var(--text-accent); }
+      .code-block {
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin: 1rem 0;
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+        overflow-x: auto;
+      }
+      .callout {
+        border-left: 3px solid var(--border-accent);
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+        color: var(--text-secondary);
+      }
+      .callout strong { color: var(--text-accent); }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>topgon: AlphaAxe Trading Strategy System</h1>
+        <p class="subtitle">Modular Trading Workflow with AlphaAxe Radar, Router, and RiskManager</p>
+      </div>
+
+      <section class="card">
+        <h2>Why This Matters for Investors</h2>
+        <p>
+          topgon (Axefield Luck Strategy v1.0) implements a <strong>complete trading workflow</strong> from signal scanning 
+          to order execution, with strict risk management and performance tracking. The <strong>modular architecture</strong> 
+          with pure functions and MCP-driven execution demonstrates sophisticated systems design.
+        </p>
+        <p>
+          <strong>Production-Ready:</strong> Express application, TopstepX MCP server, broker adapters (Alpaca/TopstepX). 
+          <strong>Unique IP:</strong> AlphaAxe Radar, AlphaAxe Router, RiskManager system with per-trade, daily, weekly R guardrails.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>AlphaAxe Radar: Scanner & Ranking System</h2>
+        <p>
+          AlphaAxe Radar provides signal detection and ranking:
+        </p>
+
+        <h3>Signal Detection</h3>
+        <ul>
+          <li><strong>VWAP_REVERSAL:</strong> VWAP reversal signals</li>
+          <li><strong>MA150_PULLBACK:</strong> MA150 pullback signals</li>
+          <li><strong>GAP_FADE:</strong> Gap fade signals</li>
+          <li><strong>Pattern Recognition:</strong> Automatic pattern detection</li>
+        </ul>
+
+        <h3>Technical Indicators</h3>
+        <ul>
+          <li><strong>RSI:</strong> Relative Strength Index</li>
+          <li><strong>VWAP:</strong> Volume Weighted Average Price</li>
+          <li><strong>MA20/MA150:</strong> Moving averages</li>
+          <li><strong>ATR:</strong> Average True Range</li>
+        </ul>
+
+        <h3>Ranking System</h3>
+        <ul>
+          <li><strong>Multi-Factor Ranking:</strong> Asymmetry, volume expansion, trend score</li>
+          <li><strong>Signal Strength:</strong> Measures signal strength</li>
+          <li><strong>Confidence Scoring:</strong> Confidence scores for signals</li>
+          <li><strong>Filtering:</strong> Configurable filters (minRelVolume, minATR, minGapPct, RSI thresholds)</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>AlphaAxe Router: Alerts & Entry Plans</h2>
+        <p>
+          AlphaAxe Router generates alerts and entry plans:
+        </p>
+
+        <h3>Alert Generation</h3>
+        <ul>
+          <li><strong>Signal Alerts:</strong> Alerts for detected signals</li>
+          <li><strong>Priority Ranking:</strong> Alerts ranked by priority</li>
+          <li><strong>Notification System:</strong> Multiple notification channels</li>
+          <li><strong>Alert Management:</strong> Alert tracking and management</li>
+        </ul>
+
+        <h3>Entry Plan Creation</h3>
+        <ul>
+          <li><strong>Entry Strategy:</strong> Defines entry strategy for signals</li>
+          <li><strong>Position Sizing:</strong> Calculates position size</li>
+          <li><strong>Risk Parameters:</strong> Sets risk parameters</li>
+          <li><strong>Execution Plan:</strong> Creates execution plan</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>RiskManager: Per-Trade, Daily, Weekly R Guardrails</h2>
+        <p>
+          RiskManager provides comprehensive risk management:
+        </p>
+
+        <h3>Per-Trade Risk</h3>
+        <ul>
+          <li><strong>R-Based Position Sizing:</strong> Position size based on risk (R)</li>
+          <li><strong>Stop Loss:</strong> Automatic stop loss placement</li>
+          <li><strong>Risk Limits:</strong> Per-trade risk limits</li>
+          <li><strong>Risk Monitoring:</strong> Real-time risk monitoring</li>
+        </ul>
+
+        <h3>Daily Risk</h3>
+        <ul>
+          <li><strong>Daily Loss Limits:</strong> Maximum daily loss limits</li>
+          <li><strong>Daily R Limits:</strong> Maximum daily R limits</li>
+          <li><strong>Daily Tracking:</strong> Tracks daily risk usage</li>
+          <li><strong>Automatic Shutdown:</strong> Automatic shutdown on daily limits</li>
+        </ul>
+
+        <h3>Weekly Risk</h3>
+        <ul>
+          <li><strong>Weekly Loss Limits:</strong> Maximum weekly loss limits</li>
+          <li><strong>Weekly R Limits:</strong> Maximum weekly R limits</li>
+          <li><strong>Weekly Tracking:</strong> Tracks weekly risk usage</li>
+          <li><strong>Weekly Reset:</strong> Weekly risk reset</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>KPIs Tracker: Performance Metrics</h2>
+        <p>
+          KPIs Tracker provides comprehensive performance tracking:
+        </p>
+
+        <h3>Key Metrics</h3>
+        <ul>
+          <li><strong>Expectancy:</strong> Expected value per trade</li>
+          <li><strong>Win Rate:</strong> Percentage of winning trades</li>
+          <li><strong>Latency:</strong> Trade execution latency</li>
+          <li><strong>A+ Selectivity:</strong> Quality of trade selection</li>
+        </ul>
+
+        <h3>Performance Analysis</h3>
+        <ul>
+          <li><strong>Performance Tracking:</strong> Tracks performance over time</li>
+          <li><strong>Trend Analysis:</strong> Analyzes performance trends</li>
+          <li><strong>Benchmarking:</strong> Compares performance to benchmarks</li>
+          <li><strong>Reporting:</strong> Generates performance reports</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Schedule/Playbook: Daily Trading Schedule</h2>
+        <p>
+          Schedule/Playbook provides daily trading schedule:
+        </p>
+
+        <h3>Time-Based Blocks</h3>
+        <ul>
+          <li><strong>Market Open:</strong> Trading block for market open</li>
+          <li><strong>Mid-Day:</strong> Trading block for mid-day</li>
+          <li><strong>Market Close:</strong> Trading block for market close</li>
+          <li><strong>Custom Blocks:</strong> Custom time-based blocks</li>
+        </ul>
+
+        <h3>Playbook Management</h3>
+        <ul>
+          <li><strong>Strategy Playbooks:</strong> Pre-defined strategy playbooks</li>
+          <li><strong>Custom Playbooks:</strong> Custom playbook creation</li>
+          <li><strong>Playbook Execution:</strong> Executes playbooks automatically</li>
+          <li><strong>Playbook Tracking:</strong> Tracks playbook performance</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Broker Adapters: Alpaca & TopstepX</h2>
+        <p>
+          topgon includes broker adapters for Alpaca and TopstepX:
+        </p>
+
+        <h3>Adapter Architecture</h3>
+        <ul>
+          <li><strong>Pure Functions:</strong> Strategy code accepts data and returns typed objects—no I/O</li>
+          <li><strong>MCP-Driven Execution:</strong> Broker adapters return order objects; MCP decides execution</li>
+          <li><strong>Strongly Typed:</strong> Full TypeScript support with strict typing</li>
+          <li><strong>Modular:</strong> Separate concerns (radar, router, risk, metrics, schedule)</li>
+        </ul>
+
+        <h3>Alpaca Adapter</h3>
+        <ul>
+          <li><strong>Order Objects:</strong> Returns order objects for MCP execution</li>
+          <li><strong>Market Data:</strong> Fetches market data from Alpaca</li>
+          <li><strong>Order Management:</strong> Manages orders through Alpaca</li>
+        </ul>
+
+        <h3>TopstepX Adapter</h3>
+        <ul>
+          <li><strong>TopstepX MCP Server:</strong> Python MCP server for TopstepX integration</li>
+          <li><strong>Order Objects:</strong> Returns order objects for MCP execution</li>
+          <li><strong>Market Data:</strong> Fetches market data from TopstepX</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Investment Recommendation:</strong> topgon demonstrates sophisticated trading strategy system with 
+          modular architecture and comprehensive risk management. The AlphaAxe Radar, Router, and RiskManager create 
+          unique IP. Pure functions and MCP-driven execution demonstrate professional software engineering.
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
+

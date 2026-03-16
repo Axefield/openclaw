@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[TRULIGON] Investor One-Pager</title>
+
+    <!--
+      Truligon Investor One-Pager
+      - Compressed layout for quick-reading briefs (1 screen on desktop)
+      - Uses the same visual language as the main Truligon theme
+    -->
+
+    <style>
+      :root {
+        --jsr-pink: #ff00ff;
+        --jsr-blue: #00ffff;
+        --jsr-yellow: #ffff00;
+        --jsr-green: #00ff00;
+        --tron-cyan: #00f0ff;
+
+        --bg-primary: #000000;
+        --bg-card: #0f0f0f;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --text-muted: #888888;
+        --text-accent: #00f0ff;
+        --border-primary: #333333;
+        --border-accent: #00f0ff;
+
+        --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+          "Oxygen", "Ubuntu", "Cantarell", sans-serif;
+        --font-mono: "Courier New", Monaco, Menlo, Consolas, monospace;
+
+        --radius-md: 0.5rem;
+        --radius-lg: 0.75rem;
+        --radius-full: 9999px;
+
+        --spacing-2: 0.5rem;
+        --spacing-3: 0.75rem;
+        --spacing-4: 1rem;
+        --spacing-5: 1.25rem;
+        --spacing-6: 1.5rem;
+        --spacing-8: 2rem;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 16px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body {
+        min-height: 100vh;
+        font-family: var(--font-sans);
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        background-image: linear-gradient(
+            rgba(0, 255, 255, 0.08) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            90deg,
+            rgba(0, 255, 255, 0.08) 1px,
+            transparent 1px
+          );
+        background-size: 20px 20px;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: var(--spacing-6) var(--spacing-4);
+      }
+
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-2);
+        margin-bottom: var(--spacing-3);
+      }
+
+      .pill {
+        border-radius: var(--radius-full);
+        border: 1px solid var(--border-accent);
+        padding: 0.2rem 0.6rem;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--text-accent);
+      }
+
+      .header-row {
+        display: grid;
+        gap: var(--spacing-4);
+      }
+
+      @media (min-width: 768px) {
+        .header-row {
+          grid-template-columns: 2.2fr 1.4fr;
+          align-items: flex-start;
+        }
+      }
+
+      .title-block .eyebrow {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        margin-bottom: 0.35rem;
+      }
+
+      .title-block h1 {
+        font-size: 1.9rem;
+        line-height: 1.1;
+        margin-bottom: 0.4rem;
+        background: linear-gradient(135deg, var(--jsr-pink), var(--jsr-blue));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .title-block p {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+      }
+
+      .key-metrics {
+        display: grid;
+        gap: var(--spacing-2);
+      }
+
+      .metric {
+        border-radius: var(--radius-md);
+        border: 1px solid var(--border-primary);
+        background: var(--bg-card);
+        padding: var(--spacing-2) var(--spacing-3);
+      }
+
+      .metric-label {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--text-muted);
+      }
+
+      .metric-value {
+        font-size: 0.95rem;
+        font-family: var(--font-mono);
+        color: var(--text-accent);
+      }
+
+      .content-grid {
+        display: grid;
+        gap: var(--spacing-4);
+        margin-top: var(--spacing-5);
+      }
+
+      @media (min-width: 900px) {
+        .content-grid {
+          grid-template-columns: 1.6fr 1.2fr;
+        }
+      }
+
+      .block {
+        background: var(--bg-card);
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border-primary);
+        padding: var(--spacing-4);
+      }
+
+      .block h2 {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: var(--spacing-2);
+      }
+
+      .block p {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        margin-bottom: var(--spacing-2);
+      }
+
+      .block ul {
+        padding-left: 1.15rem;
+        margin-top: 0.15rem;
+      }
+
+      .block li {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+      }
+
+      .block li + li {
+        margin-top: 0.15rem;
+      }
+
+      .footer-line {
+        margin-top: var(--spacing-5);
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="pill-row">
+        <div class="pill">Investor One-Pager</div>
+        <div class="pill">Truligon</div>
+        <div class="pill">Confidential</div>
+      </div>
+
+      <div class="header-row">
+        <div class="title-block">
+          <div class="eyebrow">Program Snapshot</div>
+          <h1>[Replace With Brief Title]</h1>
+          <p>
+            One-paragraph summary of what this is, why it matters, and how it
+            fits into the broader Truligon / Axerey / mythoGon stack.
+          </p>
+        </div>
+        <div class="key-metrics">
+          <div class="metric">
+            <div class="metric-label">Domain</div>
+            <div class="metric-value">[Trading / Games / Infra]</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Stage</div>
+            <div class="metric-value">Built • Pre-Launch</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Core Edge</div>
+            <div class="metric-value">[Memory + Soul / IP Layer]</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <section class="block">
+          <h2>1 • What This Is</h2>
+          <p>
+            Replace this block with a tight definition in investor language.
+            What is the system, product, or layer? What problem does it solve?
+          </p>
+          <h2>2 • Why It’s Defensible</h2>
+          <ul>
+            <li>Unique architecture or soul/memory interaction.</li>
+            <li>Production-ready infrastructure already in place.</li>
+            <li>Hard-to-replicate workflow and IP depth.</li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <h2>3 • Near-Term Path</h2>
+          <p>
+            Translate roadmap into 2–3 concrete, investor-relevant steps: who
+            this serves first, what launch looks like, how it starts generating
+            value.
+          </p>
+          <ul>
+            <li>[Milestone 1] • e.g., closed investor preview.</li>
+            <li>[Milestone 2] • e.g., first paying deployment.</li>
+            <li>[Milestone 3] • e.g., expansion into next domain.</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="footer-line">
+        Truligon • Private Investor Material • Not For Public Distribution
+      </div>
+    </div>
+  </body>
+</html>
+
+

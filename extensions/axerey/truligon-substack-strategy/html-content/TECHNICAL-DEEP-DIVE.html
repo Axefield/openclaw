@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Truligon • Technical Deep Dive</title>
+    <style>
+      :root {
+        --jsr-pink: #ff00ff;
+        --jsr-blue: #00ffff;
+        --tron-cyan: #00f0ff;
+        --jsr-green: #00ff00;
+        --bg-primary: #000000;
+        --bg-card: #0f0f0f;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --text-accent: #00f0ff;
+        --border-primary: #333333;
+        --border-accent: #00f0ff;
+        --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-mono: "Courier New", Monaco, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: var(--font-sans);
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        background-image: linear-gradient(rgba(0, 255, 255, 0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 255, 255, 0.08) 1px, transparent 1px);
+        background-size: 20px 20px;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+      .container { max-width: 1000px; margin: 0 auto; }
+      .header {
+        border-bottom: 2px solid var(--border-accent);
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+      }
+      h1 {
+        background: linear-gradient(135deg, var(--jsr-pink), var(--jsr-blue));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+      .section {
+        background: var(--bg-card);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.5rem;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      .section h2 {
+        color: var(--text-accent);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .section h3 {
+        color: var(--text-primary);
+        font-size: 1.2rem;
+        margin: 1.5rem 0 0.5rem;
+      }
+      .code-block {
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        margin: 1rem 0;
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+        overflow-x: auto;
+      }
+      .architecture-diagram {
+        background: var(--bg-card);
+        border: 1px solid var(--border-accent);
+        border-radius: 0.5rem;
+        padding: 2rem;
+        margin: 1.5rem 0;
+        text-align: center;
+      }
+      .layer {
+        background: rgba(0, 240, 255, 0.1);
+        border: 1px solid var(--border-accent);
+        border-radius: 0.25rem;
+        padding: 1rem;
+        margin: 0.5rem 0;
+      }
+      ul { margin-left: 1.5rem; margin-top: 0.5rem; }
+      li { margin-bottom: 0.5rem; color: var(--text-secondary); }
+      li strong { color: var(--text-accent); }
+      .engine-boundary {
+        border-left: 3px solid var(--jsr-green);
+        padding: 1rem;
+        margin: 1rem 0;
+        background: rgba(0, 255, 0, 0.05);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Technical Deep Dive</h1>
+        <p style="color: var(--text-secondary);">Architecture, Engine Boundaries, Scalability, Security</p>
+      </div>
+
+      <div class="section">
+        <h2>System Architecture Overview</h2>
+        <div class="architecture-diagram">
+          <div class="layer">
+            <strong>Application Layer</strong><br>
+            Axerey, mythoGon, deltaGon, car02/PAWS, Gon-Search, etc.
+          </div>
+          <div class="layer">
+            <strong>Engine Layer</strong><br>
+            Economic Engine, Reality-Systems Engine, Glucose System, Time Logic, etc.
+          </div>
+          <div class="layer">
+            <strong>Infrastructure Layer</strong><br>
+            Multi-subdomain hosting, Accounting, Chat, Email, Database, Authentication
+          </div>
+          <div class="layer">
+            <strong>Memory & Reasoning Layer</strong><br>
+            Axerey Memory System, mythoGon Soul System, Context Broker
+          </div>
+        </div>
+        <p>
+          Truligon uses a <strong>layered architecture</strong> with clear separation between application logic, 
+          reusable engines, infrastructure, and memory/reasoning systems. This enables:
+        </p>
+        <ul>
+          <li><strong>Engine Portability:</strong> Engines can be extracted as standalone APIs</li>
+          <li><strong>Scalability:</strong> Each layer scales independently</li>
+          <li><strong>Maintainability:</strong> Clear boundaries reduce coupling</li>
+          <li><strong>Reusability:</strong> Engines can be used across multiple applications</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Engine Boundaries</h2>
+        <p>
+          Clear engine boundaries enable extraction as standalone services/APIs, licensing, and acquisition exits.
+        </p>
+
+        <div class="engine-boundary">
+          <h3>NeoCheyenne Economic Engine</h3>
+          <p><strong>Boundary:</strong> UnifiedEconomicSystem.ts (1,032 lines), ServicesAndUtilitiesPricing.ts, wealth.types.ts</p>
+          <p><strong>Extractable:</strong> Economic simulation engine, wealth-based pricing, infrastructure dependencies</p>
+          <p><strong>API Surface:</strong> Economic metrics (8 types), event types (18 types), wealth tiers, pricing calculations</p>
+        </div>
+
+        <div class="engine-boundary">
+          <h3>Semisweet Jacket Reality-Systems Engine</h3>
+          <p><strong>Boundary:</strong> reality-systems.ts (500 lines, engine-agnostic TypeScript)</p>
+          <p><strong>Extractable:</strong> Surveillance System, Commandeering System, Reality Sickness System, Essentials System</p>
+          <p><strong>API Surface:</strong> Control/surveillance modeling, reality manipulation, system interactions</p>
+        </div>
+
+        <div class="engine-boundary">
+          <h3>Death by Diabetes Glucose System</h3>
+          <p><strong>Boundary:</strong> Glucose system, roguelike core, PCG, quest system, event system, shop system</p>
+          <p><strong>Extractable:</strong> Glucose management engine, roguelike mechanics, procedural generation</p>
+          <p><strong>Portability:</strong> Proven (Three.js → Unity), demonstrates engine portability</p>
+        </div>
+
+        <div class="engine-boundary">
+          <h3>Semigon Time Logic & 52-Card Universe</h3>
+          <p><strong>Boundary:</strong> timeLogic.ts, deck.ts, reshuffle.ts, procedural board generation</p>
+          <p><strong>Extractable:</strong> Time logic/fractures (8 progressive states), 52-card structured universe, board generation</p>
+          <p><strong>API Surface:</strong> Time manipulation, card-based universe, procedural generation</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Infrastructure Architecture</h2>
+        <h3>Multi-Subdomain Hosting Platform</h3>
+        <ul>
+          <li><strong>Architecture:</strong> Cloudflare Tunnel, multi-tenant subdomain routing</li>
+          <li><strong>Scalability:</strong> Horizontal scaling through subdomain distribution</li>
+          <li><strong>Isolation:</strong> Each application has its own subdomain and database schema</li>
+        </ul>
+
+        <h3>Double-Entry Accounting System</h3>
+        <ul>
+          <li><strong>Architecture:</strong> Full double-entry accounting with transactions, accounts, journals</li>
+          <li><strong>Scalability:</strong> Handles high transaction volume, supports multiple currencies</li>
+          <li><strong>Audit Trail:</strong> Complete transaction history for compliance</li>
+        </ul>
+
+        <h3>Enterprise Chat System</h3>
+        <ul>
+          <li><strong>Architecture:</strong> WebSocket-based real-time chat with embeddings/VSS</li>
+          <li><strong>Scalability:</strong> Horizontal scaling through message queue, supports thousands of concurrent users</li>
+          <li><strong>Features:</strong> Vector similarity search, memory integration, multi-tenant</li>
+        </ul>
+
+        <h3>Email Infrastructure</h3>
+        <ul>
+          <li><strong>Architecture:</strong> SMTP integration, email templates, delivery tracking</li>
+          <li><strong>Scalability:</strong> Queue-based email delivery, supports high volume</li>
+          <li><strong>Features:</strong> Template system, delivery status, bounce handling</li>
+        </ul>
+
+        <h3>Database Architecture</h3>
+        <ul>
+          <li><strong>Technology:</strong> Prisma ORM, PostgreSQL (primary), vector database for embeddings</li>
+          <li><strong>Scalability:</strong> Read replicas, connection pooling, query optimization</li>
+          <li><strong>Features:</strong> Multi-tenant schemas, migrations, backup/restore</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>API Specifications</h2>
+        <h3>Axerey Memory API</h3>
+        <div class="code-block">
+POST /api/memory/store
+{
+  "text": "string",
+  "tags": ["string"],
+  "type": "episodic|semantic|procedural",
+  "importance": 0.0-1.0
+}
+
+GET /api/memory/search?query=string&limit=10
+GET /api/memory/recall?tags=["tag1","tag2"]&limit=10
+        </div>
+
+        <h3>deltaGon Trading API</h3>
+        <div class="code-block">
+POST /api/trading/analyze
+{
+  "symbol": "SPY",
+  "strategy": "scalping",
+  "context": "pretrade|intrade|posttrade"
+}
+
+GET /api/trading/history?symbol=SPY&limit=10
+GET /api/trading/patterns?symbol=SPY
+        </div>
+
+        <h3>Gon-Search API</h3>
+        <div class="code-block">
+POST /api/search
+{
+  "query": "string",
+  "profile": "default|trading|technical",
+  "limit": 10
+}
+
+GET /api/search/index?url=string
+POST /api/search/crawl?url=string
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Scalability Analysis</h2>
+        <h3>Horizontal Scaling</h3>
+        <ul>
+          <li><strong>Application Layer:</strong> Stateless services, load balancing, auto-scaling</li>
+          <li><strong>Database Layer:</strong> Read replicas, sharding, connection pooling</li>
+          <li><strong>Memory Layer:</strong> Distributed memory storage, vector database clustering</li>
+          <li><strong>Infrastructure:</strong> Multi-subdomain routing, CDN, caching</li>
+        </ul>
+
+        <h3>Performance Optimizations</h3>
+        <ul>
+          <li><strong>Caching:</strong> Multi-layer caching (application, database, CDN)</li>
+          <li><strong>Database:</strong> Query optimization, indexing, connection pooling</li>
+          <li><strong>Memory:</strong> Vector similarity search optimization, embedding caching</li>
+          <li><strong>API:</strong> Rate limiting, request batching, async processing</li>
+        </ul>
+
+        <h3>Current Capacity</h3>
+        <ul>
+          <li><strong>DNS Analytics:</strong> 7,800 unique visitors, 57,000 requests, 900MB data served</li>
+          <li><strong>Infrastructure:</strong> Multi-subdomain hosting, Cloudflare Tunnel, scalable architecture</li>
+          <li><strong>Database:</strong> Prisma ORM, PostgreSQL, vector database for embeddings</li>
+          <li><strong>Chat System:</strong> WebSocket-based, supports thousands of concurrent users</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Security Considerations</h2>
+        <h3>Authentication & Authorization</h3>
+        <ul>
+          <li><strong>Authentication:</strong> JWT tokens, session management, password hashing</li>
+          <li><strong>Authorization:</strong> Role-based access control (RBAC), permission system</li>
+          <li><strong>API Keys:</strong> Secure API key management, rate limiting, key rotation</li>
+        </ul>
+
+        <h3>Data Security</h3>
+        <ul>
+          <li><strong>Encryption:</strong> Data at rest (database encryption), data in transit (TLS/SSL)</li>
+          <li><strong>Isolation:</strong> Multi-tenant data isolation, memory isolation per persona</li>
+          <li><strong>Backup:</strong> Regular backups, disaster recovery, data retention policies</li>
+        </ul>
+
+        <h3>Infrastructure Security</h3>
+        <ul>
+          <li><strong>Network:</strong> Cloudflare Tunnel, DDoS protection, firewall rules</li>
+          <li><strong>Monitoring:</strong> Security logging, intrusion detection, anomaly detection</li>
+          <li><strong>Compliance:</strong> Data privacy, GDPR considerations, audit trails</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Technology Stack</h2>
+        <h3>Frontend</h3>
+        <ul>
+          <li><strong>React:</strong> Modern UI framework, component-based architecture</li>
+          <li><strong>TypeScript:</strong> Strong typing, reduced errors, better maintainability</li>
+          <li><strong>Styling:</strong> SCSS, CSS modules, responsive design</li>
+        </ul>
+
+        <h3>Backend</h3>
+        <ul>
+          <li><strong>Node.js/Express:</strong> Server-side logic, API endpoints, middleware</li>
+          <li><strong>TypeScript:</strong> Type-safe backend code, shared types</li>
+          <li><strong>Prisma:</strong> Database ORM, migrations, type-safe queries</li>
+        </ul>
+
+        <h3>Database</h3>
+        <ul>
+          <li><strong>PostgreSQL:</strong> Primary database, ACID compliance, relational data</li>
+          <li><strong>Vector Database:</strong> Embeddings storage, similarity search</li>
+          <li><strong>Redis:</strong> Caching, session storage, message queue</li>
+        </ul>
+
+        <h3>Infrastructure</h3>
+        <ul>
+          <li><strong>Cloudflare:</strong> CDN, DDoS protection, tunnel, DNS</li>
+          <li><strong>Docker:</strong> Containerization, deployment, scaling</li>
+          <li><strong>WebSocket:</strong> Real-time communication, chat system</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Development Practices</h2>
+        <ul>
+          <li><strong>Type Safety:</strong> TypeScript throughout, no `any` policy in core logic</li>
+          <li><strong>Code Quality:</strong> Linting, formatting, code reviews</li>
+          <li><strong>Testing:</strong> Unit tests, integration tests, end-to-end tests</li>
+          <li><strong>Documentation:</strong> 29+ documentation guides, API documentation, architecture docs</li>
+          <li><strong>Version Control:</strong> Git, branching strategy, commit conventions</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
+

@@ -1,0 +1,33 @@
+# Axerey Strawman to Steelman Tool Grammar
+# Transform distorted claims back to their strongest form
+
+root ::= McpAction
+
+McpAction ::= "{" 
+  "\"name\":\"axerey_strawman_to_steelman\","
+  "\"arguments\":" McpArguments 
+"}"
+
+McpArguments ::= "{" 
+  "\"originalClaim\":" string
+  (",\"distorts\":" DistortionArray)?
+  (",\"context\":" string)?
+"}"
+
+DistortionArray ::= "[" (Distortion ("," Distortion)*)? "]"
+Distortion ::= 
+    "\"exaggeration\""
+  | "\"oversimplification\""
+  | "\"misattribution\""
+  | "\"context_stripping\""
+  | "\"straw_person_minor\""
+  | "\"quote_mining\""
+  | "\"false_dichotomy\""
+
+string ::= "\"" ( "\\" ( "u" [0-9a-fA-F]{4} | [^\n"\\] ) | [^\n"\\] )* "\""
+object ::= "{" (pair ("," pair)*)? "}"
+pair ::= string ":" value
+value ::= string | number | boolean | object | array | "null"
+array ::= "[" (value ("," value)*)? "]"
+number ::= "-"? ([0-9]+ ("." [0-9]+)?)? (("e"|"E") ("+"|"-") [0-9]+)?
+boolean ::= "true" | "false"

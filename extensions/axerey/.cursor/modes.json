@@ -1,0 +1,70 @@
+{
+  "modes": [
+    {
+      "name": "persona-ops",
+      "description": "Work on persona APIs, config, and UI safely.",
+      "rules": [
+        ".cursor/rules/06-persona-management.mdc",
+        ".cursor/rules/03-security-data.md"
+      ],
+      "commands": [
+        ".cursor/commands/persona-management.md"
+      ],
+      "prompts": [
+        ".cursor/prompts/persona-config.md",
+        ".cursor/prompts/persona-checklist.md"
+      ]
+    },
+    {
+      "name": "memory-ops",
+      "description": "End-to-end memory workflows (store, search, consolidate, connect, verify, quality).",
+      "rules": [
+        ".cursor/rules/01-architecture.md",
+        ".cursor/rules/03-security-data.md"
+      ],
+      "commands": [
+        ".cursor/commands/memorize.md",
+        ".cursor/commands/memory-search.md",
+        ".cursor/commands/memory-consolidate.md",
+        ".cursor/commands/memory-connect.md",
+        ".cursor/commands/memory-verify.md",
+        ".cursor/commands/memory-quality.md",
+        ".cursor/commands/context-broker.md"
+      ]
+    },
+    {
+      "name": "frontend-runway",
+      "description": "React/Vite + WordPress hook-aware UI work.",
+      "rules": [
+        ".cursor/rules/02-typescript-standards.md",
+        ".cursor/rules/05-workflow-tooling.md"
+      ],
+      "commands": [
+        ".cursor/commands/code-review-checklist.md",
+        ".cursor/commands/troubleshooting-guide.md"
+      ],
+      "prompts": [
+        ".cursor/prompts/persona-checklist.md"
+      ]
+    },
+    {
+      "name": "smart-thinking",
+      "description": "Smart-Thinking features: connections, verification, quality, reasoning tracking.",
+      "rules": [
+        ".cursor/rules/01-architecture.md",
+        ".cursor/rules/03-security-data.md"
+      ],
+      "commands": [
+        ".cursor/commands/memory-connect.md",
+        ".cursor/commands/memory-verify.md",
+        ".cursor/commands/memory-quality.md",
+        ".cursor/commands/reasoning-step.md",
+        ".cursor/commands/reasoning-state.md",
+        ".cursor/commands/reasoning-trace.md",
+        ".cursor/commands/next-steps.md",
+        ".cursor/commands/context-broker.md"
+      ]
+    }
+  ]
+}***
+

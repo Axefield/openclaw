@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semigon • RPG Core System</title>
+    <style>
+      :root {
+        --jsr-pink: #ff00ff;
+        --jsr-blue: #00ffff;
+        --tron-cyan: #00f0ff;
+        --jsr-green: #00ff00;
+        --bg-primary: #000000;
+        --bg-card: #0f0f0f;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --text-muted: #888888;
+        --text-accent: #00f0ff;
+        --border-primary: #333333;
+        --border-accent: #00f0ff;
+        --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-mono: "Courier New", Monaco, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: var(--font-sans);
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        background-image: linear-gradient(rgba(0, 255, 255, 0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 255, 255, 0.08) 1px, transparent 1px);
+        background-size: 20px 20px;
+      }
+      .page { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+      .pill-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+      .pill {
+        border-radius: 9999px;
+        border: 1px solid var(--border-accent);
+        padding: 0.2rem 0.6rem;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--text-accent);
+      }
+      .header-row { display: grid; gap: 1rem; margin-bottom: 1.5rem; }
+      @media (min-width: 768px) { .header-row { grid-template-columns: 2.2fr 1.4fr; } }
+      .title-block .eyebrow {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        margin-bottom: 0.35rem;
+      }
+      .title-block h1 {
+        font-size: 1.9rem;
+        line-height: 1.1;
+        margin-bottom: 0.4rem;
+        background: linear-gradient(135deg, var(--jsr-pink), var(--jsr-blue));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .title-block p { font-size: 0.95rem; color: var(--text-secondary); }
+      .key-metrics { display: grid; gap: 0.5rem; }
+      .metric {
+        border-radius: 0.5rem;
+        border: 1px solid var(--border-primary);
+        background: var(--bg-card);
+        padding: 0.5rem 0.75rem;
+      }
+      .metric-label {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--text-muted);
+      }
+      .metric-value {
+        font-size: 0.95rem;
+        font-family: var(--font-mono);
+        color: var(--text-accent);
+      }
+      .content-grid {
+        display: grid;
+        gap: 1rem;
+        margin-top: 1.25rem;
+      }
+      @media (min-width: 900px) { .content-grid { grid-template-columns: 1.6fr 1.2fr; } }
+      .block {
+        background: var(--bg-card);
+        border-radius: 0.75rem;
+        border: 1px solid var(--border-primary);
+        padding: 1rem;
+      }
+      .block h2 {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 0.5rem;
+        color: var(--text-accent);
+      }
+      .block p { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
+      .block ul { padding-left: 1.15rem; margin-top: 0.15rem; }
+      .block li { font-size: 0.9rem; color: var(--text-secondary); }
+      .block li + li { margin-top: 0.15rem; }
+      .block li strong { color: var(--text-accent); }
+      .footer-line {
+        margin-top: 1.25rem;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="pill-row">
+        <div class="pill">System One-Pager</div>
+        <div class="pill">Semigon</div>
+        <div class="pill">RPG Core System</div>
+      </div>
+
+      <div class="header-row">
+        <div class="title-block">
+          <div class="eyebrow">System Snapshot</div>
+          <h1>Semigon: RPG Core System with Time Logic</h1>
+          <p>
+            TypeScript RPG core system based on 52-card structured universe, time logic/fractures with 8 progressive states, 
+            procedural board generation, dynamic zone editing, comprehensive character system, and modular combat/trait/inventory systems.
+          </p>
+        </div>
+        <div class="key-metrics">
+          <div class="metric">
+            <div class="metric-label">Universe</div>
+            <div class="metric-value">52-Card</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Time States</div>
+            <div class="metric-value">8 Progressive</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Board</div>
+            <div class="metric-value">Procedural</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Status</div>
+            <div class="metric-value">Production-Ready</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <section class="block">
+          <h2>1 • What This Is</h2>
+          <p>
+            Semigon is a TypeScript RPG core system based on a 52-card structured universe with unique time logic/fractures 
+            (8 progressive states), procedural board generation, dynamic zone editing, comprehensive character system, 
+            and modular combat/trait/inventory systems.
+          </p>
+          <p>
+            <strong>Core Capabilities:</strong> 52-card structured universe, time logic/fractures (8 progressive states), 
+            procedural board generation, dynamic zone editing, comprehensive character system, modular combat system, 
+            trait engine, inventory engine, drop engine.
+          </p>
+          
+          <h2>2 • Why It's Defensible</h2>
+          <ul>
+            <li><strong>Unique IP:</strong> Time logic/fractures (8 progressive states), 52-card universe</li>
+            <li><strong>Procedural Generation:</strong> Board generation, zone editing, dynamic content</li>
+            <li><strong>Modular Systems:</strong> Combat, trait, inventory, drop engines</li>
+            <li><strong>Clear Engine Boundaries:</strong> RPG core extractable as standalone API</li>
+            <li><strong>Production-Ready Code:</strong> Comprehensive TypeScript implementation</li>
+            <li><strong>Reusable:</strong> Engine can be used for multiple RPG games</li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <h2>3 • Near-Term Path</h2>
+          <p>
+            <strong>Current Status:</strong> Production-ready RPG core system with time logic, procedural generation, 
+            and modular systems. Clear boundaries enable extraction.
+          </p>
+          <ul>
+            <li><strong>Immediate:</strong> Continue game development, refine time logic mechanics</li>
+            <li><strong>Short-Term:</strong> Extract RPG core as standalone API</li>
+            <li><strong>Medium-Term:</strong> B2B API offering for game development</li>
+            <li><strong>Long-Term:</strong> Industry-standard RPG core system</li>
+          </ul>
+
+          <h2>4 • Key Features</h2>
+          <ul>
+            <li><strong>52-Card Universe:</strong> Structured universe based on card system</li>
+            <li><strong>Time Logic/Fractures:</strong> 8 progressive states with time manipulation</li>
+            <li><strong>Procedural Board:</strong> Dynamic board generation</li>
+            <li><strong>Zone Editing:</strong> Dynamic zone modification</li>
+            <li><strong>Character System:</strong> Comprehensive character management</li>
+            <li><strong>Modular Systems:</strong> Combat, trait, inventory, drop engines</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="footer-line">
+        Truligon • Semigon System • RPG Core System • Production-Ready
+      </div>
+    </div>
+  </body>
+</html>
+

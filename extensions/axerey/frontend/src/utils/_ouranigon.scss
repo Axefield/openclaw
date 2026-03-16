@@ -1,0 +1,289 @@
+//
+// Ouranigon Bootstrap Theme (SCSS)
+// ------------------------------------------------------------
+// Inspired by a celestial blue dragon encircling Earth in deep space.
+// Use with Bootstrap v5.x. Place this file BEFORE importing Bootstrap
+// so variable overrides are picked up:
+//
+//   @import "ouranigon";              // this file
+//   @import "bootstrap/scss/bootstrap";
+//
+// Optionally, after Bootstrap you can import the "extras" section at the
+// bottom for custom utilities and animations.
+//
+// ------------------------------------------------------------
+
+// ===== Palette =====
+$ouranigon-void:       #06070c;  // near‑black space
+$ouranigon-night:      #0b1020;  // deep cosmos blue
+$ouranigon-abyss:      #0f1b37;  // shadowed blue
+$ouranigon-cerulean:   #1f3f7a;  // dragon body highlights
+$ouranigon-nebula:     #264a91;  // atmosphere rim
+$ouranigon-aurora:     #3e6dd8;  // electric blue accents
+$ouranigon-violet:     #5a46b9;  // cosmic violet
+$ouranigon-starlight:  #b7c7ff;  // cool star white
+$ouranigon-gold:       #d4b84a;  // celestial eye gold
+$ouranigon-ember:      #f6e27b;  // brighter gold for glow
+$ouranigon-smoke:      #aab0c5;  // muted UI gray
+$ouranigon-mist:       #e3e6f1;  // faint UI light
+
+// ===== Bootstrap Core Variable Overrides =====
+$body-bg:              $ouranigon-void;
+$body-color:           rgba($ouranigon-starlight, .92);
+
+$link-color:           $ouranigon-aurora;
+$link-hover-color:     lighten($ouranigon-aurora, 7%);
+
+$primary:              $ouranigon-aurora;  // electric blue
+$secondary:            $ouranigon-abyss;
+$success:              #5bd29a;            // cool emerald
+$info:                 $ouranigon-violet;
+$warning:              $ouranigon-gold;
+$danger:               #ff5370;            // auroral red/pink
+$light:                #0f172a;            // deep slate for "light" surfaces
+$dark:                 $ouranigon-night;
+
+$border-color:         rgba($ouranigon-starlight, .14);
+$border-radius:        1rem;
+$border-radius-sm:     .75rem;
+$border-radius-lg:     1.25rem;
+
+$box-shadow:           0 10px 30px rgba(#000, .45), 0 0 0 1px rgba($ouranigon-starlight, .06);
+$box-shadow-sm:        0 6px 16px rgba(#000, .35);
+$box-shadow-lg:        0 18px 48px rgba(#000, .55);
+
+// Typography
+$font-family-sans-serif:      ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Inter, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+$headings-color:              mix($ouranigon-starlight, white, 85%);
+$headings-font-weight:        700;
+$lead-font-weight:            400;
+
+// Buttons
+$btn-border-radius:           $border-radius;
+$btn-border-width:            1px;
+$btn-padding-y:               .6rem;
+$btn-padding-x:               1.1rem;
+$btn-font-weight:             600;
+
+// Forms
+$input-bg:                    rgba(white, .03);
+$input-border-color:          rgba($ouranigon-starlight, .18);
+$input-focus-border-color:    $ouranigon-aurora;
+$input-color:                 $body-color;
+$input-placeholder-color:     rgba($ouranigon-starlight, .5);
+$input-focus-box-shadow:      0 0 0 .25rem rgba($ouranigon-aurora, .25);
+
+// Cards
+$card-bg:                     rgba(white, .025);
+$card-border-color:           rgba($ouranigon-starlight, .08);
+$card-cap-bg:                 rgba(white, .03);
+$card-color:                  $body-color;
+
+// Navbar
+$navbar-dark-color:           rgba($ouranigon-starlight, .82);
+$navbar-dark-hover-color:     white;
+$navbar-dark-active-color:    $ouranigon-ember;
+$navbar-dark-brand-color:     $ouranigon-ember;
+$navbar-dark-brand-hover-color: lighten($ouranigon-ember, 5%);
+
+// Dropdowns
+$dropdown-bg:                 rgba(#000, .6);
+$dropdown-border-color:       rgba($ouranigon-starlight, .12);
+$dropdown-link-color:         $body-color;
+$dropdown-link-hover-color:   white;
+$dropdown-link-hover-bg:      rgba($ouranigon-aurora, .12);
+
+// Modals
+$modal-content-bg:            rgba(#000, .7);
+$modal-content-border-color:  rgba($ouranigon-starlight, .12);
+$modal-backdrop-bg:           #000;
+$modal-backdrop-opacity:      .75;
+
+// Tooltips
+$tooltip-bg:                  rgba($ouranigon-night, .95);
+$tooltip-color:               $ouranigon-starlight;
+
+// Progress
+$progress-height:             .5rem;
+$progress-bg:                 rgba($ouranigon-starlight, .12);
+
+// Alerts (tuned for space palette)
+$alert-bg-scale:              -70%;
+$alert-border-scale:          -50%;
+$alert-color-scale:           30%;
+
+// Tables
+$table-bg:                    transparent;
+$table-border-color:          rgba($ouranigon-starlight, .14);
+$table-color:                 $body-color;
+$table-striped-bg:            rgba(white, .02);
+
+// === Optional: Component Fine‑tuning ===
+$btn-focus-box-shadow:        0 0 0 .25rem rgba($primary, .25);
+$btn-active-box-shadow:       inset 0 2px 6px rgba(#000, .4);
+
+// ------------------------------------------------------------
+// EXTRAS — import AFTER Bootstrap if desired
+//   @import "ouranigon-extras";
+// ------------------------------------------------------------
+
+// Starfield gradient mixin
+@mixin starfield($stars: 800, $size: 1px, $spread: 2000px) {
+  background-image:
+    radial-gradient(ellipse at center, rgba(255,255,255,.12), rgba(255,255,255,0) 60%),
+    repeating-radial-gradient(circle at 50% 50%,
+      transparent 0, transparent ($size * 4),
+      rgba(255,255,255,.08) ($size * 4), rgba(255,255,255,.08) ($size * 5)
+    );
+  background-size: auto, $spread $spread;
+  background-repeat: no-repeat, repeat;
+}
+
+// Twinkle animation
+@keyframes ouranigon-twinkle {
+  0%, 100% { opacity: .65; filter: drop-shadow(0 0 0 rgba($ouranigon-ember, 0)); }
+  50% { opacity: 1; filter: drop-shadow(0 0 6px rgba($ouranigon-ember, .45)); }
+}
+
+// Celestial glow utility
+%celestial-glow {
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(120% 120% at 20% 20%, rgba($ouranigon-aurora,.45), transparent 40%),
+                radial-gradient(120% 120% at 80% 80%, rgba($ouranigon-violet,.35), transparent 50%);
+    mix-blend-mode: screen;
+    opacity: .6;
+  }
+}
+
+// Backgrounds
+.bg-cosmos {
+  background: radial-gradient(1200px 800px at 50% -20%, rgba($ouranigon-cerulean,.35), transparent 60%),
+              radial-gradient(800px 600px at 80% 30%, rgba($ouranigon-violet,.25), transparent 60%),
+              radial-gradient(600px 500px at 20% 70%, rgba($ouranigon-aurora,.18), transparent 60%),
+              $ouranigon-void;
+  @include starfield();
+  color: $body-color;
+}
+
+// Optional background using the poster image (set correct path)
+.bg-ouranigon-image {
+  background:
+    linear-gradient(180deg, rgba(#000, .75), rgba(#000, .75)),
+    url("./Ouranigon.jpg") center/cover no-repeat;
+  color: $body-color;
+}
+
+// Dragon scale effect (subtle)
+.dragon-scale {
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(255,255,255,.04) 18%, transparent 20%),
+    radial-gradient(circle at 75% 75%, rgba(255,255,255,.03) 14%, transparent 16%);
+  background-size: 18px 18px, 22px 22px;
+  background-blend-mode: overlay;
+}
+
+// Cards
+.card-cosmos {
+  @extend %celestial-glow;
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
+  border: 1px solid rgba($ouranigon-starlight, .10);
+  box-shadow: $box-shadow;
+  backdrop-filter: blur(8px);
+}
+
+// Buttons
+.btn-dragon {
+  @extend .btn;
+  @extend .btn-primary;
+  background-image: linear-gradient(135deg, rgba($ouranigon-aurora,.15), rgba($ouranigon-violet,.15));
+  border: 1px solid rgba($ouranigon-aurora, .45);
+  text-shadow: 0 1px 0 rgba(#000,.6);
+  box-shadow: 0 6px 18px rgba($ouranigon-aurora,.25);
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(120% 120% at 20% 0, rgba($ouranigon-ember,.35), transparent 50%);
+    mix-blend-mode: screen;
+    opacity: .6;
+    transition: opacity .2s ease, filter .2s ease;
+  }
+  &:hover, &:focus {
+    filter: brightness(1.08);
+    box-shadow: 0 8px 24px rgba($ouranigon-aurora,.35);
+    &::after { opacity: .9; }
+  }
+}
+
+// Accent text
+.text-celestial { color: $ouranigon-ember !important; }
+.text-starlight { color: $ouranigon-starlight !important; }
+
+// Badges with glow
+.badge-glow {
+  @extend .badge;
+  background: linear-gradient(180deg, lighten($primary, 8%), $primary);
+  box-shadow: 0 0 0 1px rgba($ouranigon-starlight, .2), 0 0 18px rgba($primary, .35);
+}
+
+// Navbar variant
+.navbar-ouranigon {
+  @extend .navbar, .navbar-dark;
+  background: linear-gradient(180deg, rgba(#000,.6), rgba(#000,.3));
+  border-bottom: 1px solid rgba($ouranigon-starlight, .12);
+  backdrop-filter: blur(10px);
+}
+
+// List groups
+.list-group-cosmos .list-group-item {
+  background-color: rgba(white,.02);
+  border-color: rgba($ouranigon-starlight, .1);
+  color: $body-color;
+  &:hover { background-color: rgba(white,.04); }
+}
+
+// Twinkling stars utility for small decorative elements
+.star-dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: radial-gradient(circle, $ouranigon-ember 10%, white 35%, rgba(255,255,255,0) 70%);
+  animation: ouranigon-twinkle 3.2s ease-in-out infinite;
+}
+
+// Table accent row (like Earth's horizon glow)
+.table .row-aurora > * {
+  background-image: linear-gradient(90deg, rgba($ouranigon-aurora,.15), transparent);
+}
+
+// Form switches (aurora track)
+.form-switch .form-check-input:checked {
+  background-color: $ouranigon-aurora;
+  border-color: transparent;
+  box-shadow: 0 0 0 .25rem rgba($ouranigon-aurora, .25);
+}
+
+// Range input
+.form-range::-webkit-slider-thumb { background-color: $ouranigon-ember; }
+.form-range::-moz-range-thumb      { background-color: $ouranigon-ember; }
+
+// Footer-like section helper
+.section-cosmos {
+  padding: 4rem 0;
+  background: radial-gradient(900px 600px at 50% -10%, rgba($ouranigon-cerulean,.18), transparent 60%),
+              $ouranigon-void;
+  @include starfield();
+}
+
+// Utility tokens
+$ouranigon-shadow-ring: 0 0 0 .25rem rgba($ouranigon-aurora, .25);
+.shadow-ring { box-shadow: $ouranigon-shadow-ring; }
+

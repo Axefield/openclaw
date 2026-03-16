@@ -1,0 +1,27 @@
+# Persona Management Rules
+
+Use these guardrails whenever editing:
+- `backend/src/routes/persona.ts`
+- `backend/src/services/configManager.ts`
+- `frontend/src/components/PersonaManagement.tsx`
+- Any MCP persona tools, prompts, or docs.
+
+## Core Principles
+1. **Memory Isolation** – Every persona must have a deterministic tag/namespace. Never switch personas mid-task without writing session_end/session_start memories.
+2. **Safe Switching** – Only use `/personas/switch` (or MCP persona_switch tool). Verify persona exists and forbid deleting the active/default persona.
+3. **Config Integrity** – Personas live in `.axerey.scientific`; fallback merge pulls from `.vagogon`. Keep JSON valid, update `metadata.lastModified`, and reload via `/personas/reload` after manual edits.
+4. **Hot Reload & Broadcast** – Socket.IO events (`persona_created`, `persona_switched`, etc.) keep UI in sync. Do not remove these emits; add new listeners when creating features.
+5. **Frontend UX** – Persona IDs are slugified names. Enforce memoryIsolation checkbox, reasoning style badge, and disable destructive actions for active personas.
+6. **Security & Logging** – Validate all payloads with Zod, sanitize displayed strings, and log persona switch operations (no secrets in logs).
+
+## Implementation Checklist
+- Update schemas in `persona.ts` + shared `Persona` type when adding fields.
+- Mirror backend enums (e.g., `reasoningStyle`) in frontend dropdowns.
+- Keep config manager cache logic aligned with new persona properties.
+- Document new personas or workflows in `commands/persona-management.md` and prompts.
+
+## Related Prompts
+- `@persona-config.md` – Config merge + reload behavior.
+- `@persona-checklist.md` – CRUD + switching steps.
+
+Following these rules keeps persona contexts isolated, hot-reloadable, and safe for adaptive memory operations.***

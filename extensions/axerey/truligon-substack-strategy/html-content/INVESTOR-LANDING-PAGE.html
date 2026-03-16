@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Truligon • Investment Opportunity</title>
+    <style>
+      :root {
+        --jsr-pink: #ff00ff;
+        --jsr-blue: #00ffff;
+        --tron-cyan: #00f0ff;
+        --jsr-green: #00ff00;
+        --bg-primary: #000000;
+        --bg-card: #0f0f0f;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --text-accent: #00f0ff;
+        --border-primary: #333333;
+        --border-accent: #00f0ff;
+        --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-mono: "Courier New", Monaco, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: var(--font-sans);
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        background-image: linear-gradient(rgba(0, 255, 255, 0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 255, 255, 0.08) 1px, transparent 1px);
+        background-size: 20px 20px;
+        line-height: 1.6;
+      }
+      .hero {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+        text-align: center;
+      }
+      h1 {
+        background: linear-gradient(135deg, var(--jsr-pink), var(--jsr-blue));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        line-height: 1.1;
+      }
+      .subtitle {
+        font-size: 1.5rem;
+        color: var(--text-secondary);
+        margin-bottom: 3rem;
+      }
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin: 3rem 0;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .metric-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.5rem;
+        padding: 2rem;
+        text-align: center;
+      }
+      .metric-value {
+        font-size: 3rem;
+        font-family: var(--font-mono);
+        color: var(--jsr-green);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+      .metric-label {
+        font-size: 1rem;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .cta-section {
+        max-width: 800px;
+        margin: 4rem auto;
+        padding: 3rem 2rem;
+        background: var(--bg-card);
+        border: 1px solid var(--border-accent);
+        border-radius: 0.75rem;
+        text-align: center;
+      }
+      .cta-button {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        background: linear-gradient(135deg, var(--jsr-pink), var(--jsr-blue));
+        color: var(--text-primary);
+        text-decoration: none;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin: 1rem;
+        transition: transform 0.2s;
+      }
+      .cta-button:hover {
+        transform: scale(1.05);
+      }
+      .systems-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        max-width: 1200px;
+        margin: 3rem auto;
+        padding: 0 2rem;
+      }
+      .system-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+      }
+      .system-card h3 {
+        color: var(--text-accent);
+        margin-bottom: 0.5rem;
+      }
+      .system-card p {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+      .section {
+        max-width: 1000px;
+        margin: 4rem auto;
+        padding: 0 2rem;
+      }
+      .section h2 {
+        color: var(--text-accent);
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .section p {
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+      }
+      .confidence-badge {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        background: linear-gradient(135deg, rgba(0, 255, 0, 0.2), rgba(0, 240, 255, 0.2));
+        border: 2px solid var(--jsr-green);
+        color: var(--jsr-green);
+        font-size: 1rem;
+        font-family: var(--font-mono);
+        font-weight: 600;
+        margin: 1rem;
+      }
+      .links-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        max-width: 1000px;
+        margin: 3rem auto;
+        padding: 0 2rem;
+      }
+      .link-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        text-align: center;
+      }
+      .link-card a {
+        color: var(--text-accent);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .link-card a:hover {
+        text-decoration: underline;
+      }
+      footer {
+        text-align: center;
+        padding: 3rem 2rem;
+        color: var(--text-muted);
+        border-top: 1px solid var(--border-primary);
+        margin-top: 4rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <h1>Truligon</h1>
+      <p class="subtitle">11 Production Systems • Proven Revenue • Clear Path to Profitability</p>
+      <div class="confidence-badge">Validated 0.763 Confidence Score</div>
+    </div>
+
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-value">33x</div>
+        <div class="metric-label">ROI Proven</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">19.6x-33x</div>
+        <div class="metric-label">LTV:CAC Ratio</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">11</div>
+        <div class="metric-label">Production Systems</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">$600k</div>
+        <div class="metric-label">Year 1 Revenue</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">8x-10x</div>
+        <div class="metric-label">Risk-Adjusted ROI</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">7,800</div>
+        <div class="metric-label">Market Validation</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Investment Opportunity</h2>
+      <p>
+        Truligon represents a strong investment opportunity with proven execution capability (11 production-ready systems built, 
+        33x ROI proven revenue), comprehensive risk mitigation (bootstrap path makes investment optional), and strong unit economics 
+        (LTV:CAC 19.6x-33x, 1.3 month payback, 80% gross margins).
+      </p>
+      <p>
+        Financial projections: <strong>$600k Year 1</strong>, <strong>$2.5M Year 2</strong>, <strong>$9M Year 3</strong>. 
+        Risk-adjusted returns: <strong>8x-10x ROI</strong> with medium-low risk level.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Our Systems</h2>
+      <div class="systems-grid">
+        <div class="system-card">
+          <h3>Axerey</h3>
+          <p>Adaptive learning, memory-driven systems with high switching costs and network effects</p>
+        </div>
+        <div class="system-card">
+          <h3>mythoGon</h3>
+          <p>Soul system, black hole system, affective architecture - unique IP with no direct competitors</p>
+        </div>
+        <div class="system-card">
+          <h3>deltaGon</h3>
+          <p>Trading intelligence platform with 33x ROI proven revenue, advanced options pricing</p>
+        </div>
+        <div class="system-card">
+          <h3>car02/PAWS</h3>
+          <p>PineScript knowledge system with strong unit economics (LTV:CAC 19.6x)</p>
+        </div>
+        <div class="system-card">
+          <h3>Gon-Search</h3>
+          <p>Hybrid search engine with RAG context builder and memory-driven search</p>
+        </div>
+        <div class="system-card">
+          <h3>NeoCheyenne</h3>
+          <p>Economic simulation engine with reusable economic systems and wealth-based pricing</p>
+        </div>
+        <div class="system-card">
+          <h3>Semisweet Jacket</h3>
+          <p>Reality-systems engine with surveillance, commandeering, and reality sickness systems</p>
+        </div>
+        <div class="system-card">
+          <h3>Death by Diabetes</h3>
+          <p>Glucose system with Hades-like roguelike core, PCG, engine portability (Three.js → Unity)</p>
+        </div>
+        <div class="system-card">
+          <h3>blingyat</h3>
+          <p>Alpaca Trading Analysis API with advanced strategy engine and market health dashboard</p>
+        </div>
+        <div class="system-card">
+          <h3>topgon</h3>
+          <p>Axefield Luck Strategy Trading System with AlphaAxe Radar and Router</p>
+        </div>
+        <div class="system-card">
+          <h3>Semigon</h3>
+          <p>RPG Core System with time logic/fractures, 52-card universe, procedural board generation</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-section">
+      <h2 style="color: var(--text-accent); margin-bottom: 1rem;">Ready to Invest?</h2>
+      <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+        All 10 core investment claims have been validated through comprehensive iterative testing, 
+        reaching a 0.763 confidence score (above 0.700 threshold).
+      </p>
+      <a href="#contact" class="cta-button">Get in Touch</a>
+      <a href="#materials" class="cta-button" style="background: transparent; border: 2px solid var(--border-accent);">View Materials</a>
+    </div>
+
+    <div class="section" id="materials">
+      <h2>Investor Materials</h2>
+      <div class="links-grid">
+        <div class="link-card">
+          <h3>Executive Summary</h3>
+          <p style="font-size: 0.9rem; margin: 0.5rem 0;">Synthesizes all 10 validated claims</p>
+          <a href="EXECUTIVE-SUMMARY.html">View →</a>
+        </div>
+        <div class="link-card">
+          <h3>One-Pager</h3>
+          <p style="font-size: 0.9rem; margin: 0.5rem 0;">Visual summary with key metrics</p>
+          <a href="INVESTOR-ONEPAGER-FINAL.html">View →</a>
+        </div>
+        <div class="link-card">
+          <h3>Pitch Deck</h3>
+          <p style="font-size: 0.9rem; margin: 0.5rem 0;">13-slide presentation</p>
+          <a href="PITCH-DECK.html">View →</a>
+        </div>
+        <div class="link-card">
+          <h3>Comprehensive Analysis</h3>
+          <p style="font-size: 0.9rem; margin: 0.5rem 0;">Detailed analysis of all 10 claims</p>
+          <a href="INVESTOR-ARTICLE-COMPREHENSIVE.html">View →</a>
+        </div>
+        <div class="link-card">
+          <h3>Case Studies</h3>
+          <p style="font-size: 0.9rem; margin: 0.5rem 0;">deltaGon & car02/PAWS</p>
+          <a href="CASE-STUDY-DELTAGON.html">View →</a>
+        </div>
+        <div class="link-card">
+          <h3>Financial Model</h3>
+          <p style="font-size: 0.9rem; margin: 0.5rem 0;">Unit economics & projections</p>
+          <a href="FINANCIAL-MODEL-SUMMARY.html">View →</a>
+        </div>
+        <div class="link-card">
+          <h3>Risk Assessment</h3>
+          <p style="font-size: 0.9rem; margin: 0.5rem 0;">Comprehensive risk analysis</p>
+          <a href="RISK-ASSESSMENT.html">View →</a>
+        </div>
+        <div class="link-card">
+          <h3>Competitive Analysis</h3>
+          <p style="font-size: 0.9rem; margin: 0.5rem 0;">Cross-domain for all 11 systems</p>
+          <a href="COMPETITIVE-ANALYSIS.html">View →</a>
+        </div>
+        <div class="link-card">
+          <h3>Investor FAQ</h3>
+          <p style="font-size: 0.9rem; margin: 0.5rem 0;">Common questions answered</p>
+          <a href="INVESTOR-FAQ.html">View →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="contact">
+      <h2>Contact</h2>
+      <p>
+        For investment inquiries, please contact:
+      </p>
+      <p style="margin-top: 1rem;">
+        <strong>Pedro "Axefield" de Castro Davila</strong><br>
+        <span style="color: var(--text-accent);">Truligon / Axerey / mythoGon</span>
+      </p>
+      <p style="margin-top: 1rem; color: var(--text-muted);">
+        All materials are confidential and for investor use only.
+      </p>
+    </div>
+
+    <footer>
+      <p>Truligon • Private Investor Material • Validated Through Comprehensive Iterative Testing</p>
+      <p style="margin-top: 0.5rem; color: var(--jsr-green);">
+        Confidence Score: 0.763 (Above 0.700 Threshold)
+      </p>
+    </footer>
+  </body>
+</html>
+

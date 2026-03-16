@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[TRULIGON] Investor Article Template</title>
+
+    <!--
+      Truligon Investor Article Base Template
+      - Designed to visually match the main Truligon site theme
+      - Intended for use in Substack or other HTML-capable platforms
+      - Replace placeholder content with your article body
+    -->
+
+    <!-- Web-safe fallbacks approximating Truligon fonts -->
+    <style>
+      :root {
+        /* Core Truligon tokens (from variables.scss) */
+        --jsr-pink: #ff00ff;
+        --jsr-blue: #00ffff;
+        --jsr-yellow: #ffff00;
+        --jsr-green: #00ff00;
+
+        --tron-cyan: #00f0ff;
+        --tron-blue: #0080ff;
+
+        --bg-primary: #000000;
+        --bg-secondary: #0a0a0a;
+        --bg-tertiary: #1a1a1a;
+        --bg-card: #0f0f0f;
+
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --text-muted: #888888;
+        --text-accent: #00f0ff;
+        --text-warning: #ffff00;
+        --text-error: #ff4444;
+        --text-success: #00ff00;
+
+        --border-primary: #333333;
+        --border-accent: #00f0ff;
+
+        --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+          "Oxygen", "Ubuntu", "Cantarell", sans-serif;
+        --font-mono: "Courier New", Monaco, Menlo, Consolas, monospace;
+
+        --radius-sm: 0.25rem;
+        --radius-md: 0.5rem;
+        --radius-lg: 0.75rem;
+        --radius-xl: 1rem;
+        --radius-full: 9999px;
+
+        --spacing-1: 0.25rem;
+        --spacing-2: 0.5rem;
+        --spacing-3: 0.75rem;
+        --spacing-4: 1rem;
+        --spacing-5: 1.25rem;
+        --spacing-6: 1.5rem;
+        --spacing-8: 2rem;
+        --spacing-10: 2.5rem;
+
+        --shadow-neon: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 30px #00f0ff;
+
+        --duration-fast: 150ms;
+        --duration-normal: 300ms;
+        --ease-out: cubic-bezier(0, 0, 0.2, 1);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 16px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+      }
+
+      body {
+        min-height: 100vh;
+        font-family: var(--font-sans);
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        /* Subtle tron grid */
+        background-image: linear-gradient(
+            rgba(0, 255, 255, 0.1) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            90deg,
+            rgba(0, 255, 255, 0.1) 1px,
+            transparent 1px
+          );
+        background-size: 20px 20px;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: var(--spacing-6) var(--spacing-4) var(--spacing-10);
+      }
+
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-2);
+        margin-bottom: var(--spacing-4);
+      }
+
+      .pill {
+        border-radius: var(--radius-full);
+        border: 1px solid var(--border-accent);
+        padding: 0.25rem 0.75rem;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--text-accent);
+      }
+
+      .article-header {
+        margin-bottom: var(--spacing-6);
+      }
+
+      .article-eyebrow {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        margin-bottom: var(--spacing-2);
+      }
+
+      .article-title {
+        font-size: 2.25rem;
+        line-height: 1.1;
+        margin-bottom: var(--spacing-3);
+        background: linear-gradient(135deg, var(--jsr-pink), var(--jsr-blue));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .article-subtitle {
+        font-size: 1.05rem;
+        color: var(--text-secondary);
+        max-width: 42rem;
+      }
+
+      .article-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-2);
+        margin-top: var(--spacing-3);
+        font-size: 0.8rem;
+        color: var(--text-muted);
+      }
+
+      .article-meta span {
+        padding-right: var(--spacing-2);
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .article-meta span:last-child {
+        border-right: none;
+      }
+
+      .card {
+        background: var(--bg-card);
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border-primary);
+        padding: var(--spacing-5);
+        margin: var(--spacing-4) 0;
+        position: relative;
+      }
+
+      .card--accent {
+        box-shadow: var(--shadow-neon);
+        border-color: var(--border-accent);
+      }
+
+      .card h2,
+      .card h3 {
+        margin-bottom: var(--spacing-3);
+      }
+
+      .card p + p {
+        margin-top: var(--spacing-2);
+      }
+
+      .callout {
+        border-left: 3px solid var(--border-accent);
+        padding-left: var(--spacing-3);
+        margin: var(--spacing-4) 0;
+        color: var(--text-secondary);
+        font-size: 0.98rem;
+      }
+
+      .callout strong {
+        color: var(--text-accent);
+      }
+
+      .grid {
+        display: grid;
+        gap: var(--spacing-3);
+      }
+
+      @media (min-width: 768px) {
+        .grid--2 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      .metric {
+        padding: var(--spacing-3);
+        border-radius: var(--radius-md);
+        border: 1px solid var(--border-primary);
+        background: linear-gradient(
+          135deg,
+          rgba(0, 240, 255, 0.08),
+          rgba(0, 0, 0, 0.6)
+        );
+      }
+
+      .metric-label {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--text-muted);
+        margin-bottom: 0.15rem;
+      }
+
+      .metric-value {
+        font-size: 1.1rem;
+        font-family: var(--font-mono);
+        color: var(--text-accent);
+      }
+
+      .article-body {
+        margin-top: var(--spacing-6);
+        color: var(--text-secondary);
+        font-size: 0.98rem;
+      }
+
+      .article-body h2 {
+        font-size: 1.5rem;
+        margin: var(--spacing-5) 0 var(--spacing-2);
+        color: var(--text-primary);
+      }
+
+      .article-body h3 {
+        font-size: 1.2rem;
+        margin: var(--spacing-4) 0 var(--spacing-2);
+        color: var(--text-primary);
+      }
+
+      .article-body p {
+        margin-bottom: var(--spacing-3);
+      }
+
+      .article-body ul {
+        margin: var(--spacing-2) 0 var(--spacing-3);
+        padding-left: var(--spacing-4);
+        list-style: disc;
+      }
+
+      .article-body li + li {
+        margin-top: 0.25rem;
+      }
+
+      .code-block {
+        margin: var(--spacing-4) 0;
+        padding: var(--spacing-3);
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        background: var(--bg-secondary);
+        border-radius: var(--radius-md);
+        border: 1px solid var(--border-primary);
+        overflow-x: auto;
+      }
+
+      .tagline {
+        margin-top: var(--spacing-6);
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <!-- Top pills / labels -->
+      <div class="pill-row">
+        <div class="pill">Exclusive Investor Access</div>
+        <div class="pill">Truligon • Private Briefing</div>
+        <div class="pill">Confidential IP Overview</div>
+      </div>
+
+      <!-- Header -->
+      <header class="article-header">
+        <div class="article-eyebrow">Internal Investor Dossier</div>
+        <h1 class="article-title">[Replace With Article Title]</h1>
+        <p class="article-subtitle">
+          [One or two sentences that summarize why this matters in investor
+          language: strategic IP, competitive advantage, launch timing.]
+        </p>
+        <div class="article-meta">
+          <span>Date: [Month YYYY]</span>
+          <span>Author: Pedro “Axefield” de Castro Davila</span>
+          <span>Program: Truligon / Axerey / mythoGon</span>
+        </div>
+      </header>
+
+      <!-- Optional highlight card -->
+      <section class="card card--accent">
+        <h2>Why This Briefing Exists</h2>
+        <p>
+          Use this block to make the investor case in 3–4 sentences. State the
+          problem, the IP answer, and why it is defensible and near-term
+          monetizable.
+        </p>
+
+        <div class="grid grid--2" style="margin-top: var(--spacing-4)">
+          <div class="metric">
+            <div class="metric-label">IP Layer</div>
+            <div class="metric-value">Memory + Reasoning + Soul</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Launch Horizon</div>
+            <div class="metric-value">[QX • 2025 / 2026]</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main body: paste your converted Markdown here -->
+      <article class="article-body">
+        <h2>Section 1 — Context For Investors</h2>
+        <p>
+          Replace this with the opening of your article (e.g., from
+          <code>WHITE-PAPER-AXEREY-MYTHOGON.md</code> or any example file). The
+          goal is to set context quickly in investor language, not community
+          language.
+        </p>
+
+        <h3>Key Points</h3>
+        <ul>
+          <li>Point one — strategic capability.</li>
+          <li>Point two — why it is already built / production-ready.</li>
+          <li>Point three — what unlocks near term.</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Investor Note:</strong> Use this style for explicit “why this
+          matters” paragraphs that tie technical depth back to capital and
+          outcomes.
+        </div>
+
+        <h2>Section 2 — Technical / System Deep Dive</h2>
+        <p>
+          Use normal paragraphs and lists. You can also drop in pseudo-code or
+          structural snippets using the <code>.code-block</code> style:
+        </p>
+
+        <pre class="code-block"><code>// example
+System = {
+  memory: "Axerey",
+  agency: "mythoGon",
+  domain: "Trading / Games / Infrastructure"
+}</code></pre>
+
+        <h2>Section 3 — IP, Moat, and Roadmap</h2>
+        <p>
+          Close by restating the IP, the competitive moat, and the next concrete
+          1–3 milestones you want investors to track.
+        </p>
+      </article>
+
+      <div class="tagline">
+        Truligon • Strategic Disclosure Only • Do Not Circulate Publicly
+      </div>
+    </div>
+  </body>
+</html>
+
+

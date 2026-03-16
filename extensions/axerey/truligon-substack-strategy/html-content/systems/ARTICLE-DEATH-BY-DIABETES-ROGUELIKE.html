@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Death by Diabetes: Roguelike Core & PCG</title>
+    <style>
+      :root {
+        --jsr-pink: #ff00ff;
+        --jsr-blue: #00ffff;
+        --tron-cyan: #00f0ff;
+        --jsr-green: #00ff00;
+        --bg-primary: #000000;
+        --bg-card: #0f0f0f;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --text-accent: #00f0ff;
+        --border-primary: #333333;
+        --border-accent: #00f0ff;
+        --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-mono: "Courier New", Monaco, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: var(--font-sans);
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        background-image: linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+      .container { max-width: 960px; margin: 0 auto; }
+      .header {
+        border-bottom: 2px solid var(--border-accent);
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+      }
+      h1 {
+        background: linear-gradient(135deg, var(--jsr-pink), var(--jsr-blue));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 2.25rem;
+        margin-bottom: 0.5rem;
+      }
+      .subtitle { color: var(--text-secondary); font-size: 1.05rem; }
+      .section {
+        background: var(--bg-card);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.75rem;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      .section h2 {
+        color: var(--text-accent);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .section h3 {
+        color: var(--text-primary);
+        font-size: 1.2rem;
+        margin: 1.5rem 0 0.5rem;
+      }
+      .card {
+        background: var(--bg-card);
+        border-radius: 0.75rem;
+        border: 1px solid var(--border-accent);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+      }
+      ul { margin-left: 1.5rem; margin-top: 0.5rem; }
+      li { margin-bottom: 0.5rem; color: var(--text-secondary); }
+      li strong { color: var(--text-accent); }
+      .code-block {
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin: 1rem 0;
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+        overflow-x: auto;
+      }
+      .callout {
+        border-left: 3px solid var(--jsr-green);
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+        color: var(--text-secondary);
+      }
+      .callout strong { color: var(--jsr-green); }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Death by Diabetes: Roguelike Core & PCG</h1>
+        <p class="subtitle">Hades-Like Roguelike with Procedural Content Generation</p>
+      </div>
+
+      <section class="card">
+        <h2>Why This Matters for Investors</h2>
+        <p>
+          Death by Diabetes implements a <strong>Hades-like roguelike core</strong> with procedural content generation (PCG), 
+          quest system, event system, and shop system. The roguelike mechanics create high replayability, while the PCG 
+          system enables infinite content variations.
+        </p>
+        <p>
+          <strong>High Replayability:</strong> Roguelike mechanics create high replayability. <strong>Infinite Content:</strong> 
+          PCG enables infinite content variations. <strong>Extractable:</strong> Roguelike core can be extracted as standalone API.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Hades-Like Roguelike Mechanics</h2>
+        <p>
+          Death by Diabetes implements Hades-like roguelike mechanics:
+        </p>
+
+        <h3>Permadeath System</h3>
+        <ul>
+          <li><strong>Character Death:</strong> Character death resets progress</li>
+          <li><strong>Run-Based:</strong> Each run is independent</li>
+          <li><strong>Learning Curve:</strong> Learning from each death</li>
+          <li><strong>Challenge:</strong> Creates challenging gameplay</li>
+        </ul>
+
+        <h3>Progression System</h3>
+        <ul>
+          <li><strong>Permanent Upgrades:</strong> Permanent upgrades between runs</li>
+          <li><strong>Meta-Progression:</strong> Meta-progression unlocks new content</li>
+          <li><strong>Character Development:</strong> Character development over time</li>
+          <li><strong>Unlock System:</strong> Unlocks new abilities and content</li>
+        </ul>
+
+        <h3>Difficulty Scaling</h3>
+        <ul>
+          <li><strong>Progressive Difficulty:</strong> Difficulty increases with progression</li>
+          <li><strong>Adaptive Challenge:</strong> Challenge adapts to player skill</li>
+          <li><strong>Difficulty Options:</strong> Multiple difficulty options</li>
+          <li><strong>Challenge Modes:</strong> Additional challenge modes</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Procedural Content Generation (PCG)</h2>
+        <p>
+          Death by Diabetes includes comprehensive PCG:
+        </p>
+
+        <h3>Level Generation</h3>
+        <ul>
+          <li><strong>Procedural Levels:</strong> Levels generated procedurally</li>
+          <li><strong>Room Generation:</strong> Rooms generated with variety</li>
+          <li><strong>Layout Generation:</strong> Layouts generated algorithmically</li>
+          <li><strong>Infinite Variations:</strong> Infinite level variations</li>
+        </ul>
+
+        <h3>Enemy Spawning</h3>
+        <ul>
+          <li><strong>Procedural Enemies:</strong> Enemies spawned procedurally</li>
+          <li><strong>Enemy Variety:</strong> High enemy variety</li>
+          <li><strong>Difficulty Scaling:</strong> Enemy difficulty scales with progression</li>
+          <li><strong>Encounter Design:</strong> Well-designed enemy encounters</li>
+        </ul>
+
+        <h3>Loot Generation</h3>
+        <ul>
+          <li><strong>Procedural Loot:</strong> Loot generated procedurally</li>
+          <li><strong>Loot Variety:</strong> High loot variety</li>
+          <li><strong>Rarity System:</strong> Rarity-based loot system</li>
+          <li><strong>Loot Balance:</strong> Balanced loot distribution</li>
+        </ul>
+
+        <h3>Replayability</h3>
+        <ul>
+          <li><strong>High Replayability:</strong> PCG creates high replayability</li>
+          <li><strong>Unique Runs:</strong> Each run is unique</li>
+          <li><strong>Content Variety:</strong> High content variety</li>
+          <li><strong>Player Engagement:</strong> Keeps players engaged</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Quest System: Goal-Oriented Gameplay</h2>
+        <p>
+          Death by Diabetes includes comprehensive quest system:
+        </p>
+
+        <h3>Quest Types</h3>
+        <ul>
+          <li><strong>Main Quests:</strong> Main story quests</li>
+          <li><strong>Side Quests:</strong> Optional side quests</li>
+          <li><strong>Daily Quests:</strong> Daily quests for engagement</li>
+          <li><strong>Challenge Quests:</strong> Challenge quests for skilled players</li>
+        </ul>
+
+        <h3>Quest Progression</h3>
+        <ul>
+          <li><strong>Goal-Oriented:</strong> Quests provide clear goals</li>
+          <li><strong>Progression Unlocks:</strong> Quests unlock progression</li>
+          <li><strong>Story Integration:</strong> Quests integrate with story</li>
+          <li><strong>Reward System:</strong> Quests provide rewards</li>
+        </ul>
+
+        <h3>Quest Variety</h3>
+        <ul>
+          <li><strong>Multiple Types:</strong> Multiple quest types</li>
+          <li><strong>Varied Objectives:</strong> Varied quest objectives</li>
+          <li><strong>Dynamic Quests:</strong> Dynamic quest generation</li>
+          <li><strong>Player Choice:</strong> Player choice in quest selection</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Event System: Dynamic Events</h2>
+        <p>
+          Death by Diabetes includes dynamic event system:
+        </p>
+
+        <h3>Event Types</h3>
+        <ul>
+          <li><strong>Random Events:</strong> Random events occur dynamically</li>
+          <li><strong>Story Events:</strong> Story-driven events</li>
+          <li><strong>Glucose Events:</strong> Glucose-related events</li>
+          <li><strong>Combat Events:</strong> Combat-related events</li>
+        </ul>
+
+        <h3>Event Consequences</h3>
+        <ul>
+          <li><strong>Meaningful Choices:</strong> Events have meaningful consequences</li>
+          <li><strong>Branching Paths:</strong> Events create branching paths</li>
+          <li><strong>Risk/Reward:</strong> Events create risk/reward decisions</li>
+          <li><strong>Player Agency:</strong> Players influence event outcomes</li>
+        </ul>
+
+        <h3>Event Variety</h3>
+        <ul>
+          <li><strong>High Variety:</strong> High event variety</li>
+          <li><strong>Unique Events:</strong> Each event is unique</li>
+          <li><strong>Replayability:</strong> Events create replayability</li>
+          <li><strong>Engagement:</strong> Events keep players engaged</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Shop System: Resource Management</h2>
+        <p>
+          Death by Diabetes includes comprehensive shop system:
+        </p>
+
+        <h3>Resource Management</h3>
+        <ul>
+          <li><strong>Currency System:</strong> Multiple currency types</li>
+          <li><strong>Resource Tracking:</strong> Tracks resources and currency</li>
+          <li><strong>Resource Acquisition:</strong> Multiple ways to acquire resources</li>
+          <li><strong>Resource Spending:</strong> Strategic resource spending</li>
+        </ul>
+
+        <h3>Upgrade System</h3>
+        <ul>
+          <li><strong>Purchasable Upgrades:</strong> Purchases upgrades and items</li>
+          <li><strong>Upgrade Tiers:</strong> Multiple upgrade tiers</li>
+          <li><strong>Upgrade Progression:</strong> Upgrade progression system</li>
+          <li><strong>Upgrade Strategy:</strong> Strategic upgrade decisions</li>
+        </ul>
+
+        <h3>Strategic Decisions</h3>
+        <ul>
+          <li><strong>Shop Choices:</strong> Shop choices create strategic decisions</li>
+          <li><strong>Resource Allocation:</strong> Strategic resource allocation</li>
+          <li><strong>Upgrade Priority:</strong> Prioritizing upgrades</li>
+          <li><strong>Risk/Reward:</strong> Risk/reward in shop decisions</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Investment Recommendation:</strong> Roguelike core with PCG creates high replayability and infinite content 
+          variations. The quest system, event system, and shop system create engaging gameplay. The roguelike core can be 
+          extracted as standalone API for game development applications.
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
+

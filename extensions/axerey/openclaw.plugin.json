@@ -1,0 +1,20 @@
+{
+  "id": "axerey",
+  "kind": "memory",
+  "name": "Axerey",
+  "description": "Multi-persona memory and reasoning system with vector search",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  },
+  "mcpServers": {
+    "axerey": {
+      "command": "node",
+      "args": ["extensions/axerey/dist/index.js"],
+      "env": {
+        "PCM_DB": "~/.openclaw/axerey.db"
+      }
+    }
+  }
+}

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gon-Search: Hybrid Search Engine & RAG</title>
+    <style>
+      :root {
+        --jsr-pink: #ff00ff;
+        --jsr-blue: #00ffff;
+        --tron-cyan: #00f0ff;
+        --jsr-green: #00ff00;
+        --bg-primary: #000000;
+        --bg-card: #0f0f0f;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --text-accent: #00f0ff;
+        --border-primary: #333333;
+        --border-accent: #00f0ff;
+        --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-mono: "Courier New", Monaco, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: var(--font-sans);
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        background-image: linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+      .container { max-width: 960px; margin: 0 auto; }
+      .header {
+        border-bottom: 2px solid var(--border-accent);
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+      }
+      h1 {
+        background: linear-gradient(135deg, var(--jsr-pink), var(--jsr-blue));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 2.25rem;
+        margin-bottom: 0.5rem;
+      }
+      .subtitle { color: var(--text-secondary); font-size: 1.05rem; }
+      .section {
+        background: var(--bg-card);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.75rem;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      .section h2 {
+        color: var(--text-accent);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .section h3 {
+        color: var(--text-primary);
+        font-size: 1.2rem;
+        margin: 1.5rem 0 0.5rem;
+      }
+      .card {
+        background: var(--bg-card);
+        border-radius: 0.75rem;
+        border: 1px solid var(--border-accent);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+      }
+      ul { margin-left: 1.5rem; margin-top: 0.5rem; }
+      li { margin-bottom: 0.5rem; color: var(--text-secondary); }
+      li strong { color: var(--text-accent); }
+      .code-block {
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin: 1rem 0;
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+        overflow-x: auto;
+      }
+      .callout {
+        border-left: 3px solid var(--border-accent);
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+        color: var(--text-secondary);
+      }
+      .callout strong { color: var(--text-accent); }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Gon-Search: Hybrid Search Engine & RAG</h1>
+        <p class="subtitle">Production-Ready Hybrid Search with RAG Context Builder</p>
+      </div>
+
+      <section class="card">
+        <h2>Why This Matters for Investors</h2>
+        <p>
+          Gon-Search combines <strong>traditional search</strong> with <strong>RAG (Retrieval-Augmented Generation)</strong> 
+          context builder, providing enhanced search results. The platform demonstrates how Axerey memory system can be 
+          embedded into search applications for memory-driven intelligence.
+        </p>
+        <p>
+          <strong>Production-Ready:</strong> Deployed at gon.truligon.com, URL indexing, web crawler, search profiles. 
+          <strong>Unique IP:</strong> Hybrid search approach with RAG context builder, memory-driven search.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Hybrid Search: Traditional + RAG</h2>
+        <p>
+          Gon-Search combines traditional search with RAG for enhanced results:
+        </p>
+
+        <h3>Traditional Search</h3>
+        <ul>
+          <li><strong>Keyword Matching:</strong> Standard keyword-based search</li>
+          <li><strong>URL Indexing:</strong> Automatic URL indexing and content extraction</li>
+          <li><strong>Web Crawler:</strong> Automated web crawling for content discovery</li>
+          <li><strong>Fast Results:</strong> Quick response times for standard queries</li>
+        </ul>
+
+        <h3>RAG Context Builder</h3>
+        <ul>
+          <li><strong>Context Generation:</strong> Generates context from retrieved documents</li>
+          <li><strong>Semantic Understanding:</strong> Understands semantic meaning of queries</li>
+          <li><strong>Enhanced Results:</strong> Provides context-aware search results</li>
+          <li><strong>Memory Integration:</strong> Uses Axerey memory for context enhancement</li>
+        </ul>
+
+        <h3>Hybrid Approach</h3>
+        <p>
+          The hybrid approach combines the speed of traditional search with the intelligence of RAG:
+        </p>
+        <ul>
+          <li><strong>Fast Initial Results:</strong> Traditional search provides quick results</li>
+          <li><strong>Enhanced Context:</strong> RAG adds context and semantic understanding</li>
+          <li><strong>Best of Both:</strong> Combines speed and intelligence</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>URL Indexing & Web Crawler</h2>
+        <p>
+          Gon-Search includes comprehensive URL indexing and web crawling:
+        </p>
+
+        <h3>URL Indexing</h3>
+        <ul>
+          <li><strong>Automatic Indexing:</strong> Automatically indexes URLs and extracts content</li>
+          <li><strong>Content Extraction:</strong> Extracts text, metadata, and structure</li>
+          <li><strong>Update Management:</strong> Tracks and updates indexed content</li>
+          <li><strong>Search Integration:</strong> Indexed content available for search</li>
+        </ul>
+
+        <h3>Web Crawler</h3>
+        <ul>
+          <li><strong>Automated Crawling:</strong> Automatically crawls web pages</li>
+          <li><strong>Content Discovery:</strong> Discovers new content automatically</li>
+          <li><strong>Link Following:</strong> Follows links to discover related content</li>
+          <li><strong>Rate Limiting:</strong> Respects rate limits and robots.txt</li>
+        </ul>
+
+        <h3>Investment Value</h3>
+        <p>
+          URL indexing and web crawler create network effects:
+        </p>
+        <ul>
+          <li><strong>More Content:</strong> More indexed content improves search quality</li>
+          <li><strong>Network Effects:</strong> Search quality improves with more content</li>
+          <li><strong>Defensible Moat:</strong> Large indexed content base creates switching costs</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Search Profiles: Context-Aware Search</h2>
+        <p>
+          Gon-Search provides search profiles for context-aware search:
+        </p>
+
+        <h3>Default Profile</h3>
+        <ul>
+          <li><strong>General Search:</strong> Standard search for general queries</li>
+          <li><strong>Balanced Approach:</strong> Balanced between traditional and RAG</li>
+          <li><strong>Wide Coverage:</strong> Covers all types of content</li>
+        </ul>
+
+        <h3>Trading Profile</h3>
+        <ul>
+          <li><strong>Trading-Focused:</strong> Optimized for trading-related queries</li>
+          <li><strong>Market Data:</strong> Prioritizes market data and analysis</li>
+          <li><strong>Trading Context:</strong> Uses trading-specific context</li>
+        </ul>
+
+        <h3>Technical Profile</h3>
+        <ul>
+          <li><strong>Technical Focus:</strong> Optimized for technical queries</li>
+          <li><strong>Code & Documentation:</strong> Prioritizes code and documentation</li>
+          <li><strong>Technical Context:</strong> Uses technical-specific context</li>
+        </ul>
+
+        <h3>Investment Value</h3>
+        <p>
+          Search profiles enable context-aware search:
+        </p>
+        <ul>
+          <li><strong>Better Results:</strong> Context-aware search provides better results</li>
+          <li><strong>User Experience:</strong> Improved user experience with relevant results</li>
+          <li><strong>Defensible Moat:</strong> Context-aware search creates switching costs</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Memory-Driven Search</h2>
+        <p>
+          Gon-Search integrates with Axerey memory system for memory-driven search:
+        </p>
+
+        <h3>Memory Integration</h3>
+        <ul>
+          <li><strong>Search History:</strong> Remembers user search history</li>
+          <li><strong>Preferences:</strong> Learns user preferences and interests</li>
+          <li><strong>Context Awareness:</strong> Uses memory for context-aware results</li>
+          <li><strong>Personalization:</strong> Personalizes results based on memory</li>
+        </ul>
+
+        <h3>Adaptive Learning</h3>
+        <ul>
+          <li><strong>Result Feedback:</strong> Learns from user feedback on results</li>
+          <li><strong>Query Understanding:</strong> Improves query understanding over time</li>
+          <li><strong>Result Ranking:</strong> Improves result ranking based on outcomes</li>
+          <li><strong>Continuous Improvement:</strong> System improves with usage</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Investment Recommendation:</strong> Gon-Search demonstrates how Axerey memory system can be embedded 
+          into search applications. Hybrid search approach with RAG context builder creates unique IP. Network effects 
+          and memory-driven search create defensible moats.
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
+

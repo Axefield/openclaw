@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Truligon • Investment Opportunity</title>
+
+    <style>
+      :root {
+        --jsr-pink: #ff00ff;
+        --jsr-blue: #00ffff;
+        --jsr-yellow: #ffff00;
+        --jsr-green: #00ff00;
+        --tron-cyan: #00f0ff;
+
+        --bg-primary: #000000;
+        --bg-card: #0f0f0f;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --text-muted: #888888;
+        --text-accent: #00f0ff;
+        --border-primary: #333333;
+        --border-accent: #00f0ff;
+
+        --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+          "Oxygen", "Ubuntu", "Cantarell", sans-serif;
+        --font-mono: "Courier New", Monaco, Menlo, Consolas, monospace;
+
+        --radius-md: 0.5rem;
+        --radius-lg: 0.75rem;
+        --radius-full: 9999px;
+
+        --spacing-2: 0.5rem;
+        --spacing-3: 0.75rem;
+        --spacing-4: 1rem;
+        --spacing-5: 1.25rem;
+        --spacing-6: 1.5rem;
+        --spacing-8: 2rem;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 16px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body {
+        min-height: 100vh;
+        font-family: var(--font-sans);
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        background-image: linear-gradient(
+            rgba(0, 255, 255, 0.08) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            90deg,
+            rgba(0, 255, 255, 0.08) 1px,
+            transparent 1px
+          );
+        background-size: 20px 20px;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: var(--spacing-6) var(--spacing-4);
+      }
+
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-2);
+        margin-bottom: var(--spacing-3);
+      }
+
+      .pill {
+        border-radius: var(--radius-full);
+        border: 1px solid var(--border-accent);
+        padding: 0.2rem 0.6rem;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--text-accent);
+      }
+
+      .header-row {
+        display: grid;
+        gap: var(--spacing-4);
+      }
+
+      @media (min-width: 768px) {
+        .header-row {
+          grid-template-columns: 2.2fr 1.4fr;
+          align-items: flex-start;
+        }
+      }
+
+      .title-block .eyebrow {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        margin-bottom: 0.35rem;
+      }
+
+      .title-block h1 {
+        font-size: 1.9rem;
+        line-height: 1.1;
+        margin-bottom: 0.4rem;
+        background: linear-gradient(135deg, var(--jsr-pink), var(--jsr-blue));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .title-block p {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+      }
+
+      .key-metrics {
+        display: grid;
+        gap: var(--spacing-2);
+      }
+
+      .metric {
+        border-radius: var(--radius-md);
+        border: 1px solid var(--border-primary);
+        background: var(--bg-card);
+        padding: var(--spacing-2) var(--spacing-3);
+      }
+
+      .metric-label {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--text-muted);
+      }
+
+      .metric-value {
+        font-size: 0.95rem;
+        font-family: var(--font-mono);
+        color: var(--text-accent);
+      }
+
+      .metric-value.highlight {
+        color: var(--jsr-green);
+        font-weight: 600;
+      }
+
+      .content-grid {
+        display: grid;
+        gap: var(--spacing-4);
+        margin-top: var(--spacing-5);
+      }
+
+      @media (min-width: 900px) {
+        .content-grid {
+          grid-template-columns: 1.6fr 1.2fr;
+        }
+      }
+
+      .block {
+        background: var(--bg-card);
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border-primary);
+        padding: var(--spacing-4);
+      }
+
+      .block h2 {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: var(--spacing-2);
+        color: var(--text-accent);
+      }
+
+      .block p {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        margin-bottom: var(--spacing-2);
+      }
+
+      .block ul {
+        padding-left: 1.15rem;
+        margin-top: 0.15rem;
+      }
+
+      .block li {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+      }
+
+      .block li + li {
+        margin-top: 0.15rem;
+      }
+
+      .block li strong {
+        color: var(--text-accent);
+      }
+
+      .footer-line {
+        margin-top: var(--spacing-5);
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        text-align: right;
+      }
+
+      .confidence-badge {
+        display: inline-block;
+        padding: 0.25rem 0.5rem;
+        border-radius: var(--radius-md);
+        background: linear-gradient(135deg, rgba(0, 255, 0, 0.2), rgba(0, 240, 255, 0.2));
+        border: 1px solid var(--jsr-green);
+        color: var(--jsr-green);
+        font-size: 0.75rem;
+        font-family: var(--font-mono);
+        margin-left: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="pill-row">
+        <div class="pill">Investment Opportunity</div>
+        <div class="pill">Truligon</div>
+        <div class="pill">Confidential</div>
+        <div class="pill">Validated 0.763 Confidence</div>
+      </div>
+
+      <div class="header-row">
+        <div class="title-block">
+          <div class="eyebrow">Investment Snapshot</div>
+          <h1>Truligon: 11 Production Systems, Proven Revenue, Clear Path to Profitability</h1>
+          <p>
+            A diversified portfolio of 11 production-ready systems with proven revenue (33x ROI), 
+            strong unit economics (LTV:CAC 19.6x-33x), and clear path to $30k/month profitability 
+            within 4-6 months. Bootstrap path makes investment optional, reducing total loss risk.
+          </p>
+        </div>
+        <div class="key-metrics">
+          <div class="metric">
+            <div class="metric-label">Proven Revenue</div>
+            <div class="metric-value highlight">33x ROI</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Unit Economics</div>
+            <div class="metric-value highlight">LTV:CAC 19.6x-33x</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Profitability Path</div>
+            <div class="metric-value">$30k/mo in 4-6 mo</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Production Systems</div>
+            <div class="metric-value">11 Systems</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Market Validation</div>
+            <div class="metric-value">7,800 Visitors</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Risk-Adjusted ROI</div>
+            <div class="metric-value highlight">8x-10x</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <section class="block">
+          <h2>1 • Investment Thesis</h2>
+          <p>
+            Truligon represents a strong investment opportunity with <strong>proven execution capability</strong> 
+            (11 production-ready systems built, 33x ROI proven revenue), <strong>comprehensive risk mitigation</strong> 
+            (bootstrap path makes investment optional, proven revenue reduces business model failure risk, multiple 
+            revenue streams reduce single-product risk), and <strong>strong unit economics</strong> 
+            (LTV:CAC 19.6x-33x, 1.3 month payback, 80% gross margins).
+          </p>
+          <p>
+            <strong>Financial Projections:</strong> Year 1 $600k, Year 2 $2.5M, Year 3 $9M revenue growth trajectory 
+            based on unit economics and market validation. <strong>Risk-Adjusted Returns:</strong> 8x-10x ROI expected 
+            with medium-low risk level and comprehensive risk mitigation strategies.
+          </p>
+          
+          <h2>2 • Why It's Defensible</h2>
+          <ul>
+            <li><strong>Unique IP:</strong> 7 unique algorithms across 11 systems (adaptive learning, soul system, AlphaAxe system, advanced options pricing, time logic, reality-systems engine, glucose system)</li>
+            <li><strong>High Switching Costs:</strong> Axerey memories, deltaGon trading history create lock-in</li>
+            <li><strong>Network Effects:</strong> Pattern mining improves with usage, creating defensible moats</li>
+            <li><strong>First-Mover Advantage:</strong> 8 emerging markets (adaptive memory, soul systems, memory-driven trading, PineScript knowledge systems, MCP-driven trading execution, reusable economic engines, reusable reality-systems engines, glucose system + roguelike)</li>
+            <li><strong>Production-Ready Code:</strong> All 11 systems have production-ready code, not prototypes</li>
+            <li><strong>Clear Engine Boundaries:</strong> Enable extraction as APIs, licensing, acquisition exits</li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <h2>3 • Near-Term Path</h2>
+          <p>
+            <strong>Break-Even:</strong> 1-2 months (44 users at $2,125/month revenue). 
+            <strong>Profitability:</strong> $30k/month within 4-6 months (612 users PineScript or 303 users deltaGon). 
+            Bootstrap path means investment accelerates growth but isn't required for survival.
+          </p>
+          <ul>
+            <li><strong>Month 1-2:</strong> Break-even achieved (44 users)</li>
+            <li><strong>Month 4-6:</strong> $30k/month profitability (612 PineScript or 303 deltaGon users)</li>
+            <li><strong>Month 6-12:</strong> Scale to $50k-100k/month with agentic systems model (10x faster scaling, 10x lower cost)</li>
+            <li><strong>Year 1:</strong> $600k revenue target</li>
+            <li><strong>Year 2:</strong> $2.5M revenue target</li>
+            <li><strong>Year 3:</strong> $9M revenue target</li>
+          </ul>
+
+          <h2>4 • Safety Mechanisms</h2>
+          <ul>
+            <li><strong>Bootstrap Path:</strong> Investment optional, reduces total loss risk</li>
+            <li><strong>Proven Revenue:</strong> 33x ROI validates market demand</li>
+            <li><strong>Multiple Revenue Streams:</strong> 11 systems provide diversification</li>
+            <li><strong>Production Code Assets:</strong> Value independent of business success</li>
+            <li><strong>Exit Strategies:</strong> Licensing, acquisition, asset sale options</li>
+            <li><strong>Worst-Case Protection:</strong> 2x ROI still positive (20% probability)</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="footer-line">
+        Truligon • Private Investor Material • Validated Through Comprehensive Iterative Testing 
+        <span class="confidence-badge">0.763 Confidence Score</span> • Not For Public Distribution
+      </div>
+    </div>
+  </body>
+</html>
+

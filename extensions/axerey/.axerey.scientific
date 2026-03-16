@@ -1,0 +1,126 @@
+{
+  "version": "1.0.0",
+  "environment": "production",
+  "security": {
+    "encryptionEnabled": true,
+    "signatureVerification": false,
+    "auditLogging": true,
+    "strictMode": true
+  },
+  "reasoning": {
+    "mindBalance": {
+      "defaultTheta": 0.7853981633974483,
+      "defaultPhi": 0.5235987755982988,
+      "defaultCosine": 0.7,
+      "defaultTangent": 0.4,
+      "abstentionThreshold": 0.3
+    },
+    "argumentation": {
+      "steelman": {
+        "maxPremises": 10,
+        "charitableAssumptionsRequired": true
+      },
+      "strawman": {
+        "maxDistortions": 5,
+        "requestRefutation": true
+      }
+    }
+  },
+  "memory": {
+    "vssEnabled": true,
+    "vectorDimension": 1536,
+    "maxMemories": 10000,
+    "retentionDays": 365,
+    "hybridVSS": {
+      "useHNSWForSearch": true,
+      "useVectorliteForPersistence": true,
+      "autoSwitchThreshold": 1000,
+      "maxElements": 50000,
+      "M": 16,
+      "efConstruction": 200,
+      "ef": 100,
+      "space": "cosine"
+    }
+  },
+  "performance": {
+    "cacheSize": 1000,
+    "batchSize": 100,
+    "timeoutMs": 30000
+  },
+  "personas": {
+    "p1-financial-investor": {
+      "name": "Financial Investor",
+      "description": "Systems IP portfolio, upside potential, defensibility, execution capability. Focus on NeoCheyenne economics/infra, Semisweet Jacket control/surveillance, Semigon systems thinking, truligon infra.",
+      "memoryIsolation": true,
+      "reasoningStyle": "strategic",
+      "preferences": {
+        "focusAreas": ["systems-ip", "upside-potential", "defensibility", "execution"],
+        "primaryGames": ["neocheyenne", "semisweet-jacket", "semigon", "truligon-infra"],
+        "useConcreteMechanics": true
+      }
+    },
+    "p2-technical-investor": {
+      "name": "Technical Investor",
+      "description": "Architectures, tradeoffs, engine boundaries, typing. Focus on NeoCheyenne, Semisweet Jacket, Semigon, truligon infra technical details.",
+      "memoryIsolation": true,
+      "reasoningStyle": "analytical",
+      "preferences": {
+        "focusAreas": ["architectures", "tradeoffs", "engine-boundaries", "typing"],
+        "primaryGames": ["neocheyenne", "semisweet-jacket", "semigon", "truligon-infra"]
+      }
+    },
+    "p3-ethics-investor": {
+      "name": "Ethics / Systems Investor",
+      "description": "Honest harm modeling, ethics after extraction, mythoGon. Focus on NeoCheyenne, Semisweet Jacket, mythoGon ethical considerations.",
+      "memoryIsolation": true,
+      "reasoningStyle": "analytical",
+      "preferences": {
+        "focusAreas": ["harm-modeling", "ethics", "extraction-ethics"],
+        "primaryGames": ["neocheyenne", "semisweet-jacket", "mythogon"]
+      }
+    },
+    "p4-client-cto": {
+      "name": "Client CTO / Head of Product",
+      "description": "Integration surfaces, APIs, packaging, maintenance. Focus on NeoCheyenne economic sim, Semisweet Jacket reality-systems, truligon infra.",
+      "memoryIsolation": true,
+      "reasoningStyle": "strategic",
+      "preferences": {
+        "focusAreas": ["integration", "apis", "packaging", "maintenance"],
+        "primaryGames": ["neocheyenne", "semisweet-jacket", "truligon-infra"]
+      }
+    },
+    "p5-innovation-strategy": {
+      "name": "Innovation / Strategy",
+      "description": "Workshops, training scenarios, scenario design. Focus on NeoCheyenne and Semisweet Jacket as training environments.",
+      "memoryIsolation": true,
+      "reasoningStyle": "creative",
+      "preferences": {
+        "focusAreas": ["workshops", "training-scenarios", "scenario-design"],
+        "primaryGames": ["neocheyenne", "semisweet-jacket"]
+      }
+    },
+    "p6-player-gamer": {
+      "name": "Player / Gamer",
+      "description": "Player/gamer perspective. Not yet scoped into full reasoning session.",
+      "memoryIsolation": true,
+      "reasoningStyle": "balanced",
+      "preferences": {
+        "status": "not-yet-scoped"
+      }
+    },
+    "p7-citizen-reader": {
+      "name": "Citizen / Dystopia-Aware Reader",
+      "description": "Citizen/dystopia-aware reader perspective. Not yet scoped into full reasoning session.",
+      "memoryIsolation": true,
+      "reasoningStyle": "balanced",
+      "preferences": {
+        "status": "not-yet-scoped"
+      }
+    }
+  },
+  "metadata": {
+    "createdAt": "2025-01-18T00:00:00.000Z",
+    "lastModified": "2025-01-18T00:00:00.000Z",
+    "version": "1.0.0"
+  }
+}

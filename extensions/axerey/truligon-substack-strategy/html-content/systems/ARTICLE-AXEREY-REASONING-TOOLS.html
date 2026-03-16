@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Axerey: Reasoning Tools & Decision-Making</title>
+    <style>
+      :root {
+        --jsr-pink: #ff00ff;
+        --jsr-blue: #00ffff;
+        --tron-cyan: #00f0ff;
+        --jsr-green: #00ff00;
+        --bg-primary: #000000;
+        --bg-card: #0f0f0f;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --text-accent: #00f0ff;
+        --border-primary: #333333;
+        --border-accent: #00f0ff;
+        --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-mono: "Courier New", Monaco, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: var(--font-sans);
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        background-image: linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+      .container { max-width: 960px; margin: 0 auto; }
+      .header {
+        border-bottom: 2px solid var(--border-accent);
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+      }
+      h1 {
+        background: linear-gradient(135deg, var(--jsr-pink), var(--jsr-blue));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 2.25rem;
+        margin-bottom: 0.5rem;
+      }
+      .subtitle { color: var(--text-secondary); font-size: 1.05rem; }
+      .section {
+        background: var(--bg-card);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.75rem;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      .section h2 {
+        color: var(--text-accent);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .section h3 {
+        color: var(--text-primary);
+        font-size: 1.2rem;
+        margin: 1.5rem 0 0.5rem;
+      }
+      .card {
+        background: var(--bg-card);
+        border-radius: 0.75rem;
+        border: 1px solid var(--border-accent);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+      }
+      ul { margin-left: 1.5rem; margin-top: 0.5rem; }
+      li { margin-bottom: 0.5rem; color: var(--text-secondary); }
+      li strong { color: var(--text-accent); }
+      .code-block {
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin: 1rem 0;
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+        overflow-x: auto;
+      }
+      .callout {
+        border-left: 3px solid var(--border-accent);
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+        color: var(--text-secondary);
+      }
+      .callout strong { color: var(--text-accent); }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Axerey: Reasoning Tools & Decision-Making</h1>
+        <p class="subtitle">Steelman, Strawman, Mind-Balance, and Comprehensive Reasoning</p>
+      </div>
+
+      <section class="card">
+        <h2>Why This Matters for Investors</h2>
+        <p>
+          Axerey's reasoning tools enable sophisticated decision-making and argument analysis, critical for 
+          <strong>trading logic</strong> and <strong>investment decisions</strong>. The mind-balance tool requires 
+          high confidence thresholds (0.700), ensuring decisions are well-validated before execution.
+        </p>
+        <p>
+          <strong>Proven Application:</strong> Used to validate all 10 core investment claims, reaching 0.763 
+          confidence score (above 0.700 threshold). <strong>Unique IP:</strong> Comprehensive reasoning tools with 
+          steelman, strawman, and mind-balance analysis.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Steelman Analysis: Strengthening Arguments</h2>
+        <p>
+          Steelman analysis strengthens arguments by finding their most charitable, strongest version:
+        </p>
+
+        <h3>How It Works</h3>
+        <ul>
+          <li><strong>Charitable Assumptions:</strong> Adds reasonable assumptions to strengthen the argument</li>
+          <li><strong>Premise Support:</strong> Identifies and strengthens weak premises</li>
+          <li><strong>Objection Addressing:</strong> Proactively addresses likely objections</li>
+          <li><strong>Evidence Integration:</strong> Incorporates concrete evidence to support claims</li>
+        </ul>
+
+        <h3>Example: Investment Claim</h3>
+        <div class="code-block">
+Original: "Truligon is a good investment"
+Steelmanned: "Truligon represents a strong investment opportunity with 
+proven execution capability (11 systems), comprehensive risk mitigation 
+(bootstrap path), and strong unit economics (LTV:CAC 19.6x-33x)"
+        </div>
+
+        <h3>Investment Application</h3>
+        <p>
+          Used to strengthen all 10 core investment claims, adding charitable assumptions and premise support 
+          to create the strongest possible argument.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Strawman Analysis: Identifying Weak Points</h2>
+        <p>
+          Strawman analysis identifies distortions, fallacies, and weak points in arguments:
+        </p>
+
+        <h3>How It Works</h3>
+        <ul>
+          <li><strong>Distortion Detection:</strong> Identifies exaggerations, oversimplifications, misattributions</li>
+          <li><strong>Fallacy Identification:</strong> Finds logical fallacies (strawman, ad hominem, false dichotomy, etc.)</li>
+          <li><strong>Weak Premise Detection:</strong> Identifies premises that need more support</li>
+          <li><strong>Improvement Hints:</strong> Provides guidance on how to strengthen the argument</li>
+        </ul>
+
+        <h3>Common Issues Identified</h3>
+        <ul>
+          <li><strong>Appeal to Common Sense:</strong> Claims that assume obvious truth without evidence</li>
+          <li><strong>Appeal to Popularity:</strong> Claims that assume everyone knows something</li>
+          <li><strong>False Dichotomy:</strong> Binary thinking that oversimplifies complex issues</li>
+        </ul>
+
+        <h3>Investment Application</h3>
+        <p>
+          Used to identify weak points in investment arguments, ensuring claims are well-supported and nuanced, 
+          not relying on appeals to common sense or popularity.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Mind-Balance: Probabilistic Decision-Making</h2>
+        <p>
+          Mind-balance provides probabilistic decision-making with abstention-aware scoring using an angel/demon 
+          advisory system:
+        </p>
+
+        <h3>How It Works</h3>
+        <ul>
+          <li><strong>Angel Signal:</strong> Ethical grounding, harmonizing influence from stable cosine dynamics</li>
+          <li><strong>Demon Signal:</strong> Opportunity/urgency, escalating urgency and emotional pull</li>
+          <li><strong>Probabilistic Mode:</strong> Statistical analysis with p(positive) and p(negative) probabilities</li>
+          <li><strong>Blend Mode:</strong> Weighted vector field combining both perspectives</li>
+          <li><strong>Confidence Threshold:</strong> Requires 0.700 confidence for decision (important for trading logic)</li>
+        </ul>
+
+        <h3>Parameters</h3>
+        <ul>
+          <li><strong>theta (0.0-1.0):</strong> Optimism level (higher = more optimistic)</li>
+          <li><strong>phi (0.0-1.0):</strong> Risk tolerance (higher = more risk-tolerant)</li>
+          <li><strong>cosine (0.0-1.0):</strong> Similarity to past decisions (higher = more similar)</li>
+          <li><strong>tangent (0.0-1.0):</strong> Complexity factor (higher = more complex)</li>
+          <li><strong>mode:</strong> angel, demon, blend, or probabilistic</li>
+        </ul>
+
+        <h3>Investment Application</h3>
+        <p>
+          Used to validate all 10 core investment claims, with optimized parameters (theta 0.9, phi 0.8, cosine 0.8, 
+          tangent 1.0) achieving 0.763 combined score (above 0.700 threshold) in blend mode.
+        </p>
+
+        <div class="callout">
+          <strong>Key Insight:</strong> The high confidence threshold (0.700) is important for trading logic and 
+          decision-making, ensuring decisions are well-validated before execution. This prevents false positives 
+          and ensures high-quality decision-making.
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Comprehensive Reasoning</h2>
+        <p>
+          Axerey provides comprehensive reasoning capabilities that combine memory, reasoning tools, and decision-making:
+        </p>
+
+        <h3>Reasoning with Memory</h3>
+        <ul>
+          <li><strong>Task Types:</strong> decision-making, argument-analysis, problem-solving</li>
+          <li><strong>Reasoning Types:</strong> mind-balance, steelman, strawman, pipeline</li>
+          <li><strong>Memory Integration:</strong> Uses relevant memories for context</li>
+          <li><strong>Adaptive Learning:</strong> Improves reasoning based on outcomes</li>
+        </ul>
+
+        <h3>Decision Patterns</h3>
+        <ul>
+          <li><strong>Pattern Analysis:</strong> Analyzes decision patterns and extracts insights</li>
+          <li><strong>Success Patterns:</strong> Identifies patterns that lead to success</li>
+          <li><strong>Failure Patterns:</strong> Identifies patterns that lead to failure</li>
+          <li><strong>Confidence Patterns:</strong> Tracks confidence levels over time</li>
+        </ul>
+
+        <h3>Investment Application</h3>
+        <p>
+          Used to analyze investment decisions, identify successful patterns, and improve decision-making over time 
+          through adaptive learning.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Unique IP & Competitive Advantage</h2>
+        <p>
+          Axerey's reasoning tools create unique intellectual property:
+        </p>
+
+        <ul>
+          <li><strong>Steelman/Strawman Pipeline:</strong> Systematic argument strengthening and weak point identification</li>
+          <li><strong>Mind-Balance System:</strong> Probabilistic decision-making with angel/demon advisory system</li>
+          <li><strong>Memory-Driven Reasoning:</strong> Reasoning enhanced by relevant memories</li>
+          <li><strong>Adaptive Learning:</strong> Reasoning improves based on outcomes</li>
+          <li><strong>High Confidence Thresholds:</strong> Important for trading logic and decision-making</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Investment Recommendation:</strong> Axerey's reasoning tools provide unique IP that competitors 
+          cannot easily replicate. The mind-balance tool's high confidence threshold (0.700) is critical for trading 
+          logic and ensures high-quality decision-making.
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
+

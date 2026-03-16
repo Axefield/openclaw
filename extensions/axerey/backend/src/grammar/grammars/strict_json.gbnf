@@ -1,0 +1,23 @@
+# Strict JSON Grammar - Enforces valid JSON output with optional schema
+# Usage: Use for any JSON output that must be parseable
+
+root ::= object
+
+object ::= "{" (pair ("," pair)*)? "}"
+
+array ::= "[" (value ("," value)*)? "]"
+
+pair ::= string ":" value
+
+value ::= 
+    string
+  | number
+  | object
+  | array
+  | "true"
+  | "false"
+  | "null"
+
+string ::= "\"" ( "\\" ( "u" [0-9a-fA-F]{4} | [^\n"\\] ) | [^\n"\\] )* "\""
+
+number ::= "-"? ([0-9]+ ("." [0-9]+)?)? (("e"|"E") ("+"|"-") [0-9]+)?

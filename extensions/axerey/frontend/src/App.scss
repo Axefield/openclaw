@@ -1,0 +1,217 @@
+// Ouranigon AI Application Styles with Celestial Theme
+// Import Ouranigon theme BEFORE Bootstrap to override variables
+@import "utils/_ouranigon";
+
+// Import Bootstrap SCSS
+@import "bootstrap/scss/bootstrap";
+
+// Custom Ouranigon Application Styles
+.App {
+  min-height: 100vh;
+  background: $ouranigon-void;
+  color: $body-color;
+}
+
+.main-content {
+  padding: 0;
+  margin-top: 0;
+  background: $ouranigon-void;
+}
+
+.kanban-board {
+  padding: 1rem;
+  background: $ouranigon-void;
+}
+
+.kanban-column {
+  min-height: 600px;
+}
+
+.kanban-column .card {
+  height: 100%;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  background: rgba(white, .025);
+  border: 1px solid rgba($ouranigon-starlight, .08);
+  backdrop-filter: blur(8px);
+}
+
+.kanban-column .card-header {
+  border-radius: $border-radius $border-radius 0 0 !important;
+  font-weight: 600;
+  background: linear-gradient(135deg, rgba($ouranigon-aurora, .15), rgba($ouranigon-violet, .15));
+  border-bottom: 1px solid rgba($ouranigon-starlight, .12);
+}
+
+.cards-container {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.cards-container .card {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgba(white, .02);
+  border: 1px solid rgba($ouranigon-starlight, .06);
+}
+
+.cards-container .card:hover {
+  transform: translateY(-2px);
+  box-shadow: $box-shadow-lg;
+  background: rgba(white, .04);
+  border-color: rgba($ouranigon-aurora, .3);
+}
+
+// Priority indicators with celestial colors
+.border-danger {
+  border-left: 4px solid $danger !important;
+  box-shadow: 0 0 0 1px rgba($danger, .2);
+}
+
+.border-warning {
+  border-left: 4px solid $warning !important;
+  box-shadow: 0 0 0 1px rgba($warning, .2);
+}
+
+.border-success {
+  border-left: 4px solid $success !important;
+  box-shadow: 0 0 0 1px rgba($success, .2);
+}
+
+// Column colors using Ouranigon palette
+.bg-primary {
+  background: linear-gradient(135deg, rgba($ouranigon-aurora, .8), rgba($ouranigon-aurora, .6)) !important;
+  color: white !important;
+}
+
+.bg-info {
+  background: linear-gradient(135deg, rgba($ouranigon-violet, .8), rgba($ouranigon-violet, .6)) !important;
+  color: white !important;
+}
+
+.bg-success {
+  background: linear-gradient(135deg, rgba($success, .8), rgba($success, .6)) !important;
+  color: white !important;
+}
+
+.bg-warning {
+  background: linear-gradient(135deg, rgba($ouranigon-gold, .8), rgba($ouranigon-gold, .6)) !important;
+  color: $ouranigon-void !important;
+}
+
+.bg-secondary {
+  background: linear-gradient(135deg, rgba($ouranigon-smoke, .8), rgba($ouranigon-smoke, .6)) !important;
+  color: $ouranigon-void !important;
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .kanban-column {
+    margin-bottom: 1rem;
+  }
+  
+  .kanban-board {
+    padding: 0.5rem;
+  }
+}
+
+// Animation for card movements
+.card-moving {
+  opacity: 0.7;
+  transform: rotate(-2deg);
+  box-shadow: 0 8px 16px rgba($ouranigon-aurora, .3);
+}
+
+// Quick actions styling with celestial theme
+.bg-light .btn {
+  border-radius: $border-radius;
+  font-weight: 500;
+  background: linear-gradient(135deg, rgba($ouranigon-aurora, .15), rgba($ouranigon-violet, .15));
+  border: 1px solid rgba($ouranigon-aurora, .45);
+  color: $ouranigon-starlight;
+  box-shadow: 0 6px 18px rgba($ouranigon-aurora, .25);
+}
+
+.bg-light .btn:hover {
+  background: linear-gradient(135deg, rgba($ouranigon-aurora, .25), rgba($ouranigon-violet, .25));
+  border-color: rgba($ouranigon-aurora, .6);
+  box-shadow: 0 8px 24px rgba($ouranigon-aurora, .35);
+}
+
+// Header styling with celestial theme
+.navbar-brand {
+  font-size: 1.5rem;
+  color: $ouranigon-ember !important;
+  text-shadow: 0 1px 0 rgba(#000, .6);
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  transition: color 0.2s ease;
+  color: rgba($ouranigon-starlight, .82) !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: white !important;
+}
+
+// Dropdown styling
+.dropdown-menu {
+  background: rgba(#000, .6);
+  border: 1px solid rgba($ouranigon-starlight, .12);
+  backdrop-filter: blur(10px);
+}
+
+.dropdown-item {
+  color: $body-color;
+}
+
+.dropdown-item:hover {
+  background: rgba($ouranigon-aurora, .12);
+  color: white;
+}
+
+// Badge styling
+.badge {
+  background: linear-gradient(180deg, lighten($primary, 8%), $primary);
+  box-shadow: 0 0 0 1px rgba($ouranigon-starlight, .2), 0 0 18px rgba($primary, .35);
+}
+
+// Add celestial glow to important elements
+.kanban-column .card-header {
+  @extend %celestial-glow;
+}
+
+.btn-primary {
+  @extend .btn-dragon;
+}
+
+// Navigation tabs styling
+.nav-tabs-cosmos {
+  border-bottom: 1px solid rgba($ouranigon-starlight, .2);
+  
+  .nav-link {
+    color: rgba($ouranigon-starlight, .7);
+    border: 1px solid transparent;
+    border-radius: $border-radius $border-radius 0 0;
+    background: rgba(white, .02);
+    
+    &:hover {
+      color: $ouranigon-starlight;
+      background: rgba(white, .04);
+      border-color: rgba($ouranigon-starlight, .2);
+    }
+    
+    &.active {
+      color: $ouranigon-ember;
+      background: rgba(white, .06);
+      border-color: rgba($ouranigon-starlight, .3);
+      border-bottom-color: transparent;
+    }
+  }
+}
+
+// Starfield background for the main app
+.App {
+  @extend .bg-cosmos;
+}

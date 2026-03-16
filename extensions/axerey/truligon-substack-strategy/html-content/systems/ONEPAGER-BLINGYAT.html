@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>blingyat • Alpaca Trading Analysis API</title>
+    <style>
+      :root {
+        --jsr-pink: #ff00ff;
+        --jsr-blue: #00ffff;
+        --tron-cyan: #00f0ff;
+        --jsr-green: #00ff00;
+        --bg-primary: #000000;
+        --bg-card: #0f0f0f;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --text-muted: #888888;
+        --text-accent: #00f0ff;
+        --border-primary: #333333;
+        --border-accent: #00f0ff;
+        --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-mono: "Courier New", Monaco, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: var(--font-sans);
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        background-image: linear-gradient(rgba(0, 255, 255, 0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 255, 255, 0.08) 1px, transparent 1px);
+        background-size: 20px 20px;
+      }
+      .page { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+      .pill-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+      .pill {
+        border-radius: 9999px;
+        border: 1px solid var(--border-accent);
+        padding: 0.2rem 0.6rem;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--text-accent);
+      }
+      .header-row { display: grid; gap: 1rem; margin-bottom: 1.5rem; }
+      @media (min-width: 768px) { .header-row { grid-template-columns: 2.2fr 1.4fr; } }
+      .title-block .eyebrow {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        margin-bottom: 0.35rem;
+      }
+      .title-block h1 {
+        font-size: 1.9rem;
+        line-height: 1.1;
+        margin-bottom: 0.4rem;
+        background: linear-gradient(135deg, var(--jsr-pink), var(--jsr-blue));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .title-block p { font-size: 0.95rem; color: var(--text-secondary); }
+      .key-metrics { display: grid; gap: 0.5rem; }
+      .metric {
+        border-radius: 0.5rem;
+        border: 1px solid var(--border-primary);
+        background: var(--bg-card);
+        padding: 0.5rem 0.75rem;
+      }
+      .metric-label {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--text-muted);
+      }
+      .metric-value {
+        font-size: 0.95rem;
+        font-family: var(--font-mono);
+        color: var(--text-accent);
+      }
+      .content-grid {
+        display: grid;
+        gap: 1rem;
+        margin-top: 1.25rem;
+      }
+      @media (min-width: 900px) { .content-grid { grid-template-columns: 1.6fr 1.2fr; } }
+      .block {
+        background: var(--bg-card);
+        border-radius: 0.75rem;
+        border: 1px solid var(--border-primary);
+        padding: 1rem;
+      }
+      .block h2 {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 0.5rem;
+        color: var(--text-accent);
+      }
+      .block p { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
+      .block ul { padding-left: 1.15rem; margin-top: 0.15rem; }
+      .block li { font-size: 0.9rem; color: var(--text-secondary); }
+      .block li + li { margin-top: 0.15rem; }
+      .block li strong { color: var(--text-accent); }
+      .footer-line {
+        margin-top: 1.25rem;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="pill-row">
+        <div class="pill">System One-Pager</div>
+        <div class="pill">blingyat</div>
+        <div class="pill">Trading Analysis API</div>
+      </div>
+
+      <div class="header-row">
+        <div class="title-block">
+          <div class="eyebrow">System Snapshot</div>
+          <h1>blingyat: Alpaca Trading Analysis API</h1>
+          <p>
+            Production-ready web application for advanced trading strategy analysis with Alpaca Market Data integration. 
+            Features interactive Plotly charts, Bootstrap SCSS customization, advanced strategy engine (15+ patterns), 
+            unified signal system, market health dashboard, and WebSocket support.
+          </p>
+        </div>
+        <div class="key-metrics">
+          <div class="metric">
+            <div class="metric-label">Strategy Engine</div>
+            <div class="metric-value">15+ Patterns</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Charts</div>
+            <div class="metric-value">Plotly.js</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Integration</div>
+            <div class="metric-value">Alpaca API</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Status</div>
+            <div class="metric-value">Production-Ready</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <section class="block">
+          <h2>1 • What This Is</h2>
+          <p>
+            blingyat is a comprehensive TypeScript Express + Pug web API for advanced trading strategy analysis 
+            with Alpaca Market Data integration. Features interactive Plotly charts, advanced strategy engine 
+            (15+ patterns), unified signal system, market health dashboard, and WebSocket support.
+          </p>
+          <p>
+            <strong>Core Capabilities:</strong> Advanced strategy engine (1,776+ lines), unified signal system, 
+            EMA cloud, stochastic oscillator, support/resistance detection, pattern predictions, Black-Scholes options, 
+            market health dashboard, traffic map system, multi-layer caching.
+          </p>
+          
+          <h2>2 • Why It's Defensible</h2>
+          <ul>
+            <li><strong>Advanced Strategy Engine:</strong> 15+ candlestick patterns, unified signal system</li>
+            <li><strong>Unique IP:</strong> EMA cloud, stochastic, support/resistance, pattern predictions</li>
+            <li><strong>Production Infrastructure:</strong> Multi-layer caching, WebSocket support, symbol management</li>
+            <li><strong>Interactive Charts:</strong> Plotly.js integration with strongly-typed components</li>
+            <li><strong>Market Dashboard:</strong> Real-time market snapshots with breadth analysis</li>
+            <li><strong>Alpaca Integration:</strong> Native Alpaca v2 bars with seamless normalization</li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <h2>3 • Near-Term Path</h2>
+          <p>
+            <strong>Current Status:</strong> Production-ready web application with comprehensive trading analysis capabilities. 
+            Advanced strategy engine operational with Alpaca integration.
+          </p>
+          <ul>
+            <li><strong>Immediate:</strong> Continue development, enhance strategy engine</li>
+            <li><strong>Short-Term:</strong> Expand pattern detection, improve market dashboard</li>
+            <li><strong>Medium-Term:</strong> B2B API offering, licensing opportunities</li>
+            <li><strong>Long-Term:</strong> Industry-standard trading analysis platform</li>
+          </ul>
+
+          <h2>4 • Key Features</h2>
+          <ul>
+            <li><strong>Advanced Strategy Engine:</strong> 15+ patterns, unified signal system (1,776+ lines)</li>
+            <li><strong>Interactive Charts:</strong> Plotly.js with strongly-typed components</li>
+            <li><strong>Market Dashboard:</strong> Real-time snapshots, breadth analysis</li>
+            <li><strong>WebSocket Support:</strong> Real-time data streaming via Alpaca</li>
+            <li><strong>Symbol Management:</strong> Symbol maps, search, validation</li>
+            <li><strong>Caching System:</strong> Multi-layer caching for performance</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="footer-line">
+        Truligon • blingyat System • Alpaca Trading Analysis API • Production-Ready
+      </div>
+    </div>
+  </body>
+</html>
+

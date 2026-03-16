@@ -1,0 +1,24 @@
+# Axerey Recall Tool Grammar
+# Retrieves memories by query or gets recent ones
+
+root ::= McpAction
+
+McpAction ::= "{" 
+  "\"name\":\"axerey_recall\","
+  "\"arguments\":" McpArguments 
+"}"
+
+McpArguments ::= "{" 
+  "\"query\":" string
+  ",\"limit\":" number
+  ",\"tags\":" string-array
+  (",\"sessionId\":" string)?
+"}"
+
+string ::= "\"" ( "\\" ( "u" [0-9a-fA-F]{4} | [^\n"\\] ) | [^\n"\\] )* "\""
+string-array ::= "[" (string ("," string)*)? "]"
+number ::= "-"? ([0-9]+ ("." [0-9]+)?)? (("e"|"E") ("+"|"-") [0-9]+)?
+object ::= "{" (pair ("," pair)*)? "}"
+pair ::= string ":" value
+value ::= string | number | object | array | "true" | "false" | "null"
+array ::= "[" (value ("," value)*)? "]"

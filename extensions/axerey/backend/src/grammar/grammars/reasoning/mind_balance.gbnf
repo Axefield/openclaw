@@ -1,0 +1,40 @@
+# Axerey Mind Balance Tool Grammar
+# Probabilistic decision-making with abstention-aware scoring
+
+root ::= McpAction
+
+McpAction ::= "{" 
+  "\"name\":\"axerey_mind_balance\","
+  "\"arguments\":" McpArguments 
+"}"
+
+McpArguments ::= "{" 
+  "\"topic\":" string
+  ",\"theta\":" number
+  ",\"phi\":" number
+  ",\"cosine\":" number
+  ",\"tangent\":" number
+  ",\"mode\":" BalanceMode
+  (",\"tanClamp\":" number)?
+  (",\"normalize\":" boolean)?
+  (",\"scoring\":" Scoring)?
+"}"
+
+BalanceMode ::= "\"angel\"" | "\"demon\"" | "\"blend\"" | "\"probabilistic\""
+
+Scoring ::= "{" 
+  (",\"rules\":" RuleArray)?
+  (",\"abstainThreshold\":" number)?
+  (",\"abstentionScore\":" number)?
+"}"
+
+RuleArray ::= "[" (Rule ("," Rule)*)? "]"
+Rule ::= "\"brier\"" | "\"log\"" | "\"quadratic\"" | "\"spherical\""
+
+boolean ::= "true" | "false"
+string ::= "\"" ( "\\" ( "u" [0-9a-fA-F]{4} | [^\n"\\] ) | [^\n"\\] )* "\""
+number ::= "-"? ([0-9]+ ("." [0-9]+)?)? (("e"|"E") ("+"|"-") [0-9]+)?
+object ::= "{" (pair ("," pair)*)? "}"
+pair ::= string ":" value
+value ::= string | number | boolean | object | array | "null"
+array ::= "[" (value ("," value)*)? "]"

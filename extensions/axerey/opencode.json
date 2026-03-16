@@ -1,0 +1,62 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama",
+      "options": {
+        "baseURL": "http://localhost:11434/v1"
+      },
+      "models": {
+        "qwen2.5:1.5b": {
+          "options": {
+            "temperature": 0.15,
+            "top_p": 0.95,
+            "top_k": 40,
+            "repeat_penalty": 1.15,
+            "num_ctx": 8192,
+            "num_predict": 1024
+          }
+        },
+        "deepseek-coder:1.3b": {
+          "options": {
+            "temperature": 0.15,
+            "top_p": 0.95,
+            "top_k": 40,
+            "repeat_penalty": 1.15,
+            "num_ctx": 8192,
+            "num_predict": 1024
+          }
+        },
+        "qwen2.5:3b": {
+          "options": {
+            "temperature": 0.15,
+            "top_p": 0.95,
+            "top_k": 40,
+            "repeat_penalty": 1.15,
+            "num_ctx": 8192,
+            "num_predict": 1024
+          }
+        }
+      }
+    }
+  },
+
+  "model": "ollama/qwen2.5:3b",
+
+  "mcp": {
+    "axerey": {
+      "type": "local",
+      "command": ["npm", "run", "start"],
+      "environment": {
+        "PCM_DB": "C:\\Users\\p5_pa\\axerey\\pcm.db",
+        "NODE_ENV": "production",
+        "LOG_LEVEL": "INFO",
+        "VSS_ENABLED": "true",
+        "VECTOR_DIMENSION": "1536",
+        "EMBEDDING_MODE": "advanced-hash"
+      }
+    }
+  }
+}

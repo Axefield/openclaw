@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Truligon • Financial Model Summary</title>
+    <style>
+      :root {
+        --jsr-pink: #ff00ff;
+        --jsr-blue: #00ffff;
+        --tron-cyan: #00f0ff;
+        --jsr-green: #00ff00;
+        --bg-primary: #000000;
+        --bg-card: #0f0f0f;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --text-accent: #00f0ff;
+        --border-primary: #333333;
+        --border-accent: #00f0ff;
+        --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-mono: "Courier New", Monaco, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: var(--font-sans);
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        background-image: linear-gradient(rgba(0, 255, 255, 0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 255, 255, 0.08) 1px, transparent 1px);
+        background-size: 20px 20px;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+      .container { max-width: 1000px; margin: 0 auto; }
+      .header {
+        border-bottom: 2px solid var(--border-accent);
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+      }
+      h1 {
+        background: linear-gradient(135deg, var(--jsr-pink), var(--jsr-blue));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+      .section {
+        background: var(--bg-card);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.5rem;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      .section h2 {
+        color: var(--text-accent);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+      }
+      th, td {
+        border: 1px solid var(--border-primary);
+        padding: 1rem;
+        text-align: left;
+      }
+      th {
+        background: rgba(0, 240, 255, 0.1);
+        color: var(--text-accent);
+        font-weight: 600;
+      }
+      td {
+        color: var(--text-secondary);
+      }
+      .metric-value {
+        font-family: var(--font-mono);
+        color: var(--jsr-green);
+        font-weight: 600;
+      }
+      .projection-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin: 1.5rem 0;
+      }
+      .projection-card {
+        border: 1px solid var(--border-primary);
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        text-align: center;
+      }
+      .projection-value {
+        font-size: 2.5rem;
+        font-family: var(--font-mono);
+        color: var(--jsr-green);
+        font-weight: 600;
+      }
+      .projection-label {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        margin-top: 0.5rem;
+      }
+      ul { margin-left: 1.5rem; margin-top: 0.5rem; }
+      li { margin-bottom: 0.5rem; color: var(--text-secondary); }
+      li strong { color: var(--text-accent); }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Financial Model Summary</h1>
+        <p style="color: var(--text-secondary);">Unit Economics, Revenue Projections, Scenario Analysis</p>
+      </div>
+
+      <div class="section">
+        <h2>Unit Economics</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>PineScript Tool</th>
+              <th>deltaGon</th>
+              <th>Industry Target</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Monthly Price</strong></td>
+              <td class="metric-value">$99</td>
+              <td class="metric-value">$99</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td><strong>LTV (Lifetime Value)</strong></td>
+              <td class="metric-value">$1,940</td>
+              <td class="metric-value">$3,267</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td><strong>CAC (Customer Acquisition Cost)</strong></td>
+              <td class="metric-value">$99</td>
+              <td class="metric-value">$99</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td><strong>LTV:CAC Ratio</strong></td>
+              <td class="metric-value">19.6x</td>
+              <td class="metric-value">33x</td>
+              <td>3x+</td>
+            </tr>
+            <tr>
+              <td><strong>Payback Period</strong></td>
+              <td class="metric-value">1.3 months</td>
+              <td class="metric-value">1.3 months</td>
+              <td>&lt;12 months</td>
+            </tr>
+            <tr>
+              <td><strong>Gross Margins</strong></td>
+              <td class="metric-value">80%</td>
+              <td class="metric-value">80%</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td><strong>Churn Rate</strong></td>
+              <td class="metric-value">5%</td>
+              <td class="metric-value">3%</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-top: 1rem;">
+          <strong>Assumptions:</strong> Based on industry averages (5% churn for PineScript tool, 3% churn for trading platforms), 
+          suggesting actual performance may be better than projected.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Revenue Projections</h2>
+        <div class="projection-grid">
+          <div class="projection-card">
+            <div class="projection-value">$600k</div>
+            <div class="projection-label">Year 1</div>
+          </div>
+          <div class="projection-card">
+            <div class="projection-value">$2.5M</div>
+            <div class="projection-label">Year 2</div>
+          </div>
+          <div class="projection-card">
+            <div class="projection-value">$9M</div>
+            <div class="projection-label">Year 3</div>
+          </div>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Revenue</th>
+              <th>Users (PineScript)</th>
+              <th>Users (deltaGon)</th>
+              <th>Growth Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Year 1</strong></td>
+              <td class="metric-value">$600k</td>
+              <td>612</td>
+              <td>303</td>
+              <td>50-100 users/month</td>
+            </tr>
+            <tr>
+              <td><strong>Year 2</strong></td>
+              <td class="metric-value">$2.5M</td>
+              <td>2,550</td>
+              <td>1,263</td>
+              <td>50-100 users/month</td>
+            </tr>
+            <tr>
+              <td><strong>Year 3</strong></td>
+              <td class="metric-value">$9M</td>
+              <td>9,180</td>
+              <td>4,545</td>
+              <td>50-100 users/month</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-top: 1rem;">
+          <strong>Basis:</strong> Projections based on unit economics (LTV:CAC 19.6x-33x, payback 1.3 months), 
+          market validation (7,800 visitors, 1,416 followers), and conservative growth estimates (50-100 new users/month).
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Break-Even Analysis</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Value</th>
+              <th>Timeline</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Fixed Costs</strong></td>
+              <td class="metric-value">$1,700/month</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td><strong>Gross Margin</strong></td>
+              <td class="metric-value">80%</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td><strong>Break-Even Revenue</strong></td>
+              <td class="metric-value">$2,125/month</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td><strong>Break-Even Users</strong></td>
+              <td class="metric-value">44 users</td>
+              <td>1-2 months</td>
+            </tr>
+            <tr>
+              <td><strong>$30k/month Users</strong></td>
+              <td class="metric-value">612 (PineScript) or 303 (deltaGon)</td>
+              <td>4-6 months</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section">
+        <h2>Scenario Analysis</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Scenario</th>
+              <th>Probability</th>
+              <th>ROI</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Best-Case</strong></td>
+              <td>20%</td>
+              <td class="metric-value">25x</td>
+              <td>Rapid market adoption, strong execution, competitive advantages hold</td>
+            </tr>
+            <tr>
+              <td><strong>Most-Likely</strong></td>
+              <td>60%</td>
+              <td class="metric-value">10x</td>
+              <td>Steady growth, unit economics hold, market validation continues</td>
+            </tr>
+            <tr>
+              <td><strong>Worst-Case</strong></td>
+              <td>20%</td>
+              <td class="metric-value">2x</td>
+              <td>Slow adoption, but bootstrap path enables survival</td>
+            </tr>
+            <tr>
+              <td><strong>Expected Value</strong></td>
+              <td>-</td>
+              <td class="metric-value">11.4x</td>
+              <td>Weighted average of all scenarios</td>
+            </tr>
+            <tr>
+              <td><strong>Risk-Adjusted</strong></td>
+              <td>-</td>
+              <td class="metric-value">8x-10x</td>
+              <td>Conservative estimate accounting for all risk factors</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section">
+        <h2>Sensitivity Analysis</h2>
+        <p>Key variables and their impact on projections:</p>
+        <ul>
+          <li><strong>Churn Rate:</strong> Assumed 5% (PineScript) and 3% (deltaGon) - industry averages. Lower churn improves LTV significantly.</li>
+          <li><strong>Growth Rate:</strong> Conservative 50-100 new users/month. Higher growth accelerates timeline to profitability.</li>
+          <li><strong>CAC:</strong> Assumed $99 (1 month payback). Lower CAC improves unit economics further.</li>
+          <li><strong>Market Adoption:</strong> Based on 0.56% conversion (44 users/7,800 visitors). Higher conversion accelerates growth.</li>
+        </ul>
+        <p style="margin-top: 1rem;">
+          <strong>Note:</strong> All assumptions are conservative (industry averages), suggesting actual performance may be better than projected.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
+

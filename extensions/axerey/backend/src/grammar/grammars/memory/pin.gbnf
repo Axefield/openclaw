@@ -1,0 +1,23 @@
+# Axerey Pin Tool Grammar
+# Pins/unpins memories for quick access
+
+root ::= McpAction
+
+McpAction ::= "{" 
+  "\"name\":\"axerey_pin\","
+  "\"arguments\":" McpArguments 
+"}"
+
+McpArguments ::= "{" 
+  "\"id\":" string
+  ",\"pinned\":" boolean
+"}"
+
+boolean ::= "true" | "false"
+
+string ::= "\"" ( "\\" ( "u" [0-9a-fA-F]{4} | [^\n"\\] ) | [^\n"\\] )* "\""
+object ::= "{" (pair ("," pair)*)? "}"
+pair ::= string ":" value
+value ::= string | number | boolean | object | array | "null"
+array ::= "[" (value ("," value)*)? "]"
+number ::= "-"? ([0-9]+ ("." [0-9]+)?)? (("e"|"E") ("+"|"-") [0-9]+)?

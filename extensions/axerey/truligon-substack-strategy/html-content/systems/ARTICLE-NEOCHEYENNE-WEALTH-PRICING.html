@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeoCheyenne: Wealth-Based Pricing & Infrastructure Dependencies</title>
+    <style>
+      :root {
+        --jsr-pink: #ff00ff;
+        --jsr-blue: #00ffff;
+        --tron-cyan: #00f0ff;
+        --jsr-green: #00ff00;
+        --bg-primary: #000000;
+        --bg-card: #0f0f0f;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --text-accent: #00f0ff;
+        --border-primary: #333333;
+        --border-accent: #00f0ff;
+        --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-mono: "Courier New", Monaco, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: var(--font-sans);
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        background-image: linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+      .container { max-width: 960px; margin: 0 auto; }
+      .header {
+        border-bottom: 2px solid var(--border-accent);
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+      }
+      h1 {
+        background: linear-gradient(135deg, var(--jsr-pink), var(--jsr-blue));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 2.25rem;
+        margin-bottom: 0.5rem;
+      }
+      .subtitle { color: var(--text-secondary); font-size: 1.05rem; }
+      .section {
+        background: var(--bg-card);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.75rem;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      .section h2 {
+        color: var(--text-accent);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .section h3 {
+        color: var(--text-primary);
+        font-size: 1.2rem;
+        margin: 1.5rem 0 0.5rem;
+      }
+      .card {
+        background: var(--bg-card);
+        border-radius: 0.75rem;
+        border: 1px solid var(--border-accent);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+      }
+      ul { margin-left: 1.5rem; margin-top: 0.5rem; }
+      li { margin-bottom: 0.5rem; color: var(--text-secondary); }
+      li strong { color: var(--text-accent); }
+      .code-block {
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--border-primary);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin: 1rem 0;
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+        overflow-x: auto;
+      }
+      .callout {
+        border-left: 3px solid var(--border-accent);
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+        color: var(--text-secondary);
+      }
+      .callout strong { color: var(--text-accent); }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>NeoCheyenne: Wealth-Based Pricing & Infrastructure Dependencies</h1>
+        <p class="subtitle">6 Wealth Tiers with Monopoly Effects & 7 Infrastructure Types</p>
+      </div>
+
+      <section class="card">
+        <h2>Why This Matters for Investors</h2>
+        <p>
+          NeoCheyenne's <strong>wealth-based pricing system</strong> (462 lines) with 6 tiers and monopoly/privatization effects 
+          demonstrates sophisticated economic modeling that reflects real-world wealth inequality. The <strong>infrastructure 
+          dependencies</strong> (7 types) model how infrastructure affects economic productivity and wealth distribution.
+        </p>
+        <p>
+          <strong>Realistic Modeling:</strong> Reflects real-world economic dynamics. <strong>Policy Analysis:</strong> Can analyze 
+          policy impacts on different wealth tiers. <strong>Training Applications:</strong> Useful for economic training and education.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Wealth-Based Pricing: 6 Tiers</h2>
+        <p>
+          ServicesAndUtilitiesPricing.ts (462 lines) implements wealth-based pricing:
+        </p>
+
+        <h3>Tier 1 - Destitute</h3>
+        <ul>
+          <li><strong>Lowest Wealth:</strong> Lowest wealth tier</li>
+          <li><strong>Highest Prices:</strong> Highest prices due to monopoly effects</li>
+          <li><strong>Limited Access:</strong> Limited access to services</li>
+          <li><strong>Economic Impact:</strong> High prices affect economic metrics</li>
+        </ul>
+
+        <h3>Tier 2 - Poor</h3>
+        <ul>
+          <li><strong>Low Wealth:</strong> Low wealth tier</li>
+          <li><strong>High Prices:</strong> High prices, but lower than Tier 1</li>
+          <li><strong>Limited Options:</strong> Limited service options</li>
+          <li><strong>Struggle:</strong> Economic struggle continues</li>
+        </ul>
+
+        <h3>Tier 3 - Lower Middle</h3>
+        <ul>
+          <li><strong>Moderate Wealth:</strong> Moderate wealth tier</li>
+          <li><strong>Moderate Prices:</strong> Moderate prices</li>
+          <li><strong>More Options:</strong> More service options available</li>
+          <li><strong>Stability:</strong> Economic stability begins</li>
+        </ul>
+
+        <h3>Tier 4 - Upper Middle</h3>
+        <ul>
+          <li><strong>Good Wealth:</strong> Good wealth tier</li>
+          <li><strong>Lower Prices:</strong> Lower prices due to competition</li>
+          <li><strong>Good Options:</strong> Good service options</li>
+          <li><strong>Comfort:</strong> Economic comfort achieved</li>
+        </ul>
+
+        <h3>Tier 5 - Wealthy</h3>
+        <ul>
+          <li><strong>High Wealth:</strong> High wealth tier</li>
+          <li><strong>Competitive Prices:</strong> Competitive prices</li>
+          <li><strong>Excellent Options:</strong> Excellent service options</li>
+          <li><strong>Prosperity:</strong> Economic prosperity</li>
+        </ul>
+
+        <h3>Tier 6 - Elite</h3>
+        <ul>
+          <li><strong>Highest Wealth:</strong> Highest wealth tier</li>
+          <li><strong>Best Prices:</strong> Best prices due to privatization benefits</li>
+          <li><strong>Premium Options:</strong> Premium service options</li>
+          <li><strong>Elite Status:</strong> Elite economic status</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Monopoly & Privatization Effects</h2>
+        <p>
+          The pricing system models monopoly and privatization effects:
+        </p>
+
+        <h3>Monopoly Effects</h3>
+        <ul>
+          <li><strong>Lower Tiers:</strong> Lower tiers face monopoly pricing</li>
+          <li><strong>Price Inflation:</strong> Monopoly causes price inflation</li>
+          <li><strong>Limited Competition:</strong> Limited competition in lower tiers</li>
+          <li><strong>Economic Impact:</strong> Monopoly affects economic metrics</li>
+        </ul>
+
+        <h3>Privatization Benefits</h3>
+        <ul>
+          <li><strong>Higher Tiers:</strong> Higher tiers benefit from privatization</li>
+          <li><strong>Price Reduction:</strong> Privatization reduces prices</li>
+          <li><strong>Increased Competition:</strong> Privatization increases competition</li>
+          <li><strong>Economic Benefits:</strong> Privatization benefits economic metrics</li>
+        </ul>
+
+        <h3>Wealth Inequality</h3>
+        <ul>
+          <li><strong>Pricing Reflects Inequality:</strong> Pricing reflects wealth inequality</li>
+          <li><strong>Economic Impact:</strong> Inequality affects economic metrics</li>
+          <li><strong>Policy Analysis:</strong> Can analyze policy impacts on inequality</li>
+          <li><strong>Realistic Modeling:</strong> Realistic economic modeling</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Infrastructure Dependencies: 7 Types</h2>
+        <p>
+          The system models 7 infrastructure types with economic impact:
+        </p>
+
+        <h3>Transportation Infrastructure</h3>
+        <ul>
+          <li><strong>Roads & Railways:</strong> Transportation infrastructure</li>
+          <li><strong>Productivity Impact:</strong> Affects economic productivity</li>
+          <li><strong>Cost Impact:</strong> Affects production costs</li>
+          <li><strong>Access Impact:</strong> Affects access to markets</li>
+        </ul>
+
+        <h3>Energy Infrastructure</h3>
+        <ul>
+          <li><strong>Power Plants & Grids:</strong> Energy infrastructure</li>
+          <li><strong>Renewable Energy:</strong> Renewable energy options</li>
+          <li><strong>Productivity Impact:</strong> Energy affects productivity</li>
+          <li><strong>Cost Impact:</strong> Energy costs affect production</li>
+        </ul>
+
+        <h3>Communication Infrastructure</h3>
+        <ul>
+          <li><strong>Internet & Telecommunications:</strong> Communication infrastructure</li>
+          <li><strong>Information Access:</strong> Affects information access</li>
+          <li><strong>Productivity Impact:</strong> Communication affects productivity</li>
+          <li><strong>Market Access:</strong> Affects market access</li>
+        </ul>
+
+        <h3>Water & Sanitation</h3>
+        <ul>
+          <li><strong>Water Supply:</strong> Water infrastructure</li>
+          <li><strong>Waste Management:</strong> Sanitation infrastructure</li>
+          <li><strong>Health Impact:</strong> Affects health and productivity</li>
+          <li><strong>Cost Impact:</strong> Affects production costs</li>
+        </ul>
+
+        <h3>Healthcare Infrastructure</h3>
+        <ul>
+          <li><strong>Hospitals & Clinics:</strong> Healthcare infrastructure</li>
+          <li><strong>Health Impact:</strong> Affects population health</li>
+          <li><strong>Productivity Impact:</strong> Health affects productivity</li>
+          <li><strong>Economic Impact:</strong> Healthcare affects economic metrics</li>
+        </ul>
+
+        <h3>Education Infrastructure</h3>
+        <ul>
+          <li><strong>Schools & Universities:</strong> Education infrastructure</li>
+          <li><strong>Skill Development:</strong> Affects skill development</li>
+          <li><strong>Productivity Impact:</strong> Education affects productivity</li>
+          <li><strong>Innovation Impact:</strong> Education affects innovation</li>
+        </ul>
+
+        <h3>Housing Infrastructure</h3>
+        <ul>
+          <li><strong>Residential Infrastructure:</strong> Housing infrastructure</li>
+          <li><strong>Wealth-Based Allocation:</strong> Housing allocated by wealth tiers</li>
+          <li><strong>Quality Variation:</strong> Housing quality varies by tier</li>
+          <li><strong>Economic Impact:</strong> Housing affects economic metrics</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Housing System: Wealth-Based Allocation</h2>
+        <p>
+          HousingSystem.ts implements wealth-based housing allocation:
+        </p>
+
+        <h3>Allocation System</h3>
+        <ul>
+          <li><strong>Wealth-Based:</strong> Housing allocated by wealth tier</li>
+          <li><strong>Quality Tiers:</strong> Housing quality matches wealth tier</li>
+          <li><strong>Availability:</strong> Housing availability varies by tier</li>
+          <li><strong>Economic Impact:</strong> Housing affects economic metrics</li>
+        </ul>
+
+        <h3>Housing Costs</h3>
+        <ul>
+          <li><strong>Wealth-Based Pricing:</strong> Housing costs reflect wealth tier</li>
+          <li><strong>Affordability:</strong> Affordability varies by tier</li>
+          <li><strong>Economic Impact:</strong> Housing costs affect economic metrics</li>
+          <li><strong>Policy Analysis:</strong> Can analyze housing policy impacts</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Investment Recommendation:</strong> Wealth-based pricing and infrastructure dependencies demonstrate 
+          sophisticated economic modeling. The system can be used for training, simulation, and policy analysis applications, 
+          creating additional revenue opportunities.
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
+
